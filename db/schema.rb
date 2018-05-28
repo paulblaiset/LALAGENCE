@@ -10,10 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_104255) do
+ActiveRecord::Schema.define(version: 2018_05_28_131300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "url_flat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["url_flat_id"], name: "index_applications_on_url_flat_id"
+    t.index ["user_id"], name: "index_applications_on_user_id"
+  end
+
+  create_table "guarantors", force: :cascade do |t|
+    t.string "gender"
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birthday_date"
+    t.text "address"
+    t.string "nationality"
+    t.string "couple_status"
+    t.string "mail"
+    t.integer "child_number"
+    t.string "job_name"
+    t.string "employment_contract"
+    t.string "identity_card"
+    t.string "pay_slip_1"
+    t.string "pay_slip_2"
+    t.string "pay_slip_3"
+    t.string "tax_notice"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_guarantors_on_user_id"
+  end
+
+  create_table "url_flats", force: :cascade do |t|
+    t.text "url_1"
+    t.text "url_2"
+    t.text "url_3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +68,31 @@ ActiveRecord::Schema.define(version: 2018_05_28_104255) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "gender"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "mail"
+    t.string "phone_number"
+    t.string "work_situation"
+    t.string "job_name"
+    t.float "salary_by_month"
+    t.date "first_day_of_work"
+    t.string "rental_status"
+    t.float "year_legal_income"
+    t.float "actual_rent_price"
+    t.date "birthday_date"
+    t.string "employment_contract"
+    t.string "identity_card"
+    t.string "pay_slip_1"
+    t.string "pay_slip_2"
+    t.string "pay_slip_3"
+    t.string "actual_rent_bill"
+    t.string "tax_notice"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "applications", "url_flats"
+  add_foreign_key "applications", "users"
+  add_foreign_key "guarantors", "users"
 end

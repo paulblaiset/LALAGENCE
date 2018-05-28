@@ -1,0 +1,2 @@
+class UrlFlatsController < ApplicationController
+end
