@@ -1,0 +1,76 @@
+
+.button-wrap {
+  position: relative;
+  text-align: right;
+  top: 50%;
+  margin-top: -33px;
+  @media (max-width:40em) {margin-top: -1.5em;}
+}
+
+.button-label {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  color: black;
+  border-radius: 0.25em;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0 -3px 0 rgba(0,0,0,0.22);
+  transition: 0.3s;
+  user-select: none;
+
+  h1 {
+    padding:0px;
+    margin:0px;
+    font-size: 1em;
+    font-family: "Nunito";
+  }
+  &:hover {
+    background: darken(white, 10%);
+    color: darken(black, 10%);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0 -3px 0 rgba(0,0,0,0.32);
+  }
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0px -1px 0 rgba(0,0,0,0.22);
+  }
+  @media (max-width:40em ) {
+    padding: 0em 1em 3px;
+    margin: 0.25em;
+  }
+}
+
+.checked {
+  background: $green;
+  color: white;
+  &:hover {
+    background: darken($green, 5%);
+    color: darken(white, 5%);
+  }
+}
+
+.no-button:checked .button-label {
+  background: $green;
+  color: white;
+  &:hover {
+    background: darken($red, 5%);
+    color: darken(white, 5%);
+  }
+}
+
+.button-color {
+  background-color: red;
+}
+
+#maybe-button:checked + .button-label {
+  background: $blue;
+  color: white;
+  &:hover {
+    background: darken($blue, 5%);
+    color: darken(white, 5%);
+  }
+}
+
+.hidden {
+  display: none;
+}
