@@ -10,7 +10,7 @@
   <h2>Situation professionnelle</h2>
   <%= f.input :job_name %>
   <%= f.input :salary_by_month %>
-  <%= f.input :first_day_of_work %>
+  <%= f.input :first_day_of_work, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
   <%= f.input :employment_contract_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
   <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
