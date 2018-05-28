@@ -1,0 +1,25 @@
+.footer {
+  background: #38618C;
+  height: 200px;
+  color: white;
+}
+body {
+  font-size: 10px;
+  text-align: justify;
+}
+.footer-links {
+  list-style-type: none;
+}
+li {
+  margin-bottom: 5px;
+}
+a {
+  color: white;
+}
+a:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+h4 {
+  font-size: 14px;
+}
