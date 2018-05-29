@@ -1,0 +1,6 @@
+class FlatsController < ApplicationController
+
+
+
+
+end
