@@ -1,0 +1,38 @@
+<div id="mySidenav" class="sidenav">
+  <div class="sidebar-logo-container">
+    <div>
+    <%= link_to root_path , class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo_white.png", height: 15 %>
+    </div>
+    <p style="font-family: Assistant">Lalagence</p>
+    <% end %>
+  </div>
+  <div class="profil-container">
+    <div class ="avatar">
+      <%= image_tag("avatar_phb.png") %>
+    </div>
+  <a>Jean Valjean</a>
+  </div>
+
+  <div class="name"></div>
+  <!-- s -->
+  <div class="side-bar-menu">
+    <a href="#">Mon dossier</a>
+    <a href="#">Ma séléction</a>
+    <a href="#">Mon historique</a>
+  </div>
+
+  <div class="side-bar-menu">
+    <a style="font-size:12px;text-align:center;color:#1E2939;margin-right:30px"
+    href="#">Se déconnecter</a>
+  </div>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<!-- <span onclick="openNav()">open</span> -->
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<!-- <div id="main">
+  <%#= render 'shared/form' %>
+</div>
+ -->
