@@ -10,16 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_143207) do
+ActiveRecord::Schema.define(version: 2018_05_29_102323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "agencies", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "applications", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_applications_on_user_id"
+  end
+
+  create_table "flats", force: :cascade do |t|
+    t.string "name"
+    t.bigint "agency_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo"
+    t.string "nb_room"
+    t.string "address"
+    t.string "price"
+    t.string "surface"
+    t.index ["agency_id"], name: "index_flats_on_agency_id"
   end
 
   create_table "guarantors", force: :cascade do |t|
@@ -52,7 +71,9 @@ ActiveRecord::Schema.define(version: 2018_05_28_143207) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "application_id"
+    t.bigint "flat_id"
     t.index ["application_id"], name: "index_url_flats_on_application_id"
+    t.index ["flat_id"], name: "index_url_flats_on_flat_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -93,6 +114,8 @@ ActiveRecord::Schema.define(version: 2018_05_28_143207) do
   end
 
   add_foreign_key "applications", "users"
+  add_foreign_key "flats", "agencies"
   add_foreign_key "guarantors", "users"
   add_foreign_key "url_flats", "applications"
+  add_foreign_key "url_flats", "flats"
 end
