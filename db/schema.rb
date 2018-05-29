@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_29_151427) do
+ActiveRecord::Schema.define(version: 2018_05_29_153402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2018_05_29_151427) do
 
   create_table "candidatures", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "flat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["flat_id"], name: "index_candidatures_on_flat_id"
+    t.bigint "url_flat_id"
+    t.index ["url_flat_id"], name: "index_candidatures_on_url_flat_id"
     t.index ["user_id"], name: "index_candidatures_on_user_id"
   end
 
@@ -113,7 +113,6 @@ ActiveRecord::Schema.define(version: 2018_05_29_151427) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "candidatures", "flats"
   add_foreign_key "candidatures", "users"
   add_foreign_key "flats", "agencies"
   add_foreign_key "guarantors", "users"
