@@ -1,0 +1,43 @@
+.carousel-home{
+  padding:20px 0;
+}
+.carousel-inner .item{
+  padding:0 20px;
+}
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+.card-home{
+  display:flex;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card-home > div[class^="card"]{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:50%;
+  min-height: 400px;
+}
+.card-home > div[class^="card"] > *{
+  margin:0 0 15px;
+}
+.card-profile{
+  background:#6b2b2b;
+  color:#fff;
+}
+.card-profile .card-profile-picture{
+  border-radius:50%;
+  border:2px solid #fff;
+  overflow:hidden;
+}
+.card-comment{
+  background:#7ee840;
+}
+.card-comment .card-comment-star{
+  font-size: 15px;
+}
+.card-comment .card-comment-text{
+  padding:0 15px;
+}
