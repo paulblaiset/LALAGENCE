@@ -1,1 +1,41 @@
 // Specific CSS for your home-page
+.banner-home{
+  height:70vh;
+  background:linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%);
+  position:relative;
+}
+.banner-home .form-container{
+  position:absolute;
+  bottom: 35px;
+  left:20px;
+  padding: 20px;
+  background:#fff;
+  text-align: center;
+  width:100%;
+  max-width: 500px;
+}
+.icon-home{
+  padding:0 15px;
+  position:relative;
+}
+.icon-home::before{
+  content:"";
+  display: block;
+  position:absolute;
+  left:0;
+  top:0;
+  right: 0;
+  bottom:0;
+  z-index: 4;
+  background:#fff;
+  transform-origin:0 0;
+  transform:skewY(-2deg);
+  border-top:4px solid #ff0000;
+}
+.icon-home .col-icon-home{
+  text-align:center;
+  padding-top:15px;
+  padding-bottom:15px;
+  position:relative;
+  z-index: 6;
+}
