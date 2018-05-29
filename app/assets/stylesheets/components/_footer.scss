@@ -2,8 +2,7 @@
   background: #1D536A;
   color: white;
   bottom: 0;
-  position: absolute;
-  padding: 10px;
+  padding: 20px;
   font-size: 10px;
   text-align: justify;
   font-weight: 100;
@@ -13,10 +12,10 @@
 }
 .footer-links a {
   color: white;
-  font-size: 15px;
 }
 .footer-links li {
   margin-bottom: 10px;
+  color: white;
 }
 a:hover {
   opacity: 0.7;
@@ -25,4 +24,7 @@ a:hover {
 .footer h4 {
   font-size: 14px;
   font-weight: 600;
+}
+.footer p {
+  margin-top: 10px;
 }
