@@ -12,6 +12,7 @@
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 
    .profil-container {
+    color:white;
     text-align:center;
     margin-top:70px;
       img {
@@ -20,7 +21,7 @@
       border-radius: 50%;
       }
 
-      a { font-family: "Open sans";
+      a { font-family: "Assistant";
           font-size:20px;
           padding-left:8px;
 
@@ -34,7 +35,7 @@
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 18px;
-    color: #white;
+    color: white;
     display: block;
     transition: 0.3s;
 }
@@ -72,6 +73,8 @@
 
 .side-bar-menu {
   margin-top: 75px;
+  a {font-weight:lighter;
+  }
 }
 
 .sidebar-logo-container {
