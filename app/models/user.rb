@@ -13,4 +13,13 @@ class User < ApplicationRecord
   mount_uploader :actual_rent_bill, PhotoUploader
   mount_uploader :tax_notice, PhotoUploader
 
+ def has_required_field?
+    self.gender && self.first_name && self.last_name && self.email && self.phone_number &&
+    self.work_situation && self.job_name && self.salary_by_month && self.first_day_of_work && self.rental_status &&
+    self.year_legal_income && self.actual_rent_price && self.employment_contract? && self.identity_card? &&
+    self.pay_slip_1? && self.pay_slip_2? && self.pay_slip_3? && self.actual_rent_bill? && self.tax_notice?
+  end
+
+
+
 end

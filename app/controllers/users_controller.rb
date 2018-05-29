@@ -8,7 +8,13 @@ class UsersController < ApplicationController
     @user = current_user
     authorize @user
     @user.update(user_params)
+    @user = @user.reload
+    if @user.has_required_field?
+      @application = current_user.applications.create
+      redirect_to edit_application_path(@application)
+    end
   end
+
 
   private
 
