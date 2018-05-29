@@ -1,11 +1,14 @@
 .footer {
-  background: #38618C;
-  height: 200px;
+  background: #1D536A;
   color: white;
+  bottom: 0;
+  position: absolute;
+  padding: 10px;
 }
 body {
   font-size: 10px;
   text-align: justify;
+  font-weight: 100;
 }
 .footer-links {
   list-style-type: none;
@@ -22,4 +25,5 @@ a:hover {
 }
 h4 {
   font-size: 14px;
+  font-weight: 600;
 }
