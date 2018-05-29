@@ -1,11 +1,23 @@
 <h1>Edit your profile</h1>
-<ul  class="nav nav-pills">
-  <li class="active">
-    <a  href="#1a" data-toggle="tab">Overview</a>
-  </li>
-  <li><a href="#2a" data-toggle="tab">Using nav-pills</a>
-  </li>
-</ul>
+<div class="nav-pills-content">
+  <ul class="nav nav-pills">
+    <li class="active">
+      <%= link_to "#1a", class: "tab-btn tab-me", data: { toggle: "tab"} do %>
+        <%= image_tag "icon_renter_guy_off.png", alt: ""%>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#2a", class: "tab-btn tab-guarantor", data: {toggle: "tab"} do %>
+        <%= image_tag "icon_guarantor_guy_off.png", alt: ""%>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#", class: "tab-btn tab-valide" do %>
+        <%= image_tag "icon_complete_off.png", alt: ""%>
+      <% end %>
+    </li>
+  </ul>
+</div>
 <div class="tab-content clearfix">
   <div class="tab-pane active" id="1a">
     <%= render 'shared/form' %>
