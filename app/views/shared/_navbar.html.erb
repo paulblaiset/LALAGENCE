@@ -1,8 +1,13 @@
 <div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+  <div class="sidebar-logo-container">
+    <div>
+    <%= link_to root_path , class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo_white.png", height: 15 %>
+    </div>
+    <p style="font-family: Assistant;color:white">Lalagence</p>
   <% end %>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -39,7 +44,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login", style:'color:white's), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
