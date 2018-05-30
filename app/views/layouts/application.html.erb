@@ -12,7 +12,9 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% if params['action'] == 'home' %>
+    <%= render 'shared/flashes' %>
+    <% if params['action'] == 'home' || controller_name == 'sessions'||  controller_name =='candidatures'%>
+      <%= render 'shared/navbar' %>
       <%= yield %>
     <% else %>
       <%= render 'shared/sidebar' %>
