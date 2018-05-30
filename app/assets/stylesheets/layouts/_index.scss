@@ -3,6 +3,7 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+@import "reset";
 
 
 .container-rightofnavbar {
@@ -10,5 +11,14 @@
   padding: 0 40px;
 }
 
-@import "reset";
 
+.container-navbar {
+  margin-top: 70px;
+  padding: 40px;
+
+}
+
+.footer-rightofnavbar {
+margin-left: 230px;
+
+}

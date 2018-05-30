@@ -12,18 +12,28 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/flashes' %>
-    <% if params['action'] == 'home' || controller_name == 'sessions'||  controller_name =='candidatures'%>
+    <% if controller_name == 'sessions'||  controller_name =='candidatures' || controller_name == 'registrations' %>
+      <%= render 'shared/fixnavbar' %>
+      <div class="container-navbar">
+        <%= yield %>
+        <%= render 'shared/banner' %>
+        <%= render 'shared/footer' %>
+      </div>
+    <% elsif params['action'] == 'home' %>
       <%= render 'shared/navbar' %>
       <%= yield %>
-    <% else %>
+      <%= render 'shared/banner' %>
+      <%= render 'shared/footer' %>
+    <% elsif %>
       <%= render 'shared/sidebar' %>
       <div class="container-rightofnavbar">
         <%= yield %>
       </div>
+      <div class="footer-rightofnavbar">
+      <%= render 'shared/footer' %>
+      </div>
+
     <% end %>
-    <%= render 'shared/banner' %>
-    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
