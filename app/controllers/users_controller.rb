@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
   def edit
     @user = current_user
+    @guarantor = Guarantor.create
     authorize @user
   end
 
   def update
     @user = current_user
+    @guarantor = Guarantor.create
     authorize @user
+    authorize @guarantor
     @user.update(user_params)
     @user = @user.reload
     if @user.has_required_field?

@@ -3,25 +3,28 @@
     <div class="col-xs-6">
       <div class="form-section">
         <h2>1 - Etat civil</h2>
-        <%= simple_form_for(@user) do |f|%>
+        <%= simple_form_for [@user, @guarantor] do |f|%>
           <%= f.input :gender %>
           <%= f.input :first_name %>
-
+          <%= f.input :last_name %>
           <%= f.input :birthday_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-
-          <%= f.input :phone_number %>
-          <%= f.input :work_situation %>
+          <%= f.input :address %>
+          <%= f.input :nationality %>
+          <%= f.input :couple_status %>
+          <%= f.input :mail %>
+          <%= f.input :child_number %>
           <%= f.input :identity_card, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
           <%= f.input :identity_card_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
       </div>
     </div>
-
     <div class="col-xs-6">
       <div class="form-section">
         <h2>2 - Situation professionnelle</h2>
         <%= f.input :job_name %>
-        <%= f.input :salary_by_month %>
-        <%= f.input :first_day_of_work, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :employer %>
+        <%= f.input :employer_address %>
+        <%= f.input :employer_phone_number %>
+        <%= f.input :seniority %>
         <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
         <%= f.input :employment_contract_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
         <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
@@ -33,18 +36,16 @@
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class="col-xs-6">
       <div class="form-section">
         <h2>3 - Situation locative</h2>
         <%= f.input :rental_status %>
-        <%= f.input :actual_rent_price %>
-        <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-        <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+        <%= f.input :actual_rent_bill %>
+        <%= f.input :property_tax, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+        <%= f.input :property_tax_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
       </div>
     </div>
-
     <div class="col-xs-6">
       <div class="form-section">
         <h2>4 - Situation fiscale</h2>
