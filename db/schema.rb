@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_29_153402) do
+ActiveRecord::Schema.define(version: 2018_05_30_082647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,11 @@ ActiveRecord::Schema.define(version: 2018_05_29_153402) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "employer"
+    t.string "seniority"
+    t.string "employer_address"
+    t.string "employer_phone_number"
+    t.string "property_tax"
     t.index ["user_id"], name: "index_guarantors_on_user_id"
   end
 
