@@ -1,0 +1,30 @@
+.container_candidature_anonymesession {
+  margin:100px;
+}
+
+.mega-card-candidature {
+
+  width:700px;
+  background-color: white;
+  border: 1px solid #DEE6E5;
+  border-radius: 5px;
+  padding:20px;
+  margin:20px;
+  display:flex;
+
+  h1 {
+   font-size: 18px;
+   font-weight: bold;
+  }
+
+  h2 {
+    font-size: 18px
+  }
+
+  .avatar {
+    img {
+      height: 90px;
+      width: 90px;
+    }
+  }
+}

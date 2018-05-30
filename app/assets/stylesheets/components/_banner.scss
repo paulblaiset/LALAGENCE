@@ -1,9 +1,19 @@
+
 .banner {
+  display:flex;
+  align-content:center;
   background-color: $light-green;
   color: white;
   padding: 30px;
-  height: 150px;
+  height: 250px;
   text-align: center;
+
+  .banner-content {
+    padding-top:40px;
+    margin: 0 auto;
+
+  }
+
 }
 .banner-links a {
   margin-left: 40px;

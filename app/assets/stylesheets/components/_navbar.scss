@@ -1,6 +1,5 @@
 /* Main navbar */
 .navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background-color: transparent;
   transition: 0.5s background-color ease;
   height: 70px;
@@ -11,6 +10,7 @@
 }
 .navbar-wagon-white {
   background-color: white;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 }
 /* Logo */
 .navbar-wagon-brand img {
@@ -39,8 +39,9 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+  color: white;
+  font-size: 12px;
+  font-weight: lighter
 }
 .navbar-wagon-link:hover {
   color: #da552f;
