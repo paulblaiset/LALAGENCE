@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_30_092233) do
+ActiveRecord::Schema.define(version: 2018_05_30_130919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 2018_05_30_092233) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.string "phone_number"
+    t.string "siret"
+    t.string "mail"
   end
 
   create_table "candidatures", force: :cascade do |t|
@@ -118,6 +122,9 @@ ActiveRecord::Schema.define(version: 2018_05_30_092233) do
     t.string "pay_slip_3"
     t.string "actual_rent_bill"
     t.string "tax_notice"
+    t.bigint "agency_id"
+    t.string "role"
+    t.index ["agency_id"], name: "index_users_on_agency_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
