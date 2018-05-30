@@ -13,7 +13,8 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
-    <% if params['action'] == 'home' %>
+    <% if params['action'] == 'home' || controller_name == 'sessions'||  controller_name =='candidatures'%>
+      <%= render 'shared/navbar' %>
       <%= yield %>
     <% else %>
       <%= render 'shared/sidebar' %>

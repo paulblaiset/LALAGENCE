@@ -1,0 +1,31 @@
+<div class="container_candidature_anonymesession">
+  <div class="mega-card-candidature">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class ="avatar">
+          <%= image_tag("avatar_phb.png") %>
+        </div>
+        <div>
+        <h2><%=  @user.first_name  %></h2>
+        <h1><%=  @user.last_name  %></h1>
+        <a><%=  @user.mail  %></a>
+        <a><%=  @user.phone_number %></a>
+        </div>
+        <div class="col-sm-4">
+          <div class="btn-medium" >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+    <a><%=  @user.birthday_date  %></a>
+    </div>
+
+    <a><%=  @user.work_situation  %> from <%=  @user.first_day_of_work%> </a>
+    <a><%=  @user.job_name  %> : <%=  @user.salary_by_month  %></a>
+  </div>
+</div>
+
+
+
