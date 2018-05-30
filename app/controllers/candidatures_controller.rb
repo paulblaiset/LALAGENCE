@@ -1,4 +1,6 @@
 class CandidaturesController < ApplicationController
+skip_before_action :authenticate_user!, only: [:show, :candidatures]
+
   def scrap_orpi
     ScarpOrpi.new(self).call
   end
