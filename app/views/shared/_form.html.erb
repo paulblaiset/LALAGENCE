@@ -6,14 +6,16 @@
         <%= simple_form_for(@user) do |f|%>
           <%= f.input :gender %>
           <%= f.input :first_name %>
-          <%= f.input :last_name %>
+
           <%= f.input :birthday_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+
           <%= f.input :phone_number %>
           <%= f.input :work_situation %>
           <%= f.input :identity_card, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
           <%= f.input :identity_card_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
       </div>
     </div>
+
     <div class="col-xs-6">
       <div class="form-section">
         <h2>2 - Situation professionnelle</h2>
@@ -31,6 +33,7 @@
       </div>
     </div>
   </div>
+
   <div class="row">
     <div class="col-xs-6">
       <div class="form-section">
@@ -41,6 +44,7 @@
         <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
       </div>
     </div>
+
     <div class="col-xs-6">
       <div class="form-section">
         <h2>4 - Situation fiscale</h2>

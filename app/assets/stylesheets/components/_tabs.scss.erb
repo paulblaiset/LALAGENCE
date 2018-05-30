@@ -1,0 +1,41 @@
+.nav-pills-content{
+  text-align:center;
+}
+.nav.nav-pills{
+  display: inline-block;
+  position: relative;
+}
+.nav.nav-pills::after{
+  content:"";
+  display:block;
+  border:1px solid $light-green;
+  display: inline-block;
+  position:absolute;
+  left:0;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+}
+.nav.nav-pills .tab-btn{
+  display:inline-block;
+  height:100px;
+  width:100px;
+  padding:0;
+  position:relative;
+  z-index: 10;
+}
+.nav.nav-pills li{
+  margin:0 60px;
+}
+.nav.nav-pills li:first-child{
+  margin-left: 0;
+}
+.nav.nav-pills li:last-child{
+  margin-right: 0;
+}
+.nav.nav-pills .tab-btn,
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus,
+.nav.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+  background-color: #fff;
+  opacity: 1;
+}
