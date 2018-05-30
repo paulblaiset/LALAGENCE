@@ -1,5 +1,6 @@
 .carousel-home{
-  padding:20px 0;
+  padding:20px 100px;
+
 }
 .carousel-inner .item{
   padding:0 20px;
@@ -11,6 +12,8 @@
   display:flex;
   border-radius: 5px;
   overflow: hidden;
+  box-shadow: 3px 3px 16px rgba(30, 30, 30, 0.2);
+  margin:50px 0px;
 }
 .card-home > div[class^="card"]{
   display:flex;
@@ -18,14 +21,18 @@
   align-items:center;
   justify-content:center;
   width:50%;
-  min-height: 400px;
+  height: 400px;
+
 }
 .card-home > div[class^="card"] > *{
-  margin:0 0 15px;
+  margin:18px 0 15px;
 }
 .card-profile{
-  background:#6b2b2b;
-  color:#fff;
+  background:$dark-blue;
+  color:white;
+  img {
+    height:70px;
+    width:70px}
 }
 .card-profile .card-profile-picture{
   border-radius:50%;
@@ -33,11 +40,21 @@
   overflow:hidden;
 }
 .card-comment{
-  background:#7ee840;
+  position: relative;
+  background:white;
 }
 .card-comment .card-comment-star{
   font-size: 15px;
 }
 .card-comment .card-comment-text{
   padding:0 15px;
+}
+
+.card-profile-usertype {
+  position:absolute;
+  top:10px;
+  margin-bottom: 30px;
+  font-weight:lighter;
+  color:#2684E2;
+
 }
