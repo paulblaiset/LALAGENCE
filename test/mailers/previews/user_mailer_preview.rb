@@ -6,6 +6,11 @@ class UserMailerPreview < ActionMailer::Preview
     user = User.first
     UserMailer.welcome(user).deliver_now
   end
+
+  def folder
+    user = User.first
+    UserMailer.folder(user).deliver_now
+  end
 end
 
 
