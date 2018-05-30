@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     resources :guarantors, only: [:new, :edit, :create, :update, :show]
   end
   resources :candidatures
+
+  resources :agencies, only: [:show, :new, :create, :edit, :update] do
+    resources :flats
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

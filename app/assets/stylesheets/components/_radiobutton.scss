@@ -41,16 +41,16 @@
 }
 
 .checked {
-  background: $green;
+  background: $light-green;
   color: white;
   &:hover {
-    background: darken($green, 5%);
+    background: darken($light-green, 5%);
     color: darken(white, 5%);
   }
 }
 
 .no-button:checked .button-label {
-  background: $green;
+  background: $light-green;
   color: white;
   &:hover {
     background: darken($red, 5%);
