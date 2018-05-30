@@ -1,12 +1,12 @@
 <h1>Edit your profile</h1>
 <div class="nav-pills-content">
   <ul class="nav nav-pills">
-    <li class="active">
+    <li class="<%= 'active' if @step == 1 %>">
       <%= link_to "#1a", class: "tab-btn tab-me", data: { toggle: "tab"} do %>
         <%= image_tag "icon_renter_guy_off.png", alt: ""%>
       <% end %>
     </li>
-    <li>
+    <li class="<%= 'active' if @step == 2 %>">
       <%= link_to "#2a", class: "tab-btn tab-guarantor", data: {toggle: "tab"} do %>
         <%= image_tag "icon_guarantor_guy_off.png", alt: ""%>
       <% end %>
@@ -19,10 +19,10 @@
   </ul>
 </div>
 <div class="tab-content clearfix">
-  <div class="tab-pane active" id="1a">
+  <div class="tab-pane <%= 'active' if @step == 1 %>" id="1a">
     <%= render 'shared/form' %>
   </div>
-  <div class="tab-pane" id="2a">
+  <div class="tab-pane <%= 'active' if @step == 2 %>" id="2a">
     <%= render 'shared/form_guarantor' %>
   </div>
 </div>
