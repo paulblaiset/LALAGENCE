@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  after_create :send_welcome_email
-
   def edit
     @user = current_user
     authorize @user

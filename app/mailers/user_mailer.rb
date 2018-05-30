@@ -13,7 +13,7 @@ class UserMailer < ApplicationMailer
 
     mail(
       to: @user.email,
-      subject: 'Nouveau Dosser de location :'
+      subject: 'Nouveau dosser de location :'
       )
   end
 

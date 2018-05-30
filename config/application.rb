@@ -23,5 +23,3 @@ module LALAGENCE
   end
 end
 
-config.action_mailer.delivery_method = :postmark
-config.action_mailer.postmark_settings = { :api_token => "aeb0eb43-d151-4b4e-865f-a930a155c76d" }
