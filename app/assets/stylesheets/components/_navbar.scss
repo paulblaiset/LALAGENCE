@@ -7,11 +7,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 .navbar-wagon-white {
   background-color: white;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  a {
+    color: $gray !important;
+  }
+  p {
+    color: $light-green !important;
+  }
 }
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
@@ -77,13 +85,4 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
-}
-
-.backgroundwhite {
-background-color:white;
-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-
-.navbar-wagon-link {
-  color: gray;
-}
 }
