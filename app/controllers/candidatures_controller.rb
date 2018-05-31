@@ -20,5 +20,4 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures]
     @user = @candidature.user
     authorize @candidature
   end
-
 end
