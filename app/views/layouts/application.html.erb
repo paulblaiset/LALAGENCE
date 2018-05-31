@@ -12,7 +12,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% if controller_name == 'sessions'||  controller_name =='candidatures' || controller_name == 'registrations' %>
+      <% if controller_name == 'sessions'||  controller_name =='candidatures' && action_name == 'show' || controller_name == 'registrations' %>
       <%= render 'shared/fixnavbar' %>
       <div class="container-navbar">
         <%= yield %>
