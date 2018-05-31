@@ -56,5 +56,4 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures]
   def candidature_params
     params.require(:candidature).permit(:mail_agency, :url_flat)
   end
-
 end

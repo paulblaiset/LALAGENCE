@@ -31,3 +31,18 @@ h3 {
   font-size:18px;
   font-weight: bold;
 }
+
+input.form-control{
+  border-radius: 50px;
+}
+input.form-control:focus{
+  border-color: $light-green;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(61, 234, 185, 0.6);
+}
+input.btn-send{
+  background:$pink;
+  color:#fff;
+}
+input.btn-send:hover{
+  color:#fff;
+}
