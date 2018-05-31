@@ -4,6 +4,14 @@
 .container-form-profile .form-section{
   padding:0 0 20px;
 }
+.container-form-profile .form-control{
+  border-radius: 50px !important;
+}
+.container-form-profile .form-control:focus{
+  border-color: $light-green;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(61, 234, 185, 0.6);
+}
+
 
 .container-form-profile .custom-file{
   width: 50px;
@@ -16,7 +24,16 @@
   font-size:9px;
   margin:0 5px;
   display: inline-block;
+  background:linear-gradient(-225deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.0) 50%) , asset-url('uploadcload') no-repeat center;
+  background-size:65%;
 }
+
+.profil-edit-container .form-control {
+    height: 27px;
+    font-size: 12px;
+    border-radius: 50px;
+  }
+
 .container-form-profile .form-control-label,
 .container-form-profile label.file{
   display:none;
@@ -33,8 +50,9 @@
   word-wrap: break-word;
 }
 .container-form-profile .form-control-file{
-  position: absolute;
+  //position: absolute;
   width:100%;
+  height: 100%;
   opacity: 0;
   cursor: pointer;
   left: 0;
@@ -43,6 +61,14 @@
   right: 0;
   z-index: 10;
 }
+
+.preview-name {
+    float: left;
+    max-width: 49px;
+    overflow: hidden;
+    width: 49px;
+}
+
 
 .row-step-1 {
   padding: 30px 0 30px 100px;
@@ -104,4 +130,57 @@ flex: 0 0 55%;
 
 .row-step-3-4 {
   display:flex;
+  padding: 30px 0 30px 100px;
+  background-color:#FAFAFA;
+  p { margin-bottom:20px;
+
+  }
 }
+
+.step-3-container{
+flex: 0 0 55%;
+padding-right: 160px;
+}
+
+.step-3-quittance {
+  display:flex;
+}
+
+.bouton-update-user {
+    margin-top: 42px;
+    margin-left: 64px;
+}
+
+.step-4-container{
+text-align:center;
+}
+
+.champs-step-1-guarant {
+  display:flex;
+}
+
+.deuxiemerang {
+    padding-top: 34px;
+    padding-left: 40px;
+}
+
+.champs-step-2-guarantor {
+flex: 0 0 55%;
+padding-right: 213px;
+}
+
+.upload-step-2-guarantor {
+  text-align: center;
+  margin-top: -24px;
+
+  p {
+    margin-top:0px;
+    margin-bottom:20px;
+  }
+
+  img {
+    padding-bottom:20px;
+  }
+}
+
+
