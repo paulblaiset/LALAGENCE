@@ -5,9 +5,8 @@ class ScrapLbc
 
 
 
-  def create_flat_lbc
+  def create_flat_lbc(url)
     @lbc = Flat.new
-    url = "https://www.leboncoin.fr/locations/1429551528.htm/?ca=12_s"
     html_file = open(url).read
     html_doc = Nokogiri::HTML(html_file)
 
@@ -29,7 +28,7 @@ class ScrapLbc
     puts @lbc.address.split(" ")[0]
 
     @lbc.save
-    nil
+    @lbc
   end
 
 
