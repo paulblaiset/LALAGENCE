@@ -5,9 +5,8 @@ class ScrapLogicImmo
 
 
 
-  def create_flat_logic_immo
+  def create_flat_logic_immo(url)
     @logic_immo = Flat.new
-    url = "http://www.logic-immo.com/detail-location-dfe81159-6e3f-b26b-f230-3a0328d15075.htm?mea=orpi"
     html_file = open(url).read
     html_doc = Nokogiri::HTML(html_file)
 
@@ -29,7 +28,7 @@ class ScrapLogicImmo
     puts @logic_immo.address.strip
 
     @logic_immo.save
-    nil
+    @logic_immo
   end
 
 

@@ -5,9 +5,8 @@ class ScrapOrpi
 
 
 
-  def create_flat_orpi
+  def create_flat_orpi(url)
     @orpi = Flat.new
-    url = "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/"
     html_file = open(url).read
     html_doc = Nokogiri::HTML(html_file)
 
