@@ -34,8 +34,10 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures]
 
   def update
     @candidature = Candidature.find(params[:id])
+    @url_flat = UrlFlat.new
     @candidature.update(candidature_params)
     @candidature.user = current_user
+    @candidature.url_flat = @url_flat
     authorize @candidature
     if @candidature.save
       redirect_to user_candidatures_path(current_user)
