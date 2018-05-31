@@ -8,8 +8,5 @@ class AgenciesController < ApplicationController
 
 
 
-    query = "SELECT * FROM transactions
-    JOIN socks ON transactions.sock_id = socks.id
-     WHERE socks.user_id = ?"
 
 end

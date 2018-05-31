@@ -2,9 +2,15 @@
   <div class="form-container">
     <div class="form-container-inner">
       <h1>Remplissez votre dossier de location une seule fois et envoyez le de manière sécurisée.</h1>
+      <% if current_user %>
       <div class="btn-medium" >
-        <%= link_to "Créer mon dossier", root_path %>
+        <%= link_to "Créer mon dossier", edit_user_path(current_user) %>
       </div>
+      <% else %>
+      <div class="btn-medium" >
+        <%= link_to "Sign up/Sign in", new_user_registration_path %>
+      </div>
+      <% end %>
     </div>
   </div>
 </section>

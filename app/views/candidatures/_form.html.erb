@@ -1,11 +1,7 @@
-<div class="row">
-  <div class="col-xs-12 col-md-6">
-    <%= simple_form_for [@candidature], html: { class: 'form-horizontal' },wrapper: :horizontal_form do |f|%>
-      <%= f.input :url_flat_id, label_html: { class: 'col-xs-12 col-md-3' }, input_html: { class: 'col-xs-12 col-md-7' }, wrap_with: { tag: 'div', class: 'col-md-7' }, wrapper_html: { class: 'row' } %>
-      <%= f.button :submit, :class => 'btn btn-send' %>
-    <% end %><!-- End-Form -->
+<%= simple_form_for [current_user, @candidature] do |f|%>
+  <%= f.input :mail_agency, placeholder:'Mail de l\'agence', label: false %>
+  <%= f.input :url, placeholder:'Lien de l\'annonce', label: false %>
+  <div class="text-right">
+    <%= f.button :submit, :class => 'btn-send' %>
   </div>
-  <div class="col-xs-12 col-md-6">
-    <div class="card-candidature"></div>
-  </div>
-</div>
+<% end %><!-- End-Form -->

@@ -23,6 +23,14 @@ michel = User.create!(
   agency_id: 1
 )
 
+jack = User.create!(
+  email: 'jack@jack.com',
+  password: 'password',
+  gender: 'male',
+  first_name: 'Jack',
+  last_name: 'Sparrow',
+  )
+
 t2 = Flat.create!(
   name: 'Magnifique T2',
   agency_id: 1,
