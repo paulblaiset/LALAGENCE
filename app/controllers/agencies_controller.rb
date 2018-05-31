@@ -1,18 +1,15 @@
 class AgenciesController < ApplicationController
 
-  # def new
-  #   @agency = Agency.new
-  #   authorize @agency
-  # end
+  def show
+    @agency = Agency.find(params[:id])
+    authorize @agency
+    @candidatures = @agency.candidatures
+  end
 
-  # def create
-  #   @agency = Agency.new(agency_params)
 
-  # end
 
-  # private
+    query = "SELECT * FROM transactions
+    JOIN socks ON transactions.sock_id = socks.id
+     WHERE socks.user_id = ?"
 
-  # def agency_params
-  #   params.require(:agency).permit(:name, :address, :phone_number, :siret, :mail)
-  # end
 end

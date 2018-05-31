@@ -1,7 +1,7 @@
 class FlatsController < ApplicationController
 
   def index
-    skip_policy_scope
+    @flats = policy_scope(Flat).where(agency_id: current_user.agency_id)
   end
 
 
