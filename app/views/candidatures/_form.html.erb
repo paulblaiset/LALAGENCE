@@ -1,6 +1,6 @@
 <%= simple_form_for [current_user, @candidature] do |f|%>
   <%= f.input :mail_agency, placeholder:'Mail de l\'agence', label: false %>
-  <%= f.input :url_flat, placeholder:'Lien de l\'annonce', label: false %>
+  <%= f.input :url, placeholder:'Lien de l\'annonce', label: false %>
   <div class="text-right">
     <%= f.button :submit, :class => 'btn-send' %>
   </div>

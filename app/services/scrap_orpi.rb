@@ -30,7 +30,7 @@ class ScrapOrpi
 
 
     @orpi.save
-    nil
+    @orpi
   end
 
 
