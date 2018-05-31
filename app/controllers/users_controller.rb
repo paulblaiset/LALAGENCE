@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
     @user = @user.reload
     if @user.agency_id
-      @agency = Agency.find(params[:user][:agency_id])
+      @agency = Agency.find(current_user.agency_id)
       redirect_to agency_path(@agency)
     elsif @user.has_required_field?
       @candidature = current_user.candidatures.create

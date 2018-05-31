@@ -52,9 +52,9 @@
               <%= f.input :work_situation, as: :hidden %>
           </div>
           <div class="champs-step-2-1">
-            <%= f.input :job_name %>
-            <%= f.input :salary_by_month %>
-            <%= f.input :first_day_of_work, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :job_name, placeholder:'Nom du poste'%>
+            <%= f.input :salary_by_month, placeholder:'Salaire mensuel' %>
+            <%= f.input :first_day_of_work, as: :string, required: false, input_html: {class: "datepicker"}, placeholder:'Début de contrat' %>
           </div>
         </div>
         <div class="row-step-2-2">
@@ -74,31 +74,37 @@
           </div>
         </div>
       </div>
-    </div>
-  </div><!-- End-Section -->
+    </div><!-- End-Section -->
     <div class="form-section">
       <div class="row-step-3-4">
         <div class="step-3-container">
           <h3>3 - Situation locative</h3>
           <div class="step-3-locative-box">
-            <%= f.input :rental_status %>
+            <%= f.input :rental_status, placeholder:'Situation locative' %>
+          </div>
+          <div class="quitanceetprice">
             <div class="step-3-quittance">
-            <%= f.input :actual_rent_price %>
-            <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+              <p> <span style="font-weight: bold">Quittance de loyer</span></p>
+              <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+              <div style="padding-left:24px">
+              <%= f.input :actual_rent_price, placeholder:'Loyer actuel' %>
+              </div>
             </div>
             <div class="step-3-rentalprice">
-            <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+              <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
             </div>
           </div>
         </div>
         <div class="step-4-container">
           <h3>4 - Situation fiscale</h3>
-          <%= f.input :year_legal_income %>
+          <%= f.input :year_legal_income, placeholder:'Revenus annuels' %>
+          <p> <span style="font-weight: bold">Avis d'imposition</span><br></p>
           <%= f.input :tax_notice, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
           <%= f.input :tax_notice_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-          <div>
-            <%= f.button :submit, :class => 'btn btn-send' %>
+          <div class='bouton-update-user' >
+          <%= f.button :submit, :class => 'btoun-rose-cool' %>
           </div>
+
         </div>
       </div>
     </div><!-- End-Section -->
