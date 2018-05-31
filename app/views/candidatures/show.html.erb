@@ -1,51 +1,53 @@
 <body style="background-color:#FAFAFA">
 <div class="container_candidature_anonymesession">
 
-  <div class="col-xs-4">
-    <div class="mini-card-candidature">
-      <div class="row">
-        <div class ="avatar">
-          <%= image_tag("avatar_phb.png") %>
+
+    <div class="col-xs-4">
+      <div class="mini-card-candidature">
+        <div class="row">
+          <div class ="avatar">
+            <%= image_tag("avatar_phb.png") %>
+          </div>
         </div>
-      </div>
-      <div class="row-mini">
-        <ul class="contact_info">
-          <strong><li><%=  @user.last_name  %></li></strong>
-          <strong><li><%=  @user.first_name[0]  %>.</li></strong>
-          <strong><li><%=  ((Date.today - @user.birthday_date)/365).to_i %> ans</li></strong>
-        </ul>
-      </div>
-      <div class="row-mini">
-        <ul class="contact_info">
-          <li>€ <%=  (@user.salary_by_month).to_i %></li>
-          <li> / <%= @user.job_name %></li>
-        </ul>
-      </div>
-      <div class="row-mini">
-        <ul class="contact_info">
-          <li><%=  @user.work_situation %></li>
-          <li> depuis <%= ((Date.today - @user.first_day_of_work)/31).to_i %> mois</li>
-        </ul>
-      </div>
-      <div class="row-mini">
-        <ul class="contact_info">
-          <li>*number* garant(s)</li>
-        </ul>
-      </div>
-      <div class="flat-details">
-        <div class="row-apart">
+        <div class="row-mini">
           <ul class="contact_info">
-            <li>*Flat details*</li>
+            <strong><li><%=  @user.last_name  %></li></strong>
+            <strong><li><%=  @user.first_name[0]  %>.</li></strong>
+            <strong><li><%=  ((Date.today - @user.birthday_date)/365).to_i %> ans</li></strong>
           </ul>
         </div>
-        <div class="row-apart">
+        <div class="row-mini">
           <ul class="contact_info">
-            <strong><li>Déposé depuis le *date*</li></strong>
+            <li>€<%=  (@user.salary_by_month).to_i %></li>
+            <li> / <%= @user.job_name %></li>
           </ul>
+        </div>
+        <div class="row-mini">
+          <ul class="contact_info">
+            <li><%=  @user.work_situation %></li>
+            <li> depuis <%= ((Date.today - @user.first_day_of_work)/31).to_i %> mois</li>
+          </ul>
+        </div>
+        <div class="row-mini">
+          <ul class="contact_info">
+            <li>*number* garant(s)</li>
+          </ul>
+        </div>
+        <div class="flat-details">
+          <div class="row-apart">
+            <ul class="contact_info">
+              <li>*Flat details*</li>
+            </ul>
+          </div>
+          <div class="row-apart">
+            <ul class="contact_info">
+              <% candidature = Candidature.find(params[:id]) %>
+              <strong><li>Déposé depuis le <%= candidature.created_at.strftime("%d/%m/%y") %></li></strong>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
   <div class="col-xs-8">
     <div class="mega-card-candidature">
