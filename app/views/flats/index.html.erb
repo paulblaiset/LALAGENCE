@@ -1,1 +1,11 @@
 <h1>All your flats</h1>
+<ul>
+  <% @flats.each do |flat| %>
+  <li>
+    <p><%=  flat.name %></p>
+    <p><%=  flat.nb_room %></p>
+    <p><%=  flat.address %></p>
+    <p><%=  flat.price %></p>
+  </li>
+  <% end %>
+</ul>

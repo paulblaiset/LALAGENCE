@@ -1,0 +1,9 @@
+<ul>
+<% @candidatures.each do |candidature| %>
+<li><%= candidature.url_flat.flat.name %></li>
+<li><%= candidature.url_flat.flat.address %></li>
+<li><%= candidature.url_flat.flat.price %></li>
+<li><%= candidature.url_flat.flat.surface %></li>
+<li><%= candidature.url_flat.flat.nb_room %></li>
+<% end %>
+</ul>

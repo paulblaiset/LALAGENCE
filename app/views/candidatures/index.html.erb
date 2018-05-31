@@ -1,0 +1,11 @@
+<h1>All your applications</h1>
+<ul>
+  <% @candidatures.each do |candidature| %>
+  <li>
+    <p><%=  candidature.url_flat.flat.name %></p>
+    <p><%=  candidature.url_flat.flat.nb_room %></p>
+    <p><%=  candidature.url_flat.flat.address %></p>
+    <p><%=  candidature.url_flat.flat.price %></p>
+  </li>
+  <% end %>
+</ul>
