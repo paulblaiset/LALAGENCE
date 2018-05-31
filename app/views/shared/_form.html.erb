@@ -5,7 +5,7 @@
       <div class="row-step-1">
         <div class="champs-step-1">
           <h3>1 - État civil</h3>
-          <%= f.input :gender %>
+          <%= f.collection_radio_buttons :gender, [['Monsieur', 'Monsieur'] ,['Madame', 'Madame']],:first, :last %>
           <%= f.input :first_name, placeholder:'Prénom'%>
           <%= f.input :last_name, placeholder:'Nom' %>
           <%= f.input :birthday_date, as: :string, placeholder:'Date de naissance',required: false, input_html: {class: "datepicker"} %>
@@ -80,7 +80,7 @@
         <div class="step-3-container">
           <h3>3 - Situation locative</h3>
           <div class="step-3-locative-box">
-            <%= f.input :rental_status, placeholder:'Situation locative' %>
+            <%= f.collection_radio_buttons :rental_status, [['Locataire', 'Locataire'] ,['Proprietaire', 'Proprietaire']],:first, :last %>
           </div>
           <div class="quitanceetprice">
             <div class="step-3-quittance">
