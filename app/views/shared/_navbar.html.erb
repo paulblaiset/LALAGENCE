@@ -15,10 +15,16 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-
+      <% if current_user.agency_id %>
+        <% agency_id = User.find(current_user.id).agency_id %>
+        <% agency = Agency.find(agency_id) %>
+        <%= link_to "Vos candidatures", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Vos biens", agency_flats_path(agency), class: "navbar-wagon-item navbar-wagon-link" %>
+      <% else %>
+        <%= link_to "Mon dossier", edit_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Ma sélection", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Mon historique", user_candidatures_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">

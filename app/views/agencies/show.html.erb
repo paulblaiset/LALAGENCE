@@ -1,9 +1,13 @@
-<ul>
-<% @candidatures.each do |candidature| %>
-<li><%= candidature.url_flat.flat.name %></li>
-<li><%= candidature.url_flat.flat.address %></li>
-<li><%= candidature.url_flat.flat.price %></li>
-<li><%= candidature.url_flat.flat.surface %></li>
-<li><%= candidature.url_flat.flat.nb_room %></li>
+<h1>Toutes les candidatures sur vos biens</h1>
+
+<% if current_user.agency_id %>
+  <ul>
+  <% @candidatures.each do |candidature| %>
+    <li><%= candidature.url_flat.flat.name %></li>
+    <li><%= candidature.url_flat.flat.address %></li>
+    <li><%= candidature.url_flat.flat.price %></li>
+    <li><%= candidature.url_flat.flat.surface %></li>
+    <li><%= candidature.url_flat.flat.nb_room %></li>
+  <% end %>
+  </ul>
 <% end %>
-</ul>

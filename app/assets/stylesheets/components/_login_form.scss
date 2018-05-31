@@ -1,0 +1,28 @@
+.form-login {
+  background: $light-gray;
+  padding: 10px 20px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  .btn {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    background: rgba(61, 234, 185, 1.00);
+    border: 2px solid rgba(55, 211, 167, 1.00);
+    transition: background 0.3s ease;
+    font-size: 10px;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 20px;
+    &:hover {
+    opacity: 0.7;
+    }
+  }
+  h2 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
