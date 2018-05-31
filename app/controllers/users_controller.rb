@@ -33,4 +33,8 @@ class UsersController < ApplicationController
       :year_legal_income, :actual_rent_price, :birthday_date, :employment_contract, :identity_card,
       :pay_slip_1, :pay_slip_2, :pay_slip_3, :actual_rent_bill, :tax_notice, :agency_id)
   end
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
 end
