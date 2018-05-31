@@ -1,19 +1,19 @@
 
 .button-wrap {
   position: relative;
-  text-align: right;
+  text-align: left;
   top: 50%;
-  margin-top: -33px;
+  margin-top: 0px;
   @media (max-width:40em) {margin-top: -1.5em;}
 }
 
 .button-label {
   display: inline-block;
-  padding: 10px;
-  margin: 10px;
+  padding: 12px;
+  margin: 7px;
   cursor: pointer;
   color: black;
-  border-radius: 0.25em;
+  border-radius: 2.25em;
   background: white;
   box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0 -3px 0 rgba(0,0,0,0.22);
   transition: 0.3s;
@@ -41,16 +41,16 @@
 }
 
 .checked {
-  background: $green;
+  background: $light-green;
   color: white;
   &:hover {
-    background: darken($green, 5%);
+    background: darken($light-green, 5%);
     color: darken(white, 5%);
   }
 }
 
 .no-button:checked .button-label {
-  background: $green;
+  background: $light-green;
   color: white;
   &:hover {
     background: darken($red, 5%);
@@ -63,10 +63,10 @@
 }
 
 #maybe-button:checked + .button-label {
-  background: $blue;
+  background: $dark-blue;
   color: white;
   &:hover {
-    background: darken($blue, 5%);
+    background: darken($dark-blue, 5%);
     color: darken(white, 5%);
   }
 }

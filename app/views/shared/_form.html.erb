@@ -1,53 +1,97 @@
+
 <div class="container-form-profile">
   <%= simple_form_for(@user) do |f|%>
     <div class="form-section">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <h3>1 - Etat civil</h3>
+      <div class="row-step-1">
+        <div class="champs-step-1">
+          <h3>1 - État civil</h3>
           <%= f.input :gender %>
-          <%= f.input :first_name %>
-          <%= f.input :last_name %>
-          <%= f.input :birthday_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-
-          <%= f.input :phone_number %>
-          <%= f.input :work_situation %>
+          <%= f.input :first_name, placeholder:'Prénom'%>
+          <%= f.input :last_name, placeholder:'Nom' %>
+          <%= f.input :birthday_date, as: :string, placeholder:'Date de naissance',required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :phone_number, placeholder:'Téléphone' %>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="upload-container-step-1">
+          <p> <span style="font-weight: bold">Carte d'identité ou passeport </span><br> en cours de validité</p>
             <%= f.input :identity_card, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
           <%= f.input :identity_card_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
         </div>
       </div>
     </div><!-- End-Section -->
     <div class="form-section">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <h3>2 - Situation professionnelle</h3>
-          <%= f.input :job_name %>
-          <%= f.input :salary_by_month %>
-          <%= f.input :first_day_of_work, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-          <%= f.input :employment_contract_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-          <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-          <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+      <div class="row-step-2">
+        <h3>2 - Situation professionnelle</h3>
+        <div class="row-step-2-1">
+          <div class="bouton-step-2-1">
+            <div class="container-radio">
+               <div class="button-wrap">
+                  <label for="no-button" class="button-label">
+                    <p>ÉTUDIANT(E)</p>
+                  </label>
+                  <label for="no-button" class="button-label">
+                    <p>SALARIÉ(E)</p>
+                  </label>
+                  <label for="no-button" class="button-label">
+                    <p>RETRAITÉ(E)</p>
+                  </label>
+                  <label for="no-button" class="button-label">
+                    <p>AUTRE</p>
+                  </label>
+                  <label for="no-button" class="button-label">
+                    <p>SANS EMPLOI</p>
+                  </label>
+                  <label for="no-button" class="button-label">
+                    <p>INTERIMAIRE</p>
+                  </label>
+                  <label for="no-button" class="button-label">
+                    <p>COMMERCANT(E)</p>
+                  </label>
+
+                </div>
+              </div>
+              <%= f.input :work_situation, as: :hidden %>
+          </div>
+          <div class="champs-step-2-1">
+            <%= f.input :job_name %>
+            <%= f.input :salary_by_month %>
+            <%= f.input :first_day_of_work, as: :string, required: false, input_html: {class: "datepicker"} %>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-          <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-          <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-          <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+        <div class="row-step-2-2">
+          <div class="contrat-step-2-2">
+            <p> <span style="font-weight: bold">Contrat de travail</span><br> ou attestation employeur</p>
+            <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <%= f.input :employment_contract_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+          </div>
+          <div class="bulletin-step-2-2">
+            <p> <span style="font-weight: bold">Vos 3 derniers bulletins de salaire</span><br></p>
+            <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+            <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+            <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+          </div>
         </div>
       </div>
-    </div><!-- End-Section -->
+    </div>
+  </div><!-- End-Section -->
     <div class="form-section">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6">
+      <div class="row-step-3-4">
+        <div class="step-3-container">
           <h3>3 - Situation locative</h3>
-          <%= f.input :rental_status %>
-          <%= f.input :actual_rent_price %>
-          <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-          <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+          <div class="step-3-locative-box">
+            <%= f.input :rental_status %>
+            <div class="step-3-quittance">
+            <%= f.input :actual_rent_price %>
+            <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            </div>
+            <div class="step-3-rentalprice">
+            <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+            </div>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="step-4-container">
           <h3>4 - Situation fiscale</h3>
           <%= f.input :year_legal_income %>
           <%= f.input :tax_notice, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
@@ -58,5 +102,7 @@
         </div>
       </div>
     </div><!-- End-Section -->
+
   <% end %><!-- End-Form -->
 </div>
+<%= javascript_pack_tag 'job' %>

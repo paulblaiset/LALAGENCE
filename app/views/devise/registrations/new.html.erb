@@ -8,7 +8,18 @@
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
   </div>
-
+  <div classe="container-radio">
+    <p style="font-size: 15px;font-weight:bold">Delivery Options</p>
+    <div class="button-wrap">
+      <label for="yes-button" class="button-label">
+        <h1>Agency</h1>
+      </label>
+      <label for="no-button" class="button-label">
+        <h1>Individual</h1>
+      </label>
+    </div>
+  </div>
+  <%= f.input :role, as: :hidden %>
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>

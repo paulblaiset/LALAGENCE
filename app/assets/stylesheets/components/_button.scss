@@ -31,6 +31,7 @@
   color: white;
   padding: 10px 15px;
   border-radius: 4px;
+  text-align: center;
   font-weight: bold;
   background: rgba(64, 154, 215, 1.00);
   border: 2px solid rgba(38, 132, 226, 1.00);
@@ -54,16 +55,16 @@
 }
 
 .btoun-rose-cool {
-  color: rgba(246, 97, 76, 1.00);
+  color: white;
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: rgba(246, 97, 76, 0.00);
+  background: rgba(246, 97, 76, 0.80);
   border: 2px solid rgba(246, 97, 76, 1.00);
   transition: background 0.3s ease;
   font-size: 10px;
   text-decoration: none;
-  margin-left: 30px;
+
 
   &:hover {
   opacity: 1;
@@ -80,6 +81,31 @@
 
 }
 
+.btoun-green-cool {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: rgba(61, 234, 185, 1.00);
+  border: 2px solid rgba(55, 211, 167, 1.00);
+  transition: background 0.3s ease;
+  font-size: 10px;
+  text-decoration: none;
+
+  &:hover {
+  opacity: 1;
+  background: rgba(55, 211, 167, 1.00);
+  text-decoration: none;
+  color: white;
+  }
+
+  a {
+    color: white;
+    font-weight:lighter;
+
+  }
+
+}
 
 
 

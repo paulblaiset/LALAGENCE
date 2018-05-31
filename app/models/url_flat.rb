@@ -1,4 +1,4 @@
 class UrlFlat < ApplicationRecord
-  has_many :applications
+  has_many :candidatures, dependent: :destroy
   belongs_to :flat
 end
