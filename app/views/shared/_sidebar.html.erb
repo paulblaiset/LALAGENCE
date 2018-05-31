@@ -16,15 +16,23 @@
 
   <div class="name"></div>
   <!-- s -->
+  <% if current_user.agency_id %>
   <div class="side-bar-menu">
-    <a href="#">Mon dossier</a>
-    <a href="#">Ma sélection</a>
-    <a href="#">Mon historique</a>
+    <% agency_id = User.find(current_user.id).agency_id %>
+    <% agency = Agency.find(agency_id) %>
+    <%= link_to "Vos candidatures", "#" %>
+    <%= link_to "Vos appartements", agency_flats_path(agency) %>
   </div>
+  <% else %>
+  <div class="side-bar-menu">
+    <%= link_to "Mon dossier", edit_user_path(current_user) %>
+    <%= link_to "Ma sélection", '#' %>
+    <%= link_to "Mon historique", user_candidatures_path(current_user) %>
+  </div>
+  <% end %>
 
   <div class="side-bar-menu">
-    <a style="font-size:12px;text-align:center;color:#1E2939;margin-right:30px"
-    href="#">Se déconnecter</a>
+     <%= link_to "Se déconnecter", "#", method: :delete, style:"font-size:12px;text-align:center;color:#1E2939;margin-right:30px" %>
   </div>
 </div>
 
