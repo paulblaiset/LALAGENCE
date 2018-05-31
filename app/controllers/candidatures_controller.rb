@@ -10,15 +10,15 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures]
   end
 
   def edit
-  @candidature = Candidature.find(params[:id])
-  @user = @candidature.user
-  authorize @candidature
+    @candidature = Candidature.find(params[:id])
+    @user = @candidature.user
+    authorize @candidature
   end
 
   def show
-  @candidature = Candidature.find(params[:id])
-  @user = @candidature.user
-  authorize @candidature
+    @candidature = Candidature.find(params[:id])
+    @user = @candidature.user
+    authorize @candidature
   end
 
 end

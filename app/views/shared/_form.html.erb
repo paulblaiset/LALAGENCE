@@ -7,9 +7,8 @@
           <h3>1 - État civil</h3>
           <%= f.input :gender %>
           <%= f.input :first_name, placeholder:'Prénom'%>
-
+          <%= f.input :last_name, placeholder:'Nom' %>
           <%= f.input :birthday_date, as: :string, placeholder:'Date de naissance',required: false, input_html: {class: "datepicker"} %>
-
           <%= f.input :phone_number, placeholder:'Téléphone' %>
         </div>
         <div class="upload-container-step-1">

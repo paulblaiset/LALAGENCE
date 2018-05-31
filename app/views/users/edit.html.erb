@@ -1,15 +1,14 @@
-
 <div class="profil-edit-container">
   <h1>Edit your profile</h1>
   <div class="nav-pills-content">
     <div class="content-pill">
       <ul class="nav nav-pills">
-        <li class="active">
+        <li class="<%= 'active' if @step == 1 %>">
           <%= link_to "#1a", class: "tab-btn tab-me", data: { toggle: "tab"} do %>
             <%= image_tag "icon_renter_guy_off.png", alt: ""%>
           <% end %>
         </li>
-        <li>
+        <li class="<%= 'active' if @step == 2 %>">
           <%= link_to "#2a", class: "tab-btn tab-guarantor", data: {toggle: "tab"} do %>
             <%= image_tag "icon_guarantor_guy_off.png", alt: ""%>
           <% end %>

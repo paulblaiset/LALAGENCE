@@ -1,18 +1,29 @@
 class GuarantorsController < ApplicationController
+  def create
+    @guarantor = Guarantor.new(guarantor_params)
+    @guarantor.user = current_user
+    authorize @guarantor
+    if @guarantor.save
+      redirect_to edit_candidature_path
+    else
+      render "new"
+    end
+  end
+
   def edit
     @guarantor = current_user.guarantor
     authorize @user
   end
 
   def update
-    @guarantor = current_user.guarantor
+    @guarantor = current_user.guarantors.first
     authorize @guarantor
     @guarantor.update(guarantor_params)
     @guarantor = @guarantor.reload
-    # if @guarantor.has_required_field?
-    #   @candidature = current_user.candidatures.create
-    #   redirect_to edit_candidature_path(@candidature)
-    # end
+    if @guarantor.has_required_field?
+      @candidature = current_user.candidatures.create
+      redirect_to edit_candidature_path(@candidature)
+    end
   end
 
     private

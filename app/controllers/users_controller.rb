@@ -1,15 +1,18 @@
 class UsersController < ApplicationController
   def edit
     @user = current_user
-    @guarantor = Guarantor.create
+    @guarantor = @user.guarantors.first
     authorize @user
+    if @user.has_required_field?
+      @step = 2
+    else
+      @step = 1
+    end
   end
 
   def update
     @user = current_user
-    @guarantor = Guarantor.create
     authorize @user
-    authorize @guarantor
     @user.update(user_params)
     @user = @user.reload
     if @user.agency_id
@@ -17,7 +20,7 @@ class UsersController < ApplicationController
       redirect_to agency_path(@agency)
     elsif @user.has_required_field?
       @candidature = current_user.candidatures.create
-      redirect_to edit_candidature_path(@candidature)
+      redirect_to edit_user_path(@user)
     end
   end
 

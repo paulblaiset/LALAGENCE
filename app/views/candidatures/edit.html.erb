@@ -1,1 +1,17 @@
-<h1>Send you application </h1>
+<div class="container">
+  <h1>Votre Dossier <span class="preogress-bar"><span>100%</span></span></h1>
+  <div class="nav-pills-content">
+    <ul class="nav nav-pills">
+      <li>
+        <span class="tab-btn tab-me"><%= image_tag "icon_renter_guy_off.png", alt: ""%></span>
+      </li>
+      <li>
+        <span class="tab-btn tab-guarantor"><%= image_tag "icon_guarantor_guy_off.png", alt: ""%></span>
+      </li>
+      <li>
+        <span class="tab-btn tab-valide"><%= image_tag "icon_complete_off.png", alt: ""%></span>
+      </li>
+    </ul>
+  </div>
+  <%= render "form" %>
+</div>

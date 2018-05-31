@@ -6,6 +6,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  after_create :create_guarantor
 
   mount_uploader :employment_contract, PhotoUploader
   mount_uploader :identity_card, PhotoUploader
@@ -22,6 +23,8 @@ class User < ApplicationRecord
     self.pay_slip_1? && self.pay_slip_2? && self.pay_slip_3? && self.actual_rent_bill? && self.tax_notice?
   end
 
-
+  def create_guarantor
+    Guarantor.create(user_id: self.id)
+  end
 
 end

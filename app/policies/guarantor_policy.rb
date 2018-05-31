@@ -9,7 +9,7 @@ class GuarantorPolicy < ApplicationPolicy
     is_user_current?
   end
 
-    def update?
+  def update?
     is_user_current?
   end
 
