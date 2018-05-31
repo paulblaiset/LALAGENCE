@@ -13,14 +13,32 @@ orpi = Agency.create!(
   mail: 'orpi@contact.com'
 )
 
-
 michel = User.create!(
   email: 'michel@michel.com',
   password: 'password',
   gender: 'male',
   first_name: 'Michel',
   last_name: 'Michou',
-  agency_id: 1
+  agency_id: 1,
+  work_situation: 'SALARIÉ(E)',
+  job_name: 'Entrepreneur',
+  salary_by_month: '1800',
+  first_day_of_work: '2017-12-01',
+  birthday_date: '1990-08-12'
+)
+
+marie = User.create!(
+  email: 'marie@marie.com',
+  password: 'password3',
+  gender: 'femail',
+  first_name: 'Marie',
+  last_name: 'Claire',
+  agency_id: 1,
+  work_situation: 'SALARIÉ(E)',
+  job_name: 'Chef de projet',
+  salary_by_month: '3900',
+  first_day_of_work: '2015-11-11',
+  birthday_date: '1985-01-22'
 )
 
 jack = User.create!(
@@ -47,6 +65,11 @@ url = UrlFlat.create!(
 
 candidature_1 = Candidature.create!(
   user_id: 1,
+  url_flat_id: 1
+)
+
+candidature_1 = Candidature.create!(
+  user_id: 3,
   url_flat_id: 1
 )
 

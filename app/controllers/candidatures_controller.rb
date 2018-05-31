@@ -50,6 +50,13 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures]
   def show
     @candidature = Candidature.find(params[:id])
     @user = @candidature.user
+    @flat = @candidature.url_flat.flat
+
+    @candidates = []
+    @flat.candidatures.each do |candidature|
+      @candidates << candidature.user
+    end
+
     authorize @candidature
   end
 
