@@ -1,27 +1,26 @@
-<div class="container">
-  <div class="candidature-container">
-    <h1>Votre Dossier <span class="step-progress-bar step-progress-bar-finish"><span></span></span></h1>
-    <div class="nav-pills-content">
-      <ul class="nav nav-pills">
-        <li>
-          <span class="tab-btn tab-me"><%= image_tag "icon_renter_guy_off.png", alt: ""%></span>
-        </li>
-        <li>
-          <span class="tab-btn tab-guarantor"><%= image_tag "icon_guarantor_guy_off.png", alt: ""%></span>
-        </li>
-        <li>
-          <span class="tab-btn tab-valide"><%= image_tag "icon_complete_off.png", alt: ""%></span>
-        </li>
-      </ul>
+<div class="candidature-container">
+  <h1>Votre Dossier <span class="step-progress-bar step-progress-bar-finish"><span></span></span></h1>
+  <div class="nav-pills-content">
+    <ul class="nav nav-pills">
+      <li>
+        <span class="tab-btn tab-me"><%= image_tag "icon_renter_guy_off.png", alt: ""%></span>
+      </li>
+      <li>
+        <span class="tab-btn tab-guarantor"><%= image_tag "icon_guarantor_guy_off.png", alt: ""%></span>
+      </li>
+      <li>
+        <span class="tab-btn tab-valide"><%= image_tag "icon_complete_off.png", alt: ""%></span>
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <h2>Envoyer le !</h2>
+      <p>Envoyer votre dossier à n'importe quelle agence.</p>
+      <%= render "form" %>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <h2>Envoyer le !</h2>
-        <p>Envoyer votre dossier à n'importe quelle agence.</p>
-        <%= render "form" %>
-      </div>
-      <div class="col-xs-12 col-md-6">
-      </div>
+    <div class="col-xs-12 col-md-6">
+      <%= render 'shared/flat_card' %>
     </div>
   </div>
 </div>
