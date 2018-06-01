@@ -63,7 +63,7 @@
             <div class="step-3-quittance">
               <p> <span style="font-weight: bold">Dernire Quittance de loyer</span><br></p>
               <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-              <%= f.input :actual_rent_bill, as: :hidden, input_html: { class: 'custom-file-input' } %>
+              <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
               <div style="padding-left:24px">
               <%= f.input :actual_rent_price, placeholder:'Loyer actuel' %>
               </div>
