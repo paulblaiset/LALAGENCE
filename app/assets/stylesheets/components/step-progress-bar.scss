@@ -2,11 +2,12 @@
   position:relative;
   display: inline-block;
   width:100%;
-  max-width:500px;
+  max-width:450px;
   height:10px;
   border-radius: 50px;
   overflow: hidden;
   background:$red;
+  margin:0 0 0 20px;
 }
 .step-progress-bar span{
   position:absolute;
@@ -18,8 +19,6 @@
 .step-progress-bar-finish span{
   width:100%;
 }
-
-
 .step-progress-bar-begin span{
  width:10%;
 }

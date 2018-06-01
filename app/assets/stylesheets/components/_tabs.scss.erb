@@ -5,10 +5,15 @@
 .nav.nav-pills{
   display: inline-block;
   position: relative;
-  h4 {
-  color:$light-green;
-  font-size: 14px;
-  padding-top: 10px;
+  span.title {
+    color:$light-green;
+    font-size: 10px;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom: -20px;
+    text-align:center;
+    z-index:5;
   }
 }
 .nav.nav-pills::after{

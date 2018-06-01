@@ -25,10 +25,9 @@
 }
 
 .add_a_guarantor {
-    padding-right: 40px;
-    text-align: right;
-    /* display: flex; */
-    align-items: center;
+  max-width: 680px;
+  margin:0 auto;
+  text-align: right;
   img {
     height:30px;
     margin:20px;
