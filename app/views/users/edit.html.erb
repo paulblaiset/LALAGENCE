@@ -27,12 +27,9 @@
   </div>
   <div class="tab-content clearfix">
     <div class="tab-pane <%= 'active' if @step == 1 %>" id="1a">
-     <%= render 'shared/selector_tab-step-1' %>
       <%= render 'shared/form' %>
-
     </div>
     <div class="tab-pane <%= 'active' if @step == 2 %>" id="2a">
-      <%= render 'shared/selector_tab-step-2' %>
       <%= render 'shared/form_guarantor' %>
     </div>
   </div>

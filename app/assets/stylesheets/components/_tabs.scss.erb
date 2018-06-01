@@ -37,12 +37,25 @@
 }
 .nav.nav-pills li{
   margin:0 110px;
+  position:relative;
 }
 .nav.nav-pills li:first-child{
   margin-left: 0;
 }
 .nav.nav-pills li:last-child{
   margin-right: 0;
+}
+.nav.nav-pills li.active::after{
+  content:"";
+  display:block;
+  position:absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 64px 64px 64px;
+  border-color: transparent transparent #FAFAFA transparent;
+  bottom:-111px;
+  left:-24px;
 }
 .nav.nav-pills .tab-btn,
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus,
