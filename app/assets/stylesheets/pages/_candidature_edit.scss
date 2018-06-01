@@ -1,0 +1,43 @@
+.candidature-container {
+  margin-top:40px;
+
+  h1 {
+    font-size: 28px;
+    color: black;
+    font-family: "Assistant";
+    text-align: center;
+    margin-right:5px;
+  }
+  .form-control {
+  height: 27px;
+  font-size: 12px;
+  }
+}
+
+.nav-pills-content {
+  height: 200px;
+  padding-top:40px;
+
+}
+
+
+.row-envoyer-apercu {
+display:flex;
+background-color:#FAFAFA;
+padding: 40px;
+
+  p {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  }
+}
+
+.envoyez-le-container {
+  flex : 0 0 35%;
+  margin-right: 50px;
+}
+
+.apercu {
+  flex : 0 0 55%;
+  margin-top:-58px;
+}
