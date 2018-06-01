@@ -55,7 +55,8 @@ t2 = Flat.create!(
   nb_room: "2",
   address: "Paris 15",
   surface: "32m²",
-  price: "1500€"
+  price: "1500€",
+  remote_photo_url: "https://static.orpi.com/images/ac3-media/estate-v2-mobile/office6/orpi_73265/catalog/images/pr_p/5/0/3/3/9/2/0/5033920a--201802270035.jpg"
 )
 
 url = UrlFlat.create!(
