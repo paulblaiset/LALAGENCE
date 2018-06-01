@@ -11,7 +11,13 @@
     <div class ="avatar">
       <%= image_tag("avatar_phb.png") %>
     </div>
-  <a><%= current_user.first_name %><br><%= current_user.last_name %></a>
+    <div class="avatar-info">
+      <% if current_user.first_name %>
+      <%= current_user.first_name %><br><%= current_user.last_name %>
+      <% else %>
+        <%= current_user.email %>
+      <% end %>
+    </div>
   </div>
 
   <div class="name"></div>
