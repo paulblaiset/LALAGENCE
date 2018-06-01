@@ -7,10 +7,22 @@
   padding: 30px;
   height: 250px;
   text-align: center;
+  font-weight: lighter;
+
+  img {
+  max-width: 70% !important;
+  margin-top: 20px
+  }
+
 
   .banner-content {
-    padding-top:40px;
+    padding-top:25px;
     margin: 0 auto;
+
+    h3 {
+      font-size: 22px;
+      font-weight:lighter;
+    }
 
   }
 

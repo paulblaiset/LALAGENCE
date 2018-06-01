@@ -3,18 +3,26 @@
   display: inline-block;
   width:100%;
   max-width:500px;
-  height:15px;
+  height:10px;
   border-radius: 50px;
   overflow: hidden;
-  background:$pink;
+  background:$light-green;
 }
 .step-progress-bar span{
   position:absolute;
   left:0;
   top:0;
   bottom:0;
-  background:$light-green;
+  background:$red;
 }
 .step-progress-bar-finish span{
   width:100%;
+  left: 98%;
+}
+
+
+
+.step-progress-bar-begin span{
+ width:100%;
+ left: 10%;
 }
