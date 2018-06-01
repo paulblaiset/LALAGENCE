@@ -14,7 +14,7 @@ class ScrapLogicImmo
     puts @logic_immo.price
 
 
-    @logic_immo.photo = html_doc.search('.offer-pictures-main img').attribute('src').value
+    @logic_immo.remote_photo_url = html_doc.search('.offer-pictures-main img').attribute('src').value
     puts @logic_immo.photo
 
     @logic_immo.nb_room = html_doc.search('.offer-rooms').first.inner_text

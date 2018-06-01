@@ -16,7 +16,7 @@ class ScrapOrpi
     @orpi.price = html_doc.search('.c-vignette__price').first.inner_text
     puts @orpi.price
 
-    @orpi.photo = html_doc.search('.expanded-img').first.attribute('src').value
+    @orpi.remote_photo_url = html_doc.search('.expanded-img').first.attribute('src').value
     puts @orpi.photo
 
     @orpi.nb_room = html_doc.search('.c-vignette__txt').first.inner_text

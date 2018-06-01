@@ -56,8 +56,11 @@ t2 = Flat.create!(
   address: "Paris 15",
   surface: "32m²",
   price: "1500€",
-  remote_photo_url: "https://static.orpi.com/images/ac3-media/estate-v2-mobile/office6/orpi_73265/catalog/images/pr_p/5/0/3/3/9/2/0/5033920a--201802270035.jpg"
 )
+
+t2.remote_photo_url = "https://static.orpi.com/images/ac3-media/estate-v2-mobile/office6/orpi_73265/catalog/images/pr_p/5/0/3/3/9/2/0/5033920a--201802270035.jpg"
+
+t2.save
 
 url = UrlFlat.create!(
   url_1: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",
@@ -78,6 +81,5 @@ paul = Guarantor.create!(
   first_name: 'Paul',
   user_id: 1
 )
-
 
 
