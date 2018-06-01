@@ -23,8 +23,16 @@ class Candidature < ApplicationRecord
     else
       @flat = Flat.new(title: "Url non trouvée")
     end
+
     @flat.save
-    url_flat = UrlFlat.first_or_create(flat: @flat)
+
+    url_flat = self.url_flat
+    if url_flat.nil?
+      url_flat = UrlFlat.new(flat: @flat)
+    else
+      url_flat.update(flat: @flat)
+    end
+    url_flat.save
 
     self.update_column(:url_flat_id, url_flat.id)
   end

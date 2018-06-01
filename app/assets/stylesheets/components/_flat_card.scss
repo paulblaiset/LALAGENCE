@@ -1,3 +1,6 @@
+.flat-dashboard{
+  padding: 0 15px;
+}
 .flat-card{
   display:flex;
   border-radius: 5px;
@@ -5,6 +8,7 @@
   border: 1px solid #D8E2E1;
   border-radius:3px;
   margin:50px 0px;
+  box-shadow: 0 1px 1px 0 rgba(30, 30, 30, 0.2);
 }
 .flat-card > div[class^="flat-card"]{
   display:flex;
@@ -12,5 +16,22 @@
   align-items:center;
   justify-content:center;
   width:50%;
-  height: 400px;
 }
+.flat-card .flat-card-info{
+  position:relative;
+  padding:0 10px;
+}
+// .flat-card .flat-card-info::after{
+//   content:"";
+//   display:block;
+//   position:absolute;
+//   top:0;
+//   bottom: 0;
+//   left:0;
+//   right:0;
+//   z-index: 4;
+//   background: $light-green;
+//   border-right: 2px solid $pink;
+//   transform-origin:0 0;
+//   transform:skewY(-2deg);
+// }

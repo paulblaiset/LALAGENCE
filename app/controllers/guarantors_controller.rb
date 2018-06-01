@@ -22,7 +22,7 @@ class GuarantorsController < ApplicationController
     @guarantor = @guarantor.reload
     if @guarantor.has_required_field?
       @candidature = current_user.candidatures.last
-      redirect_to edit_user_candidature_path [current_user, @candidature]
+      redirect_to edit_user_candidature_path(current_user, @candidature)
     end
   end
 

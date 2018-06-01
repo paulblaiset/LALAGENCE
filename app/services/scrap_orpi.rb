@@ -10,9 +10,11 @@ class ScrapOrpi
     html_file = open(url).read
     html_doc = Nokogiri::HTML(html_file)
 
+    @orpi.name = html_doc.search('.c-vignette__type').first.inner_text
+    puts @orpi.name
+
     @orpi.price = html_doc.search('.c-vignette__price').first.inner_text
     puts @orpi.price
-
 
     @orpi.photo = html_doc.search('.expanded-img').first.attribute('src').value
     puts @orpi.photo

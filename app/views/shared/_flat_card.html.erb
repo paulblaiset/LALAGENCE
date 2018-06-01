@@ -1,16 +1,16 @@
 <div class="flat-card">
-  <div class="flat-card-pic">
-    <div class="card-profile-picture">
-      <%=  candidature.url_flat.flat.photo %>
-    </div>
-  </div>
   <div class="flat-card-info">
-   <h2><%=  candidature.url_flat.flat.name %></h2>
+   <h2><%= candidature.url_flat.flat.name %></h2>
     <ul>
       <li><%= candidature.url_flat.flat.nb_room %></li>
       <li><%= candidature.url_flat.flat.address %></li>
       <li><%= candidature.url_flat.flat.price %></li>
       <li><%=  candidature.url_flat.flat.surface %></li>
     </ul>
+  </div>
+  <div class="flat-card-pic">
+    <div class="card-profile-picture">
+      <%= image_tag candidature.url_flat.flat.photo %>
+    </div>
   </div>
 </div>
