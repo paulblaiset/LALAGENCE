@@ -8,11 +8,12 @@ class UserMailer < ApplicationMailer
       )
   end
 
-  def folder(user)
-    @user = user
+  def folder(candidature)
+    @user = candidature.user
+    @candidature = candidature
 
     mail(
-      to: @user.email,
+      to: @candidature.email,
       subject: 'Nouveau dosser de location :'
       )
   end
