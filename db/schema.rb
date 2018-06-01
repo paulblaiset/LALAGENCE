@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_130557) do
+ActiveRecord::Schema.define(version: 2018_06_01_092720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2018_05_31_130557) do
     t.string "property_tax"
     t.string "year_legal_income"
     t.string "rental_status"
-    t.string "actual_rent_bill", default: "0"
+    t.string "actual_rent_bill"
     t.string "actual_rent_price"
     t.index ["user_id"], name: "index_guarantors_on_user_id"
   end
