@@ -6,23 +6,20 @@
   height:10px;
   border-radius: 50px;
   overflow: hidden;
-  background:$light-green;
+  background:$red;
 }
 .step-progress-bar span{
   position:absolute;
   left:0;
   top:0;
   bottom:0;
-  background:$red;
+  background:$light-green;
 }
 .step-progress-bar-finish span{
   width:100%;
-  left: 100%
 }
 
 
-
 .step-progress-bar-begin span{
- width:100%;
- left: 10%;
+ width:10%;
 }
