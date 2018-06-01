@@ -4,7 +4,7 @@
     <title>
 
     </title>
-    <!--[if !mso]><!-- -->
+    <!--[if !mso]><! -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<![endif]-->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,8 +18,9 @@
       table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt; }
       img { border:0;height:auto;line-height:100%; outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; }
       p { display:block;margin:13px 0; }
+      img { max-width: height:auto; vertical-align: middle; height:200px }
     </style>
-    <!--[if !mso]><!-->
+
     <style type="text/css">
       @media only screen and (max-width:480px) {
         @-ms-viewport { width:320px; }
@@ -282,8 +283,10 @@
   <div
      style="font-family:open sans;font-size:14px;line-height:1;text-align:left;color:#000000;"
   >
-    Votre client <strong><%= @user.first_name %> <%= @user.last_name %></strong> vous envoie son dossier complet et vérifier pour le bien <strong>INSERT FLAT</strong>.
+    Votre client <strong><%= @user.first_name %> <%= @user.last_name %></strong> vous envoie son dossier complet et vérifier pour le bien <strong> <%= @flat.name %> / Room : <%= @flat.nb_room %> / Adresse <%= @flat.address %> / Surface : <%= @flat.surface %> / Price : <%= @flat.price %> </strong>.
   </div>
+
+  <div style='text-align: center; '> <%= cl_image_tag(@flat.photo, :transformation=>[ { :width=>200, :crop=>'fill'}]) %></div>
 
           </td>
         </tr>
@@ -310,7 +313,7 @@
   <div
      style="font-family:open sans;font-size:16px;font-weight:bolder;line-height:1;text-align:left;color:#3DEAB9;"
   >
-    DOSSIER DE <%= @user.first_name %> <%= @user.last_name %>:
+    DOSSIER DE <%= @user.first_name %> <%= @user.last_name%>:
   </div>
 
           </td>
