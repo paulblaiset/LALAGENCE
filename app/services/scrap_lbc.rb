@@ -14,7 +14,7 @@ class ScrapLbc
     puts @lbc.price
 
 
-    @lbc.photo = html_doc.search('img').first.attribute('src').value
+    @lbc.remote_photo_url = html_doc.search('img').first.attribute('src').value
     puts @lbc.photo
 
     @lbc.nb_room = html_doc.search('._3Jxf3')[2].inner_text
