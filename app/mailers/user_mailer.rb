@@ -8,12 +8,14 @@ class UserMailer < ApplicationMailer
       )
   end
 
-  def folder(user)
-    @user = user
+  def folder(candidature)
+    @candidature = candidature
+    @user = @candidature.user
+    @flat = @candidature.url_flat.flat
 
     mail(
-      to: @user.email,
-      subject: 'Nouveau dosser de location :'
+      to: @candidature.mail_agency,
+      subject: 'Nouveau dossier de location'
       )
   end
 

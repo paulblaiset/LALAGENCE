@@ -39,6 +39,7 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures]
     @candidature.url_flat = @url_flat
     authorize @candidature
     if @candidature.save
+      UserMailer.folder(@candidature).deliver_now
       redirect_to user_candidatures_path(current_user)
     else
       render 'new'
