@@ -1,11 +1,14 @@
 <div class="flat-card">
   <div class="flat-card-info">
-   <span><%= candidature.url_flat.flat.name %></span>
+  <div class="title-card">
+   <span style="font-weight:bold; color:#3DEAB9"><%= candidature.url_flat.flat.name %></span>
+    </div>
     <ul>
-      <li><%= candidature.url_flat.flat.nb_room %></li>
-      <li><%= candidature.url_flat.flat.address %></li>
-      <li><%= candidature.url_flat.flat.price %></li>
-      <li><%=  candidature.url_flat.flat.surface %></li>
+      <li> Type : <%= candidature.url_flat.flat.nb_room %></li>
+      <li> Arrondissement : <%= candidature.url_flat.flat.address %></li>
+      <li> Surpeficie : <%=  candidature.url_flat.flat.surface %></li>
+      <br>
+      <span style="font-weight:bold; margin-top:10px;"><li><%= candidature.url_flat.flat.price %></li> </span>
     </ul>
   </div>
   <div class="flat-card-pic">

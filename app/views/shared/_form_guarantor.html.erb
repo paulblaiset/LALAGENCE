@@ -40,14 +40,24 @@
               <p> <span style="font-weight: bold">Contrat de travail</span><br> ou attestation employeur</p>
               <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
               <%= f.input :employment_contract_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-
               <p> <span style="font-weight: bold">Vos 3 derniers bulletins de salaire</span><br></p>
-              <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-              <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-              <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-              <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-              <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-              <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+              <div>
+                <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                <% if @guarantor.pay_slip_1.present? %>
+                  <span class="check"><i class='fa fa-check-circle'></i></span>
+                <% end %>
+                <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+              </div>
+              <div>
+                <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                <span><%= @guarantor.pay_slip_2.present? ? @guarantor.pay_slip_1.send(:original_filename).truncate(5) : "" %></span>
+                <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+              </div>
+              <div>
+                <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                <span><%= @guarantor.pay_slip_3.present? ? @guarantor.pay_slip_1.send(:original_filename).truncate(5) : "" %></span>
+                <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+              </div>
             </div>
         </div>
       </div>
