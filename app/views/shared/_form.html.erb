@@ -6,7 +6,7 @@
         <div class="champs-step-1">
           <h3>1 - État civil</h3>
           <%= f.collection_radio_buttons :gender, [['Monsieur', 'Monsieur'] ,['Madame', 'Madame']],:first, :last %>
-          <%= f.input :first_name, placeholder:'Prénom'%>
+          <%= f.input :first_name, placeholder:'Prénom', error: 'Username is mandatory, please specify one' %>
           <%= f.input :last_name, placeholder:'Nom' %>
           <%= f.input :birthday_date, as: :string, placeholder:'Date de naissance',required: false, input_html: {class: "datepicker"} %>
           <%= f.input :phone_number, placeholder:'Téléphone' %>
