@@ -1,0 +1,23 @@
+<div class="flat-card">
+  <div class="flat-card-info">
+  <div class="title-card">
+   <span style="font-weight:bold; color:#3DEAB9"><%= flat.name %></span>
+    </div>
+    <ul>
+      <li> Type : <%= flat.nb_room %></li>
+      <li> Arrondissement : <%= flat.address %></li>
+      <li> Surpeficie : <%=  flat.surface %></li>
+      <br>
+      <span style="font-weight:bold; margin-top:10px;"><li> Prix : <%= flat.price %></li> </span>
+      <br>
+      <span style="color:#3DEAB9; padding-top:10px;"><li> <i class="far fa-user"></i> Nombre de candidature <%= flat.candidature_ids.length %></li></span>
+    </ul>
+  </div>
+  <div class="flat-card-pic" style="background-image: url('<%= cl_image_path flat.photo %>');border-radius: 3px;">
+    <i class="fas fa-pencil-alt" style="color:white" ></i>
+    <!-- <div class="card-profile-picture">
+      <%# cl_image_tag flat.photo, width:400, crop: :fill  %>
+    </div> -->
+  </div>
+</div>
+
