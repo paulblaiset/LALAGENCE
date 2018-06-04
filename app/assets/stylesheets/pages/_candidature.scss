@@ -1,5 +1,6 @@
 .container_candidature_anonymesession {
   display: flex;
+  margin-top: 50px;
 }
 
 .mega-card-candidature {
@@ -163,7 +164,7 @@ font-weight:bold;
 
 .mini-card-candidature {
   width: 200px;
-  height: 300px;
+  height: 320px;
   background-color: white;
   border: 1px solid #DEE6E5;
   border-radius: 5px;
@@ -173,11 +174,9 @@ font-weight:bold;
   margin-bottom: 10px;
 
   .avatar {
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     margin-left: 50px;
-    width: 50%;
-    padding: 10px;
     margin-bottom: 20px;
     img {
       height: 70px;
@@ -194,4 +193,8 @@ font-weight:bold;
     font-size: 10px;
     margin-top: 20px;
   }
+}
+
+li.active {
+  border-right: 5px solid $light-green !important;
 }

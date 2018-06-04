@@ -47,7 +47,13 @@ jack = User.create!(
   gender: 'male',
   first_name: 'Jack',
   last_name: 'Sparrow',
-  )
+  agency_id: 1,
+  work_situation: 'SALARIÉ(E)',
+  job_name: 'Chef de projet',
+  salary_by_month: '3900',
+  first_day_of_work: '2015-11-11',
+  birthday_date: '1985-01-22'
+)
 
 t2 = Flat.create!(
   name: 'Magnifique T2',
@@ -68,12 +74,12 @@ url = UrlFlat.create!(
 )
 
 candidature_1 = Candidature.create!(
-  user_id: 1,
+  user_id: 3,
   url_flat_id: 1
 )
 
 candidature_1 = Candidature.create!(
-  user_id: 3,
+  user_id: 2,
   url_flat_id: 1
 )
 

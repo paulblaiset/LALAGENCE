@@ -5,6 +5,7 @@ class AgenciesController < ApplicationController
     authorize @agency
     @candidatures = @agency.candidatures
     @users = @candidatures.map(&:user)
+    @flats = @agency.flats
   end
 
 
