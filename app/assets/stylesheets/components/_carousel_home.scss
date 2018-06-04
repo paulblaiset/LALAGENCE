@@ -57,5 +57,11 @@
   margin-bottom: 30px;
   font-weight:lighter;
   color:#2684E2;
-
+}
+.carousel-indicators li{
+  border: 1px solid $light-green;
+}
+.carousel-indicators li.active{
+  background:$light-green;
+  border: 1px solid $light-green;
 }

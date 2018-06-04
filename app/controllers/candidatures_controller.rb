@@ -21,7 +21,7 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_sh
     @candidature.user = current_user
     authorize @candidature
     if @candidature.save
-      redirect_to user_candidatures_path(current_user)
+      redirect_to edit_user_candidature_path(current_user)
     else
       render 'new'
     end
@@ -41,11 +41,16 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_sh
     authorize @candidature
     if @candidature.save
       UserMailer.folder(@candidature).deliver_now
-      redirect_to user_candidatures_path(current_user)
+      respond_to do |format|
+        format.html { redirect_to edit_user_candidature_path(current_user) }
+        format.js  # <-- will render `app/views/candidatures/update.js.erb`
+      end
     else
-      render 'new'
+      respond_to do |format|
+        format.html { render 'new' }
+        format.js  # <-- idem
+      end
     end
-
   end
 
   def private_show
