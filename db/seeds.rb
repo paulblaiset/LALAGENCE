@@ -47,6 +47,11 @@ jack = User.create!(
   gender: 'male',
   first_name: 'Jack',
   last_name: 'Sparrow',
+  work_situation: 'SALARIÉ(E)',
+  job_name: 'Entrepreneur',
+  salary_by_month: '1800',
+  first_day_of_work: '2017-12-01',
+  birthday_date: '1990-08-12'
   )
 
 t2 = Flat.create!(
