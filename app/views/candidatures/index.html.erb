@@ -1,10 +1,12 @@
-<div class="flat-dashboard">
-  <h1>All your applications</h1>
-  <div class="row">
-    <% @candidatures.each do |candidature| %>
-      <div class="col-xs-12 col-sm-2 col-md-4">
-        <%= render 'shared/flat_card', candidature: candidature %>
-      </div>
-    <% end %>
+<div class="index-candidature-container">
+  <h3>Mes candidatures</h3>
+  <div class="flat-dashboard">
+    <div class="row">
+      <% @candidatures.each do |candidature| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= render 'shared/flat_card', candidature: candidature %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
