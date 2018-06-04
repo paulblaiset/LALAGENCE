@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
 orpi = Agency.create!(
   name: 'Orpi Paris 14',
   address: 'Paris 14',

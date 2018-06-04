@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :candidatures, dependent: :destroy
+  has_many :flats, through: :candidatures
   has_many :guarantors, dependent: :destroy
   belongs_to :agency, optional: true
   # Include default devise modules. Others available are:

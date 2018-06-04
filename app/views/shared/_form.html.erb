@@ -6,7 +6,7 @@
         <div class="champs-step-1">
           <h3>1 - État civil</h3>
           <%= f.collection_radio_buttons :gender, [['Monsieur', 'Monsieur'] ,['Madame', 'Madame']],:first, :last %>
-          <%= f.input :first_name, placeholder:'Prénom'%>
+          <%= f.input :first_name, placeholder:'Prénom', error: 'Username is mandatory, please specify one' %>
           <%= f.input :last_name, placeholder:'Nom' %>
           <%= f.input :birthday_date, as: :string, placeholder:'Date de naissance',required: false, input_html: {class: "datepicker"} %>
           <%= f.input :phone_number, placeholder:'Téléphone' %>
@@ -14,6 +14,9 @@
         <div class="upload-container-step-1">
           <p> <span style="font-weight: bold">Carte d'identité ou passeport </span><br> en cours de validité</p>
             <%= f.input :identity_card, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <% if @user.identity_card.present? %>
+                <span class="check"><i class='fa fa-check-circle'></i></span>
+              <% end %>
           <%= f.input :identity_card_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
         </div>
       </div>
@@ -61,15 +64,27 @@
           <div class="contrat-step-2-2">
             <p> <span style="font-weight: bold">Contrat de travail</span><br> ou attestation employeur</p>
             <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <% if @user.employment_contract.present? %>
+              <span class="check"><i class='fa fa-check-circle'></i></span>
+            <% end %>
             <%= f.input :employment_contract_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
           </div>
           <div class="bulletin-step-2-2">
-            <p> <span style="font-weight: bold">Vos 3 derniers bulletins de salaire</span><br></p>
+            <p style="margin-top:18px;"> <span style="font-weight: bold">Vos 3 derniers bulletins de salaire</span><br></p>
             <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <% if @user.pay_slip_1.present? %>
+              <span class="check"><i class='fa fa-check-circle'></i></span>
+            <% end %>
             <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
             <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <% if @user.pay_slip_2.present? %>
+              <span class="check"><i class='fa fa-check-circle'></i></span>
+            <% end %>
             <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
             <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <% if @user.pay_slip_3.present? %>
+              <span class="check"><i class='fa fa-check-circle'></i></span>
+            <% end %>
             <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
           </div>
         </div>
@@ -88,6 +103,9 @@
               <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
               <div style="padding-left:24px">
               <%= f.input :actual_rent_price, placeholder:'Loyer actuel' %>
+              <% if @user.actual_rent_price.present? %>
+              <span class="check"><i class='fa fa-check-circle'></i></span>
+            <% end %>
               </div>
             </div>
             <div class="step-3-rentalprice">
@@ -100,6 +118,9 @@
           <%= f.input :year_legal_income, placeholder:'Revenus annuels' %>
           <p> <span style="font-weight: bold">Avis d'imposition</span><br></p>
           <%= f.input :tax_notice, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+          <% if @user.tax_notice.present? %>
+              <span class="check"><i class='fa fa-check-circle'></i></span>
+            <% end %>
           <%= f.input :tax_notice_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
 
           <div class='bouton-update-user' >

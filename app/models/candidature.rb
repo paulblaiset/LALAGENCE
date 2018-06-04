@@ -2,6 +2,7 @@ class Candidature < ApplicationRecord
   belongs_to :user
   belongs_to :url_flat, optional: true
   after_update :scrap, if: :url_will_change!
+  has_many :flats, through: :url_flat
   after_create :create_token
 
   private
