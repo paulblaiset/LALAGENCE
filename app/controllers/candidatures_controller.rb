@@ -36,6 +36,7 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_sh
   def update
     @candidature = Candidature.find(params[:id])
     @candidature.update(candidature_params)
+    @candidature.url = @candidature.url.split("?").first
     @candidature.user = current_user
     authorize @candidature
     if @candidature.save
