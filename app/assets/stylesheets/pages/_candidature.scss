@@ -1,6 +1,5 @@
 .container_candidature_anonymesession {
-  // margin:600px;
-  // margin-top:0px;
+  display: flex;
 }
 
 .mega-card-candidature {
@@ -170,7 +169,8 @@ font-weight:bold;
   border-radius: 5px;
   padding:20px;
   margin: 0 auto;
-  margin-left: 300px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 
   .avatar {
     height: 80px;

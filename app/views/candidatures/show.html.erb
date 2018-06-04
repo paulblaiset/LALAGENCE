@@ -13,7 +13,9 @@
           <ul class="contact_info">
             <strong><li><%=  @user.last_name  %></li></strong>
             <strong><li><%=  @user.first_name[0]  %>.</li></strong>
-            <strong><li><%=  ((Date.today - @user.birthday_date)/365).to_i %> ans</li></strong>
+            <% if user.birthday_date %>
+              <strong><li><%=  ((Date.today - @user.birthday_date)/365).to_i %> ans</li></strong>
+            <% end %>
           </ul>
         </div>
         <div class="row-mini">

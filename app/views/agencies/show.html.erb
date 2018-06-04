@@ -1,13 +1,139 @@
+<body style="background-color:#FAFAFA">
 <h1>Toutes les candidatures sur vos biens</h1>
 
-<% if current_user.agency_id %>
-  <ul>
-  <% @candidatures.each do |candidature| %>
-    <li><%= candidature.url_flat.flat.name %></li>
-    <li><%= candidature.url_flat.flat.address %></li>
-    <li><%= candidature.url_flat.flat.price %></li>
-    <li><%= candidature.url_flat.flat.surface %></li>
-    <li><%= candidature.url_flat.flat.nb_room %></li>
-  <% end %>
-  </ul>
-<% end %>
+<div class="container_candidature_anonymesession">
+
+  <div class="row">
+    <div class="mini-cards-container">
+      <div class="col-xs-4">
+        <% @users.each do |user| %>
+          <div class="mini-card-candidature">
+            <div class="row-mini">
+              <div class ="avatar">
+                <%= image_tag("avatar_phb.png") %>
+              </div>
+            </div>
+            <div class="row-mini">
+              <ul class="contact_info">
+                <strong><li><%=  user.last_name  %></li></strong>
+                <strong><li><%=  user.first_name[0]  %>.</li></strong>
+                <% if user.birthday_date %>
+                  <strong><li><%=  ((Date.today - user.birthday_date)/365).to_i %> ans</li></strong>
+                <% end %>
+              </ul>
+            </div>
+            <div class="row-mini">
+              <ul class="contact_info">
+                <li>€<%=  (user.salary_by_month).to_i %></li>
+                <li> / <%= user.job_name %></li>
+              </ul>
+            </div>
+            <div class="row-mini">
+              <ul class="contact_info">
+                <li><%=  user.work_situation %></li>
+                <% if user.first_day_of_work %>
+                  <li> depuis <%= ((Date.today - user.first_day_of_work)/31).to_i %> mois</li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="row-mini">
+              <ul class="contact_info">
+                <li>1 garant(s)</li>
+              </ul>
+            </div>
+            <div class="flat-details">
+              <div class="row-apart">
+                <ul class="contact_info">
+                  <li>*Flat details*</li>
+                </ul>
+              </div>
+              <div class="row-apart">
+                <ul class="contact_info">
+                  <% candidature = Candidature.find(params[:id]) %>
+                  <strong><li>Déposé depuis le <%= candidature.created_at.strftime("%d/%m/%y") %></li></strong>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="mega-cards-container">
+    <div class="col-xs-8">
+      <div class="mega-card-candidature">
+
+      <% @users.each do |user| %>
+        <div class="row-button-and-contact">
+          <div class="avat_contact">
+            <div class ="avatar">
+              <%= image_tag("avatar_phb.png") %>
+            </div>
+            <div class="contact_info">
+              <h2><%=  user.first_name  %></h2>
+              <h1><%=  user.last_name  %></h1>
+              <a><%=  user.mail  %></a>
+              <a><%=  user.birthday_date  %></a>
+              <p><%=  user.phone_number %></p>
+            </div>
+          </div>
+          <div class="buttons-container">
+            <div class="accept-reject">
+              <div class="btoun-green-cool accept" > Accepter
+              </div>
+              <div class="btoun-rose-cool reject" > Refuser
+              </div>
+            </div>
+            <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
+            </div>
+          </div>
+        </div>
+
+        <div class="commentaire">
+          <h2>Son commentaire :</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.</p>
+        </div>
+
+        <div class="row-situ-pro-loca">
+          <div class="situation-pro">
+            <h2>Situation Professionelle & fiscale</h2>
+            <p> Poste : <span style="color:#3DEAB9"> <%= user.job_name %> </span></p>
+            <p> Salaire net mensuel : <span> <%=  user.salary_by_month %> €</span></p>
+            <% if user.work_situation %>
+              <p> Situation : <span> <%= user.work_situation %></span></p>
+            <% end %>
+            <% if user.first_day_of_work %>
+              <p> En poste depuis : <span><%=  user.first_day_of_work %></span></p>
+            <% end %>
+            <p> Revenus annuels déclarés :<span> <%=  user.year_legal_income %> €</span></p>
+          </div>
+          <div class="situation-loca">
+            <h2>Situation Locative</h2>
+            <p> Situation : <%= user.rental_status %> </p>
+            <p> Loyer actuel : <%= user.actual_rent_price %> € </p>
+          </div>
+        </div>
+
+        <div class="guarantor">
+          <h2>Présence de guarants : <span> Oui </span> (voir)</h2>
+        </div>
+
+        <div class="wrapper">
+          <div class ="icon-secure">
+              <%= image_tag("secureicon.png") %>
+            </div>
+            <p> TOUTES LES PIECES DE CE DOSSIER SONT LISIBLES ET STOCKÉES DE MANIERE 100% SECURISÉE</p>
+        </div>
+
+        <div class="row-apercu-bien">
+          <h2>LE BIEN</h2>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
