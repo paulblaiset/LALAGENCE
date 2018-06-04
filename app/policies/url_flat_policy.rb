@@ -1,4 +1,4 @@
-class FlatPolicy < ApplicationPolicy
+class UrlFlatPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope

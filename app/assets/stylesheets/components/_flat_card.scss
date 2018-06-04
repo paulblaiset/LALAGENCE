@@ -8,6 +8,7 @@
   padding: 20px 0px;
 }
 .flat-card{
+  height:190px;
   display:flex;
   border-radius: 5px;
   overflow: hidden;
@@ -45,3 +46,17 @@
 //   transform-origin:0 0;
 //   transform:skewY(-2deg);
 // }
+
+.flat-card-pic {
+  background-size: cover;
+  background-position: center;
+  position:relative;
+
+  .fas {
+    position:absolute;
+    top:5px;
+    right:5px;
+   }
+}
+
+

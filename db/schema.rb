@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_01_092720) do
+ActiveRecord::Schema.define(version: 2018_06_04_140705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_06_01_092720) do
     t.bigint "url_flat_id"
     t.string "mail_agency"
     t.string "url"
+    t.string "token"
     t.index ["url_flat_id"], name: "index_candidatures_on_url_flat_id"
     t.index ["user_id"], name: "index_candidatures_on_user_id"
   end
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_06_01_092720) do
     t.string "address"
     t.string "price"
     t.string "surface"
+    t.string "url"
     t.index ["agency_id"], name: "index_flats_on_agency_id"
   end
 

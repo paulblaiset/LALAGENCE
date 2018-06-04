@@ -1,4 +1,4 @@
-<%= simple_form_for [current_user, @candidature] do |f|%>
+<%= simple_form_for [current_user, @candidature], remote: true do |f|%>
   <%= f.input :mail_agency, placeholder:'Mail de l\'agence', label: false %>
   <%= f.input :url, placeholder:'Lien de l\'annonce', label: false %>
   <div class="text-right">

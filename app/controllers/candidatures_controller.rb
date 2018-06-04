@@ -1,5 +1,6 @@
 class CandidaturesController < ApplicationController
-skip_before_action :authenticate_user!, only: [:show, :candidatures]
+skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_show]
+
 
   def scrap_orpi
     ScarpOrpi.new(self).call
@@ -20,7 +21,7 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures]
     @candidature.user = current_user
     authorize @candidature
     if @candidature.save
-      redirect_to user_candidatures_path(current_user)
+      redirect_to edit_user_candidature_path(current_user)
     else
       render 'new'
     end
@@ -35,17 +36,29 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures]
   def update
     @candidature = Candidature.find(params[:id])
     @candidature.update(candidature_params)
+    @candidature.url = @candidature.url.split("?").first
     @candidature.user = current_user
-    @candidature.url_flat = @url_flat
     authorize @candidature
     if @candidature.save
       UserMailer.folder(@candidature).deliver_now
-      redirect_to user_candidatures_path(current_user)
+      respond_to do |format|
+        format.html { redirect_to edit_user_candidature_path(current_user) }
+        format.js  # <-- will render `app/views/candidatures/update.js.erb`
+      end
     else
-      render 'new'
+      respond_to do |format|
+        format.html { render 'new' }
+        format.js  # <-- idem
+      end
     end
-
   end
+
+  def private_show
+    @candidature = Candidature.find_by(token: params[:token] )
+    @user = @candidature.user
+    authorize @candidature
+  end
+
 
   def show
     @candidature = Candidature.find(params[:id])

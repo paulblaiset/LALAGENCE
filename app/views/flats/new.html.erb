@@ -1,0 +1,6 @@
+<h1>Ajoutez un nouveau bien</h1>
+
+<%= simple_form_for [@agency, @flat] do |f|%>
+  <%= f.input :url, placeholder: 'url' %>
+  <%= f.submit %>
+<% end %>

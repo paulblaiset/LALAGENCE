@@ -12,7 +12,7 @@
           <%= f.input :address,placeholder:'Adresse' %>
           </div>
           <div class="deuxiemerang">
-          <%= f.input :nationality, placeholder:'Nationality' %>
+          <%= f.input :nationality, placeholder:'Nationality', error: 'Nationality is mandatory, please specify one' %>
           <%= f.input :couple_status, placeholder:'En Couple? O/N' %>
           <%= f.input :mail, placeholder:'Mail' %>
           <%= f.input :child_number, placeholder:'Nombre enfants' %>
@@ -21,6 +21,9 @@
         <div class="upload-container-step-1">
           <p> <span style="font-weight: bold">Carte d'identité ou passeport </span><br> en cours de validité</p>
           <%= f.input :identity_card, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+          <% if @guarantor.identity_card.present? %>
+            <span class="check"><i class='fa fa-check-circle'></i></span>
+          <% end %>
           <%= f.input :identity_card_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
         </div>
       </div>
@@ -39,15 +42,35 @@
             <div class="upload-step-2-guarantor">
               <p> <span style="font-weight: bold">Contrat de travail</span><br> ou attestation employeur</p>
               <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+              <% if @guarantor.employment_contract.present? %>
+                <span class="check"><i class='fa fa-check-circle'></i></span>
+              <% end %>
               <%= f.input :employment_contract_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
 
-              <p> <span style="font-weight: bold">Vos 3 derniers bulletins de salaire</span><br></p>
-              <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-              <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-              <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-              <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-              <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-              <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+              <p style="margin-top:18px;"> <span style="font-weight: bold; ">Vos 3 derniers bulletins de salaire</span><br></p>
+              <div class="allpayslips">
+                <div>
+                  <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                  <% if @guarantor.pay_slip_1.present? %>
+                    <span class="check"><i class='fa fa-check-circle'></i></span>
+                  <% end %>
+                  <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+                </div>
+                <div>
+                  <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                  <% if @guarantor.pay_slip_2.present? %>
+                    <span class="check"><i class='fa fa-check-circle'></i></span>
+                  <% end %>
+                  <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+                </div>
+                <div>
+                   <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                  <% if @guarantor.pay_slip_3.present? %>
+                    <span class="check"><i class='fa fa-check-circle'></i></span>
+                  <% end %>
+                  <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+                </div>
+              </div>
             </div>
         </div>
       </div>
@@ -63,7 +86,10 @@
             <div class="step-3-quittance">
               <p> <span style="font-weight: bold">Dernire Quittance de loyer</span><br></p>
               <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-              <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+               <% if @guarantor.actual_rent_bill.present? %>
+                <span class="check"><i class='fa fa-check-circle'></i></span>
+               <% end %>
+               <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
               <div style="padding-left:24px">
               <%= f.input :actual_rent_price, placeholder:'Loyer actuel' %>
               </div>
@@ -71,6 +97,9 @@
             <div class="step-3-rentalprice">
               <p> Dernière <span style="font-weight: bold"> Taxe foncière</span><br></p>
               <%= f.input :property_tax, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+               <% if @guarantor.property_tax.present? %>
+                <span class="check"><i class='fa fa-check-circle'></i></span>
+              <% end %>
               <%= f.input :property_tax_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
             </div>
           </div>
@@ -80,6 +109,9 @@
           <%= f.input :year_legal_income, placeholder:'Revenus annuels' %>
           <p> <span style="font-weight: bold">Avis d'imposition</span><br></p>
           <%= f.input :tax_notice, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+          <% if @guarantor.tax_notice.present? %>
+            <span class="check"><i class='fa fa-check-circle'></i></span>
+          <% end %>
           <%= f.input :tax_notice_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
           <div class='bouton-update-user' >
           <%= f.button :submit, :class => 'btoun-rose-cool' %>
