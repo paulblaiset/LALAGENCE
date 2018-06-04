@@ -1,0 +1,15 @@
+console.log('hello');
+
+function validate(message) {
+  const formCandidature = document.querySelector('.envoyez-le-container');
+  formCandidature.classList.add('validate');
+  formCandidature.innerHTML = `<div>${message} <i class="fa fa-check-circle"></i></div>`;
+}
+
+function addCard(newCard) {
+  const apercu = document.querySelector('.apercu');
+  apercu.innerHTML = newCard;
+}
+
+validate("Votre dossier a été envoyé à : <%= @candidature.mail_agency %>")
+addCard("<%= j render 'shared/user_flat_card', candidature: @candidature %>");

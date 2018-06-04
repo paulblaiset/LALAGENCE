@@ -37,7 +37,17 @@ padding: 40px;
   margin-right: 50px;
 }
 
+.envoyez-le-container.validate{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+}
+
+.envoyez-le-container.validate .fa-check-circle{
+  color:$light-green;
+}
+
 .apercu {
   flex : 0 0 55%;
-  margin-top:-58px;
 }
