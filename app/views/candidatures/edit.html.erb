@@ -19,11 +19,14 @@
   </div>
   <div class="row-envoyer-apercu">
     <div class="envoyez-le-container">
-      <h3> <span style="font-weight: lighter;">Votre dossier est prêt. </span> Envoyez-le !</h3>
+      <h3> <span style="font-weight: lighter;">Votre dossier est prêt. </span>Envoyez-le !</h3>
       <p>Envoyer votre dossier à n'importe quelle agence.</p>
       <%= render "form" %>
     </div>
     <div class="apercu">
+      <% if @candidature.url_flat.present? %>
+        <%= render 'shared/flat_card', candidature: @candidature %>
+      <% end %>
     </div>
   </div>
 </div>
