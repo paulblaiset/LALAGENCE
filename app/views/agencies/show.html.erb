@@ -142,6 +142,16 @@
 
           <div class="row-apercu-bien">
             <h2>LE BIEN</h2>
+            <ul>
+              <% user.flats.each do |flat| %>
+              <li>
+                <p>T<%=  flat.nb_room %></p>
+                <p><%=  flat.address %></p>
+                <p><%=  flat.price %></p>
+                <p>Réf:</p>
+              </li>
+              <% end %>
+            </ul>
           </div>
         </div>
         <% end %>
