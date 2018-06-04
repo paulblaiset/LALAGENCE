@@ -1,5 +1,6 @@
 class CandidaturesController < ApplicationController
-skip_before_action :authenticate_user!, only: [:show, :candidatures]
+skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_show]
+
 
   def scrap_orpi
     ScarpOrpi.new(self).call
@@ -36,7 +37,6 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures]
     @candidature = Candidature.find(params[:id])
     @candidature.update(candidature_params)
     @candidature.user = current_user
-    @candidature.url_flat = @url_flat
     authorize @candidature
     if @candidature.save
       UserMailer.folder(@candidature).deliver_now
@@ -46,6 +46,13 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures]
     end
 
   end
+
+  def private_show
+    @candidature = Candidature.find_by(token: params[:token] )
+    @user = @candidature.user
+    authorize @candidature
+  end
+
 
   def show
     @candidature = Candidature.find(params[:id])

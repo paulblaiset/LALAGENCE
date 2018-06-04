@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get '/candidatures/:token', to: "candidatures#private_show", as: :candidature_agence
+
   resources :users, only:[:edit, :update, :show] do
     resources :guarantors, only: [:new, :edit, :create, :update, :show]
     resources :candidatures

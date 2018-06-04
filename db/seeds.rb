@@ -49,7 +49,7 @@ jack = User.create!(
   last_name: 'Sparrow',
   )
 
-t2 = Flat.create!(
+t2 = Flat.new(
   name: 'Magnifique T2',
   agency_id: 1,
   nb_room: "2",
