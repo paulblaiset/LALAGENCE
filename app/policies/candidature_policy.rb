@@ -12,4 +12,8 @@ class CandidaturePolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def private_show?
+    true
+  end
 end

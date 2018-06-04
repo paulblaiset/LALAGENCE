@@ -2,11 +2,19 @@ class Candidature < ApplicationRecord
   belongs_to :user
   belongs_to :url_flat, optional: true
   after_update :scrap
-
+  after_create :create_token
 
   private
 
+  def create_token
+    token = SecureRandom.hex(10)
+    self.token = token
+    self.save
+  end
+
+
   def scrap
+    return if url.nil?
     @url = self.url
     if @url.match("orpi")
       @flat = Flat.new
