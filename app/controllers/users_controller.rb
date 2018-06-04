@@ -21,6 +21,10 @@ class UsersController < ApplicationController
     elsif @user.has_required_field?
       @candidature = current_user.candidatures.create
       redirect_to edit_user_path(@user)
+    else
+      @step = 1
+      @guarantor = @user.guarantors.first
+      render :edit
     end
   end
 
