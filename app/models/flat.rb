@@ -4,4 +4,7 @@ class Flat < ApplicationRecord
   has_many :candidatures, through: :url_flats
 
   mount_uploader :photo, PhotoUploader
+
+
+
 end
