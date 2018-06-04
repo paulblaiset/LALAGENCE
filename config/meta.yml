@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_product_name: "Lalagence"
+meta_title: "Lalagence - Dossier de location simple et sécurisé"
+meta_description: "Lalagence est la première plateforme pour  faciliter le depot de dossier de location &  automatiser/fluidifier et sécuriser traitement des dossiers de location pour les agences"
+meta_image: "banner.png"                       # should exist in `app/assets/images/`
