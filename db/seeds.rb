@@ -98,7 +98,7 @@ candidature_1 = Candidature.create!(
 )
 
 candidature_2 = Candidature.create!(
-  user_id: 3,
+  user_id: 2,
   url_flat_id: 2
 )
 
@@ -106,5 +106,3 @@ paul = Guarantor.create!(
   first_name: 'Paul',
   user_id: 1
 )
-
-

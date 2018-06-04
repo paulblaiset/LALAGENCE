@@ -1,11 +1,14 @@
+
 .container_candidature_anonymesession {
   display: flex;
   margin-top: 50px;
+  width: 500px;
 }
 
 .mega-card-candidature {
 
   width:700px;
+  height: 800px;
   background-color: white;
   border: 1px solid #DEE6E5;
   border-radius: 5px;
@@ -187,16 +190,43 @@ font-weight:bold;
   }
 }
 
-li.active {
-  border-right: 8px solid $light-green !important;
-}
-.tab {
-  width: 200px;
-  height: 320px;
-  padding:20px;
-  background-color: white;
-  margin: 0 auto;
-  margin-left: 50px;
-  margin-bottom: 10px;
+.mini-cards-container .nav-tabs{
+  border:0;
 }
 
+.mini-cards-container .tab {
+  width: 200px;
+  height: 260px;
+  background-color: white;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  color: $gray;
+  border:1px solid #DEE6E5!important;
+  border-radius:2px!important;
+  position:relative;
+  overflow: hidden;
+}
+
+.mini-cards-container li > .tab,
+.mini-cards-container li > .tab:hover,
+.mini-cards-container li > .tab:active,
+.mini-cards-container li.active .tab,
+.mini-cards-container li.active .tab:hover,
+.mini-cards-container li.active .tab:active{
+  background:#fff;
+}
+.mini-cards-container li.active .tab::after{
+  content:"";
+  display:block;
+  position:absolute;
+  top:-1px;
+  bottom: -1px;
+  right:0;
+  width:8px;
+  background:$light-green;
+}
+.user-bien {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
