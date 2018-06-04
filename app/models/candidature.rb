@@ -1,8 +1,8 @@
 class Candidature < ApplicationRecord
   belongs_to :user
   belongs_to :url_flat, optional: true
+  after_update :scrap, if: :url_will_change!
   has_many :flats, through: :url_flat
-  after_update :scrap
   after_create :create_token
 
   private
@@ -20,15 +20,12 @@ class Candidature < ApplicationRecord
     @flat = Flat.joins(:url_flats).where("url_flats.url_1 = ? OR url_flats.url_2 = ? OR url_flats.url_3 = ? ", @url, @url, @url).first
     unless @flat
       if @url.match("orpi")
-        @flat = Flat.new
         @url_orpi = self.url
         @flat = ScrapOrpi.new.create_flat_orpi(@url_orpi)
       elsif @url.match("logic-immo")
-        @flat = Flat.new
         @url_logic_immo = self.url
         @flat = ScrapLogicImmo.new.create_flat_logic_immo(@url_logic_immo)
       elsif @url.match("leboncoin")
-        @flat = Flat.new
         @url_lbc = self.url
         @flat = ScrapLbc.new.create_flat_lbc(@url_lbc)
       else
@@ -37,7 +34,7 @@ class Candidature < ApplicationRecord
 
       @flat.save
 
-      url_flat = self.url_flat
+      url_flat = @flat.url_flats.first
       if url_flat.nil?
         url_flat = UrlFlat.new(url_1: url, flat: @flat)
       else

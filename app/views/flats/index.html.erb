@@ -1,14 +1,17 @@
-
-<div class="index-candidature-container">
-  <h3>Vos appartements</h3>
-  <div class="flat-dashboard">
-    <div class="row">
-      <% @flats.each do |flat| %>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <%= render 'shared/flat_card_agency', flat: flat %>
-        </div>
-      <% end %>
+<% if @flats.nil? %>
+  <h1>  Vous n'êtes pas autorisé à voir cette page </h1>
+<% else %>
+  <div class="index-candidature-container">
+    <h3>Vos appartements</h3>
+    <div class="flat-dashboard">
+      <div class="row">
+        <% @flats.each do |flat| %>
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <%= render 'shared/flat_card_agency', flat: flat %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
