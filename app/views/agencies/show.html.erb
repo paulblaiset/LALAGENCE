@@ -1,5 +1,6 @@
 <body style="background-color:#FAFAFA">
-<h1>Toutes les candidatures sur vos biens</h1>
+
+<h1 style="padding:20px">Toutes les candidatures sur vos biens</h1>
 
 <div class="container_candidature_anonymesession">
 
@@ -49,10 +50,8 @@
                       <ul>
                         <% user.flats.each do |flat| %>
                         <li>
-                          <p>T<%=  flat.nb_room %></p>
-                          <p><%=  flat.address %></p>
+                          <p>T<%=  flat.nb_room %> - <%=  flat.surface %> - <%=  flat.address %></p>
                           <p><%=  flat.price %></p>
-                          <p>Réf:</p>
                         </li>
                         <% end %>
                       </ul>
@@ -88,7 +87,7 @@
                 <h2><%=  user.first_name  %></h2>
                 <h1><%=  user.last_name  %></h1>
                 <a><%=  user.mail  %></a>
-                <a><%=  user.birthday_date  %></a>
+                <p><%=  user.birthday_date  %></p>
                 <p><%=  user.phone_number %></p>
               </div>
             </div>
@@ -142,16 +141,15 @@
 
           <div class="row-apercu-bien">
             <h2>LE BIEN</h2>
-            <ul>
+
+            <div class="row user-bien">
               <% user.flats.each do |flat| %>
-              <li>
-                <p>T<%=  flat.nb_room %></p>
-                <p><%=  flat.address %></p>
-                <p><%=  flat.price %></p>
-                <p>Réf:</p>
-              </li>
+                <div class="col-xs-12">
+                  <%= render 'shared/flat_card_agency', flat: flat %>
+                </div>
               <% end %>
-            </ul>
+            </div>
+
           </div>
         </div>
         <% end %>
