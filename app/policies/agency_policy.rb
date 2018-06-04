@@ -5,6 +5,10 @@ class AgencyPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    record.id == user.agency_id
+  end
+
   def show?
     true
   end
