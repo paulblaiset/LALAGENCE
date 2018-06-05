@@ -25,7 +25,7 @@ michel = User.new(
   password: 'password',
   gender: 'male',
   first_name: 'Michel',
-  last_name: 'Michou',
+  last_name: 'Dubois',
   work_situation: 'SALARIÉ(E)',
   job_name: 'Entrepreneur',
   salary_by_month: '1800',
