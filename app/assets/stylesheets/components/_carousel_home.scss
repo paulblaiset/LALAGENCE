@@ -15,6 +15,8 @@
   overflow: hidden;
   box-shadow: 3px 3px 16px rgba(30, 30, 30, 0.2);
   margin:50px 0px;
+  height: 320px;
+  align-items: center;
 }
 .card-home > div[class^="card"]{
   display:flex;
@@ -40,6 +42,9 @@
   border:2px solid #fff;
   overflow:hidden;
 }
+.card-profile .card-profile-firstname{
+  text-align: center;
+}
 .card-comment{
   position: relative;
   background:white;
@@ -53,7 +58,7 @@
 
 .card-profile-usertype {
   position:absolute;
-  top:10px;
+  top:50px;
   margin-bottom: 30px;
   font-weight:lighter;
   color:#2684E2;
@@ -65,3 +70,17 @@
   background:$light-green;
   border: 1px solid $light-green;
 }
+
+.carousel-control .glyphicon-chevron-left {
+    margin-left:-137px;
+}
+
+.carousel-control .glyphicon-chevron-right {
+    margin-right: -137px;
+  }
+
+.glyphicon-chevron-right:before {
+  color:gray }
+
+.glyphicon-chevron-left:before {
+  color:gray }
