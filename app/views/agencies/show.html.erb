@@ -98,8 +98,10 @@
                 <div class="btoun-rose-cool reject" > Refuser
                 </div>
               </div>
-              <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
-              </div>
+              <%= link_to download_path(user.id) do%>
+                <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
+                </div>
+              <% end %>
             </div>
           </div>
 

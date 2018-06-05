@@ -181,6 +181,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rubyzip (1.2.1)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -263,6 +264,7 @@ DEPENDENCIES
   pundit
   rails (= 5.2.0)
   redis
+  rubyzip
   sass-rails
   simple_form
   simple_token_authentication
