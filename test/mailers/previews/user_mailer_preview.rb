@@ -8,8 +8,8 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def folder
-    user = User.first
-    UserMailer.folder(user)
+    candidature = Candidature.first
+    UserMailer.folder(candidature)
   end
 end
 
