@@ -100,6 +100,6 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_sh
   private
 
   def candidature_params
-    params.require(:candidature).permit(:mail_agency, :url)
+    params.require(:candidature).permit(:mail_agency, :url, :commentaire)
   end
 end
