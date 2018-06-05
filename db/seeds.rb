@@ -21,7 +21,7 @@ orpi = Agency.create!(
 )
 
 michel = User.new(
-  email: 'michel@michel.com',
+  email: 'michel@orpi.com',
   password: 'password',
   gender: 'male',
   first_name: 'Michel',
@@ -46,7 +46,9 @@ paul = User.create!(
   job_name: 'Developpeur',
   salary_by_month: '2800 €',
   first_day_of_work: '2017-12-01',
-  birthday_date: '1988-10-11'
+  birthday_date: '1988-10-11',
+  actual_rent_price: '1690€',
+  rental_status: 'Locataire',
   )
 
 paul.remote_identity_card_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201886/ID_Recto.jpg"
@@ -70,7 +72,9 @@ marie = User.create!(
   job_name: 'Chef entreprise',
   salary_by_month: '4900 €',
   first_day_of_work: '2015-11-11',
-  birthday_date: '1985-01-22'
+  birthday_date: '1985-01-22',
+  actual_rent_price: '1000€',
+  rental_status: 'Locataire',
 )
 
 marie.remote_identity_card_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/ID_3_F.jpg"
@@ -96,7 +100,9 @@ jack = User.create!(
   job_name: 'Plombier',
   salary_by_month: '2800 €',
   first_day_of_work: '2017-12-01',
-  birthday_date: '1988-10-11'
+  birthday_date: '1988-10-11',
+  actual_rent_price: '1120€',
+  rental_status: 'Locataire',
   )
 
 jack.remote_identity_card_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201614/ID_2.jpg"
@@ -212,7 +218,7 @@ url2.save
 
 
 candidature_1 = Candidature.new(
-  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",
+  url: "https://www.orpi.com/annonce-location-appartement-t3-paris-20-75020-b-e0jyf7/",
   commentaire: "Pour colocation"
 )
 candidature_1.user = paul
@@ -220,7 +226,7 @@ candidature_1.url_flat = urlf32
 candidature_1.save
 
 candidature_2 = Candidature.new(
-  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",
+  url: "https://www.orpi.com/annonce-location-appartement-t3-paris-20-75020-b-e0jyf7/",
   commentaire: "Pour famille 3 personnes"
   )
 candidature_2.user = marie
@@ -228,7 +234,7 @@ candidature_2.url_flat = urlf32
 candidature_2.save
 
 candidature_3 = Candidature.new(
-  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",
+  url: "https://www.orpi.com/annonce-location-appartement-t3-paris-20-75020-b-e0jyf7/",
   commentaire: "Pour personne seule"
   )
 candidature_3.user = jack
@@ -236,7 +242,7 @@ candidature_3.url_flat = urlf32
 candidature_3.save
 
 candidature_4 = Candidature.new(
-  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",
+  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-10-75010-b-e1267n/",
   commentaire: "J'ai un chien")
 candidature_4.user = paul
 candidature_4.url_flat = url2
