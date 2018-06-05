@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def edit
     @user = current_user
-    @guarantor = @user.guarantors.first
+    @guarantor = @user.guarantors.where.not(mail: nil).first
     authorize @user
     if @user.has_required_field?
       @step = 2
