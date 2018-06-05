@@ -106,14 +106,14 @@
                 <div class="btoun-rose-cool reject" > Declined </div>
                 <% end %>
                 <div class="btoun-bleu-cool seemore" style="width:110px">
-                  <%= link_to "voir pièces", cl_image_path(User.find(3).employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
-                  <%= link_to "", cl_image_path(User.find(3).employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).pay_slip_1), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).pay_slip_2), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).pay_slip_3), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).actual_rent_bill), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).tax_notice), data: {luminous: "true", title: "lightbox"} %>
+                  <%= link_to "voir pièces", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
+                  <%= link_to "", cl_image_path(candidature.user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(candidature.user.identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(candidature.user.pay_slip_1), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(candidature.user.pay_slip_2), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(candidature.user.pay_slip_3), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(candidature.user.actual_rent_bill), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(candidature.user.tax_notice), data: {luminous: "true", title: "lightbox"} %>
               </div>
               <%= link_to download_path(user.id) do%>
                 <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
@@ -175,14 +175,14 @@
   </div>
 
 </div>
-<%= link_to "voir pièces", cl_image_path(User.find(3).employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
-<%= link_to "", cl_image_path(User.find(3).employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
-<%= link_to "", cl_image_path(User.find(3).identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
-<%= link_to "", cl_image_path(User.find(3).pay_slip_1), data: {luminous: "true", title: "luminous"} %>
-<%= link_to "", cl_image_path(User.find(3).pay_slip_2), data: {luminous: "true", title: "luminous"} %>
-<%= link_to "", cl_image_path(User.find(3).pay_slip_3), data: {luminous: "true", title: "luminous"} %>
-<%= link_to "", cl_image_path(User.find(3).actual_rent_bill), data: {luminous: "true", title: "luminous"} %>
-<%= link_to "", cl_image_path(User.find(3).tax_notice), data: {luminous: "true", title: "lightbox"} %>
+<%= link_to "voir pièces", cl_image_path(candidature.user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
+<%= link_to "", cl_image_path(candidature.user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
+<%= link_to "", cl_image_path(candidature.user.identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
+<%= link_to "", cl_image_path(candidature.user.pay_slip_1), data: {luminous: "true", title: "luminous"} %>
+<%= link_to "", cl_image_path(candidature.user.pay_slip_2), data: {luminous: "true", title: "luminous"} %>
+<%= link_to "", cl_image_path(candidature.user.pay_slip_3), data: {luminous: "true", title: "luminous"} %>
+<%= link_to "", cl_image_path(candidature.user.actual_rent_bill), data: {luminous: "true", title: "luminous"} %>
+<%= link_to "", cl_image_path(candidature.user.tax_notice), data: {luminous: "true", title: "lightbox"} %>
 <!-- <a href="images/image-1.jpg" data-lightbox="preview" data-title="My caption">Image #1</a> -->
 </div>
 
