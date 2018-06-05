@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/candidatures/:token', to: "candidatures#private_show", as: :candidature_agence
 
+  get '/users/:id/download', to: "agencies#download", as: :download
+
   resources :users, only:[:edit, :update, :show] do
     resources :guarantors, only: [:new, :edit, :create, :update, :show]
     resources :candidatures

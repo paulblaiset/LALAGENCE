@@ -106,8 +106,11 @@
                 <% else %>
                 <div class="btoun-rose-cool reject" > Declined </div>
                 <% end %>
+              </div>
+              <%= link_to download_path(user.id) do%>
                 <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
                 </div>
+              <% end %>
             </div>
           </div>
 
