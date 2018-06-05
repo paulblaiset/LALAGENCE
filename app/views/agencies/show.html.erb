@@ -106,14 +106,14 @@
                 <% end %>
 
                 <div class="btoun-bleu-cool seemore">
-                  <%= link_to "voir pièces", cl_image_path(User.find(3).employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
-                  <%= link_to "", cl_image_path(User.find(3).employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).pay_slip_1), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).pay_slip_2), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).pay_slip_3), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).actual_rent_bill), data: {luminous: "true", title: "luminous"} %>
-                  <%= link_to "", cl_image_path(User.find(3).tax_notice), data: {luminous: "true", title: "lightbox"} %>
+                  <%= link_to "voir pièces", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
+                  <%= link_to "", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.pay_slip_1), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.pay_slip_2), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.pay_slip_3), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.actual_rent_bill), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.tax_notice), data: {luminous: "true", title: "lightbox"} %>
 
               </div>
               <%= link_to 'Download',download_path(user.id), class: 'btoun-bleu-cool seemore' %>
@@ -122,7 +122,9 @@
 
           <div class="commentaire">
             <h2>Son commentaire :</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.</p>
+            <% if candidature.commentaire %>
+            <p><%=  candidature.commentaire %></p>
+            <% end %>
           </div>
 
           <div class="row-situ-pro-loca">

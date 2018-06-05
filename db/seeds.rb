@@ -213,31 +213,38 @@ url2.save
 
 candidature_1 = Candidature.new(
   url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",
+  commentaire: "Pour colocation"
 )
 candidature_1.user = paul
 candidature_1.url_flat = urlf32
 candidature_1.save
 
 candidature_2 = Candidature.new(
-  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",)
+  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",
+  commentaire: "Pour famille 3 personnes"
+  )
 candidature_2.user = marie
 candidature_2.url_flat = urlf32
 candidature_2.save
 
 candidature_3 = Candidature.new(
-  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",)
+  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",
+  commentaire: "Pour personne seule"
+  )
 candidature_3.user = jack
 candidature_3.url_flat = urlf32
 candidature_3.save
 
 candidature_4 = Candidature.new(
-  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",)
+  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",
+  commentaire: "J'ai un chien")
 candidature_4.user = paul
 candidature_4.url_flat = url2
 candidature_4.save
 
 candidature_5 = Candidature.new(
-  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",)
+  url: "https://www.orpi.com/annonce-location-appartement-t2-paris-14-75014-b-e0zav6/",
+  commentaire: "J'ai un chat")
 candidature_5.user = paul
 candidature_5.url_flat = url
 candidature_5.save
