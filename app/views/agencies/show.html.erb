@@ -10,7 +10,7 @@
         <ul class="col-xs-4 nav nav-tabs">
           <% @candidatures.each_with_index do |candidature, i| %>
           <% user = candidature.user %>
-          <li class="<%= i == 0 ? 'active' : '' %>"><a class="tab" data-toggle="tab" href="#user-<%= user.id %>">
+          <li class="<%= i == 0 ? 'active' : '' %>"><a class="tab" data-toggle="tab" href="#candidature-<%= candidature.id %>">
             <div class="mini-card-candidature">
               <div class="row-mini">
                 <div class ="avatar">
@@ -49,12 +49,11 @@
                 <div class="row-apart">
                   <ul class="contact_info">
                       <ul>
-                        <% user.flats.each do |flat| %>
+                        <% flat = candidature.url_flat.flat %>
                         <li>
                           <p>T<%=  flat.nb_room %> - <%=  flat.surface %> - <%=  flat.address %></p>
                           <p><%=  flat.price %></p>
                         </li>
-                        <% end %>
                       </ul>
                   </ul>
                 </div>
@@ -78,7 +77,7 @@
 
       <% @candidatures.each_with_index do |candidature, i| %>
       <% user = candidature.user %>
-        <div class="tab-pane <%= i == 0 ? 'active' : '' %>" id="user-<%= user.id %>">
+        <div class="tab-pane <%= i == 0 ? 'active' : '' %>" id="candidature-<%= candidature.id %>">
           <div class="row-button-and-contact">
             <div class="avat_contact">
               <div class ="avatar">
@@ -163,11 +162,9 @@
             <h2>LE BIEN</h2>
 
             <div class="row user-bien">
-              <% user.flats.each do |flat| %>
                 <div class="col-xs-12">
-                  <%= render 'shared/flat_card_agency', flat: flat %>
+                  <%= render 'shared/flat_card_agency', flat: candidature.url_flat.flat %>
                 </div>
-              <% end %>
             </div>
 
           </div>
