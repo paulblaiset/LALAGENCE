@@ -49,6 +49,11 @@
   }
 }
 
+.lb-image{
+  max-width: inherit;
+}
+
+
 .row-button-and-contact {
   display:flex;
   position:relative;
@@ -63,13 +68,14 @@
   position:absolute;
   top:0px;
   right:0px;
+  text-align:right;
 }
 
 
 
 .seemore {
 top:20px;
-margin-left:80px;
+margin-left:10px;
 margin-top:10px;
 }
 
@@ -206,13 +212,9 @@ font-weight:bold;
   position:relative;
   overflow: hidden;
 }
-
-.mini-cards-container li > .tab,
-.mini-cards-container li > .tab:hover,
-.mini-cards-container li > .tab:active,
-.mini-cards-container li.active .tab,
-.mini-cards-container li.active .tab:hover,
-.mini-cards-container li.active .tab:active{
+.mini-cards-container .nav-tabs > li.active > a,
+.mini-cards-container .nav-tabs > li.active > a:hover,
+.mini-cards-container .nav-tabs > li.active > a:focus{
   background:#fff;
 }
 .mini-cards-container li.active .tab::after{

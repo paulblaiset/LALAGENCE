@@ -1,11 +1,11 @@
 class Candidature < ApplicationRecord
   belongs_to :user
   belongs_to :url_flat, optional: true
-  after_update :scrap, if: :url_will_change!
+  after_save :scrap, if: :url_will_change!
   has_many :flats, through: :url_flat
   after_create :create_token
+  validates :status, inclusion: { in: ["pending", "validate", "declined"] }
 
-  private
 
   def create_token
     token = SecureRandom.hex(10)
@@ -31,30 +31,29 @@ class Candidature < ApplicationRecord
       else
         @flat = Flat.new(title: "Url non trouvée")
       end
-
       @flat.save
-
-      url_flat = @flat.url_flats.first
-      if url_flat.nil?
-        url_flat = UrlFlat.new(url_1: url, flat: @flat)
-      else
-        url_flat.flat = @flat
-        if url_flat.url_1.present?
-          if url_flat.url_2.present?
-            url_flat.url_3 = url
-          else
-            url_flat.url_2 = url
-          end
-        else
-          url_flat.url_1 = url
-        end
-      end
-
-
-      url_flat.save
-
-      self.update_column(:url_flat_id, url_flat.id)
     end
+    url_flat = @flat.url_flats.first
+    if url_flat.nil?
+      url_flat = UrlFlat.new(url_1: url, flat: @flat)
+    else
+      url_flat.flat = @flat
+      if url_flat.url_1.present?
+        if url_flat.url_2.present?
+          url_flat.url_3 = url
+        else
+          url_flat.url_2 = url
+        end
+      else
+        url_flat.url_1 = url
+      end
+    end
+
+
+    url_flat.save
+
+    self.update_column(:url_flat_id, url_flat.id)
+
   end
 
 

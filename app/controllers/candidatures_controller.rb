@@ -2,6 +2,21 @@ class CandidaturesController < ApplicationController
 skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_show]
 
 
+
+  def validate
+    @candidature = Candidature.find(params[:id])
+    authorize @candidature
+    @candidature.update!(status: "validate")
+    redirect_to agency_path(@candidature.flats.first.agency)
+  end
+
+  def decline
+    @candidature = Candidature.find(params[:id])
+    authorize @candidature
+    @candidature.update!(status: "declined")
+    redirect_to agency_path(@candidature.flats.first.agency)
+  end
+
   def scrap_orpi
     ScarpOrpi.new(self).call
   end
@@ -19,11 +34,20 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_sh
   def create
     @candidature = Candidature.new(candidature_params)
     @candidature.user = current_user
+    @candidature.url = @candidature.url.split("?").first
     authorize @candidature
+
     if @candidature.save
-      redirect_to edit_user_candidature_path(current_user)
+      UserMailer.folder(@candidature).deliver_now
+      respond_to do |format|
+        format.html { redirect_to edit_user_candidature_path [current_user, @candidature] }
+        format.js  # <-- will render `app/views/candidatures/update.js.erb`
+      end
     else
-      render 'new'
+      respond_to do |format|
+        format.html { render 'new' }
+        format.js  # <-- idem
+      end
     end
   end
 
@@ -76,6 +100,6 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_sh
   private
 
   def candidature_params
-    params.require(:candidature).permit(:mail_agency, :url)
+    params.require(:candidature).permit(:mail_agency, :url, :commentaire)
   end
 end

@@ -16,4 +16,12 @@ class CandidaturePolicy < ApplicationPolicy
   def private_show?
     true
   end
+
+  def validate?
+    true
+  end
+
+  def decline?
+    true
+  end
 end

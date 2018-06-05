@@ -68,12 +68,19 @@
           </div>
         </div>
         <div class="buttons-container">
+          <% if candidature.status == "pending" %>
           <div class="accept-reject">
-            <div class="btoun-green-cool accept" > Accepter
+            <div class="btoun-green-cool accept" > <%= link_to 'Accept', validate_path(candidature) %>
             </div>
-            <div class="btoun-rose-cool reject" > Refuser
+            <div class="btoun-rose-cool reject" > <%= link_to 'Decline', refuse_path(candidature) %>
             </div>
           </div>
+          <% elsif status == "validate" %>
+          <div class="btoun-green-cool accept" > Accepted
+            </div>
+          <% else %>
+          <div class="btoun-rose-cool reject" > Declined </div>
+          <% end %>
           <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
           </div>
         </div>
@@ -87,7 +94,7 @@
       <div class="row-situ-pro-loca">
         <div class="situation-pro">
           <h2>Situation Professionelle & fiscale</h2>
-          <p> Poste : <span style="color:#3DEAB9"> <%= @user.job_name %> </span></p>
+          <p> Poste : <span style="color:#01B878"> <%= @user.job_name %> </span></p>
           <p> Salaire net mensuel : <span> <%=  @user.salary_by_month %> €</span></p>
           <p> Situation : <span> <%=  @user.work_situation %></span></p>
           <p> En poste depuis : <span><%=  @user.first_day_of_work %></span></p>

@@ -29,9 +29,10 @@
       <% agency = Agency.find(agency_id) %>
       <%= link_to "Vos candidatures", agency_path(agency) %>
       <%= link_to "Vos appartements", agency_flats_path(agency) %>
+      <%= link_to "Ajouter un appartement", new_agency_flat_path(agency) %>
     </div>
     <div class="side-bar-menu">
-       <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, style:"font-size:12px;text-align:center;color:#3DEAB9;margin-right:30px" %>
+       <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, style:"font-size:12px;text-align:center;color:#01B878;margin-right:30px" %>
     </div>
   </div>
 <% else %>
@@ -61,7 +62,7 @@
       <%= link_to "Mon dossier", edit_user_path(current_user) %>
       <%= link_to "Ma sélection", '#' %>
       <%= link_to "Mon historique", user_candidatures_path(current_user) %>
-      <%= link_to "Déposer son dossier", "#" %>
+      <%= link_to "Déposer son dossier", new_user_candidature_path(current_user) %>
       </div>
     <div class="side-bar-menu">
        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, style:"font-size:12px;text-align:center;color:#1E2939;margin-right:30px" %>

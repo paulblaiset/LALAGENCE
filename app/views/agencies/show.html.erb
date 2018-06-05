@@ -1,4 +1,4 @@
-<body style="background-color:#FAFAFA">
+<div style="background-color:#FAFAFA">
 
 <h1 style="padding:20px">Toutes les candidatures sur vos biens</h1>
 
@@ -8,8 +8,9 @@
     <div class="tabs">
       <div class="mini-cards-container">
         <ul class="col-xs-4 nav nav-tabs">
-          <% @users.each_with_index do |user, i| %>
-          <li class="<%= i == 0 ? 'active' : '' %>"><a class="tab" data-toggle="tab" href="#user-<%= user.id %>">
+          <% @candidatures.each_with_index do |candidature, i| %>
+          <% user = candidature.user %>
+          <li class="<%= i == 0 ? 'active' : '' %>"><a class="tab" data-toggle="tab" href="#candidature-<%= candidature.id %>">
             <div class="mini-card-candidature">
               <div class="row-mini">
                 <div class ="avatar">
@@ -48,18 +49,16 @@
                 <div class="row-apart">
                   <ul class="contact_info">
                       <ul>
-                        <% user.flats.each do |flat| %>
+                        <% flat = candidature.url_flat.flat %>
                         <li>
                           <p>T<%=  flat.nb_room %> - <%=  flat.surface %> - <%=  flat.address %></p>
                           <p><%=  flat.price %></p>
                         </li>
-                        <% end %>
                       </ul>
                   </ul>
                 </div>
                 <div class="row-apart">
                   <ul class="contact_info">
-                    <% candidature = Candidature.find(params[:id]) %>
                     <strong><li>Déposé depuis le <%= candidature.created_at.strftime("%d/%m/%y") %></li></strong>
                   </ul>
                 </div>
@@ -76,8 +75,9 @@
     <div class="col-xs-8">
       <div class="mega-card-candidature tab-content">
 
-      <% @users.each_with_index do |user, i| %>
-        <div class="tab-pane <%= i == 0 ? 'active' : '' %>" id="user-<%= user.id %>">
+      <% @candidatures.each_with_index do |candidature, i| %>
+      <% user = candidature.user %>
+        <div class="tab-pane <%= i == 0 ? 'active' : '' %>" id="candidature-<%= candidature.id %>">
           <div class="row-button-and-contact">
             <div class="avat_contact">
               <div class ="avatar">
@@ -92,26 +92,45 @@
               </div>
             </div>
             <div class="buttons-container">
-              <div class="accept-reject">
-                <div class="btoun-green-cool accept" > Accepter
+              <% if candidature.status == "pending" %>
+                <div class="accept-reject">
+                  <div class="btoun-green-cool accept" > <%= link_to 'Accept', validate_path(candidature), method: :patch %>
+                  </div>
+                  <div class="btoun-rose-cool reject" > <%= link_to 'Decline', decline_path(candidature), method: :patch %>
+                  </div>
                 </div>
-                <div class="btoun-rose-cool reject" > Refuser
-                </div>
+                <% elsif candidature.status == "validate" %>
+                  <div><div class="btoun-green-cool accept" > Accepted</div></div>
+                <% else %>
+                  <div><div class="btoun-rose-cool reject" > Declined </div></div>
+                <% end %>
+
+                <div class="btoun-bleu-cool seemore">
+                  <%= link_to "voir pièces", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
+                  <%= link_to "", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.pay_slip_1), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.pay_slip_2), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.pay_slip_3), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.actual_rent_bill), data: {luminous: "true", title: "luminous"} %>
+                  <%= link_to "", cl_image_path(user.tax_notice), data: {luminous: "true", title: "lightbox"} %>
+
               </div>
-              <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
-              </div>
+              <%= link_to 'Download',download_path(user.id), class: 'btoun-bleu-cool seemore' %>
             </div>
           </div>
 
           <div class="commentaire">
             <h2>Son commentaire :</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.</p>
+            <% if candidature.commentaire %>
+            <p><%=  candidature.commentaire %></p>
+            <% end %>
           </div>
 
           <div class="row-situ-pro-loca">
             <div class="situation-pro">
               <h2>Situation Professionelle & fiscale</h2>
-              <p> Poste : <span style="color:#3DEAB9"> <%= user.job_name %> </span></p>
+              <p> Poste : <span style="color:#01B878"> <%= user.job_name %> </span></p>
               <p> Salaire net mensuel : <span> <%=  user.salary_by_month %> €</span></p>
               <% if user.work_situation %>
                 <p> Situation : <span> <%= user.work_situation %></span></p>
@@ -143,11 +162,9 @@
             <h2>LE BIEN</h2>
 
             <div class="row user-bien">
-              <% user.flats.each do |flat| %>
                 <div class="col-xs-12">
-                  <%= render 'shared/flat_card_agency', flat: flat %>
+                  <%= render 'shared/flat_card_agency', flat: candidature.url_flat.flat %>
                 </div>
-              <% end %>
             </div>
 
           </div>
@@ -158,4 +175,5 @@
   </div>
 
 </div>
-</body>
+
+</div>
