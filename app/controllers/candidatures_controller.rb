@@ -2,6 +2,21 @@ class CandidaturesController < ApplicationController
 skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_show]
 
 
+
+  def validate
+    @candidature = Candidature.find(params[:id])
+    authorize @candidature
+    @candidature.update!(status: "validate")
+    redirect_to agency_path(@candidature.flats.first.agency)
+  end
+
+  def decline
+    @candidature = Candidature.find(params[:id])
+    authorize @candidature
+    @candidature.update!(status: "declined")
+    redirect_to agency_path(@candidature.flats.first.agency)
+  end
+
   def scrap_orpi
     ScarpOrpi.new(self).call
   end

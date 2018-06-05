@@ -68,12 +68,19 @@
           </div>
         </div>
         <div class="buttons-container">
+          <% if candidature.status == "pending" %>
           <div class="accept-reject">
-            <div class="btoun-green-cool accept" > Accepter
+            <div class="btoun-green-cool accept" > <%= link_to 'Accept', validate_path(candidature) %>
             </div>
-            <div class="btoun-rose-cool reject" > Refuser
+            <div class="btoun-rose-cool reject" > <%= link_to 'Decline', refuse_path(candidature) %>
             </div>
           </div>
+          <% elsif status == "validate" %>
+          <div class="btoun-green-cool accept" > Accepted
+            </div>
+          <% else %>
+          <div class="btoun-rose-cool reject" > Declined </div>
+          <% end %>
           <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
           </div>
         </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_090309) do
+ActiveRecord::Schema.define(version: 2018_06_05_092349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_06_05_090309) do
     t.string "mail_agency"
     t.string "url"
     t.string "token"
-    t.string "status"
+    t.string "status", default: "pending"
     t.index ["url_flat_id"], name: "index_candidatures_on_url_flat_id"
     t.index ["user_id"], name: "index_candidatures_on_user_id"
   end
