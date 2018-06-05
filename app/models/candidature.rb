@@ -4,6 +4,7 @@ class Candidature < ApplicationRecord
   after_update :scrap, if: :url_will_change!
   has_many :flats, through: :url_flat
   after_create :create_token
+  validates :status, inclusion: { in: ["pending", "validate", "declined"] }
 
   private
 
