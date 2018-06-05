@@ -35,13 +35,12 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_sh
     @candidature = Candidature.new(candidature_params)
     @candidature.user = current_user
     @candidature.url = @candidature.url.split("?").first
-    raise
     authorize @candidature
 
     if @candidature.save
       UserMailer.folder(@candidature).deliver_now
       respond_to do |format|
-        format.html { redirect_to edit_user_candidature_path(current_user, @candidature) }
+        format.html { redirect_to edit_user_candidature_path [current_user, @candidature] }
         format.js  # <-- will render `app/views/candidatures/update.js.erb`
       end
     else
