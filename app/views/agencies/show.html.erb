@@ -8,7 +8,8 @@
     <div class="tabs">
       <div class="mini-cards-container">
         <ul class="col-xs-4 nav nav-tabs">
-          <% @users.each_with_index do |user, i| %>
+          <% @candidatures.each_with_index do |candidature, i| %>
+          <% user = candidature.user %>
           <li class="<%= i == 0 ? 'active' : '' %>"><a class="tab" data-toggle="tab" href="#user-<%= user.id %>">
             <div class="mini-card-candidature">
               <div class="row-mini">
@@ -59,7 +60,6 @@
                 </div>
                 <div class="row-apart">
                   <ul class="contact_info">
-                    <% candidature = Candidature.find(params[:id]) %>
                     <strong><li>Déposé depuis le <%= candidature.created_at.strftime("%d/%m/%y") %></li></strong>
                   </ul>
                 </div>
@@ -76,7 +76,8 @@
     <div class="col-xs-8">
       <div class="mega-card-candidature tab-content">
 
-      <% @users.each_with_index do |user, i| %>
+      <% @candidatures.each_with_index do |candidature, i| %>
+      <% user = candidature.user %>
         <div class="tab-pane <%= i == 0 ? 'active' : '' %>" id="user-<%= user.id %>">
           <div class="row-button-and-contact">
             <div class="avat_contact">
@@ -92,14 +93,21 @@
               </div>
             </div>
             <div class="buttons-container">
-              <div class="accept-reject">
-                <div class="btoun-green-cool accept" > Accepter
+              <% if candidature.status == "pending" %>
+                <div class="accept-reject">
+                  <div class="btoun-green-cool accept" > <%= link_to 'Accept', validate_path(candidature), method: :patch %>
+                  </div>
+                  <div class="btoun-rose-cool reject" > <%= link_to 'Decline', decline_path(candidature), method: :patch %>
+                  </div>
                 </div>
-                <div class="btoun-rose-cool reject" > Refuser
+                <% elsif candidature.status == "validate" %>
+                <div class="btoun-green-cool accept" > Accepted
+                  </div>
+                <% else %>
+                <div class="btoun-rose-cool reject" > Declined </div>
+                <% end %>
+                <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
                 </div>
-              </div>
-              <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
-              </div>
             </div>
           </div>
 

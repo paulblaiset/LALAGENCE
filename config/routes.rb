@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :candidatures
   end
 
+  patch '/candidatures/:id/validate', to: 'candidatures#validate', as: :validate
+  patch '/candidatures/:id/decline', to: 'candidatures#decline', as: :decline
 
   resources :agencies, only: [:show, :new, :create, :edit, :update] do
     resources :flats
