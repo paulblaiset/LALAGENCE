@@ -1,0 +1,38 @@
+<div class="candidature-container">
+  <h1>Votre Dossier <span class="step-progress-bar step-progress-bar-finish"><span></span></span></h1>
+  <div class="nav-pills-content">
+    <ul class="nav nav-pills">
+      <li>
+        <span class="tab-btn tab-me"><%= image_tag "icon_renter_guy_off.png", alt: ""%>
+          <span class="title">Moi</span>
+        </span>
+      </li>
+      <li>
+        <span class="tab-btn tab-guarantor"><%= image_tag "icon_guarantor_girl_off.png", alt: ""%><span class="title">Mon guarant n°1</span></span>
+      </li>
+      <li>
+        <span class="tab-btn tab-valide"><%= image_tag "icon_complete_on.png", alt: ""%>
+          <span class="title">Mon dossier</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div class="row-envoyer-apercu">
+    <div class="envoyez-le-container">
+      <h3> <span style="font-weight: lighter;">Votre dossier est prêt. </span>Envoyez-le !</h3>
+      <p>Envoyer votre dossier à n'importe quelle agence.</p>
+      <%= render "form" %>
+    </div>
+    <div class="apercu">
+      <% if @candidature.url_flat.present? %>
+        <%= render 'shared/flat_card', candidature: @candidature %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div>
+
+<iframe width="800" height="1000" frameborder="0" marginheight="0"
+ marginwidth="0" src="http://www.lalagence.com/users/sign_in"></iframe>
+</div>
