@@ -43,9 +43,9 @@
         <![endif]-->
 
       <!--[if !mso]><!-->
-        <link href="https://fonts.googleapis.com/css?family=Assistant:200,300,400,700|Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet" type="text/css">
         <style type="text/css">
-          @import url(https://fonts.googleapis.com/css?family=Assistant:200,300,400,700|Open+Sans:300,400,700);
+          @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
         </style>
       <!--<![endif]-->
 
@@ -56,6 +56,7 @@
         .mj-column-per-35 { width:35% !important; }
 .mj-column-per-100 { width:100% !important; }
 .mj-column-per-80 { width:80% !important; }
+.mj-column-per-40 { width:40% !important; }
       }
     </style>
 
@@ -157,7 +158,7 @@
               >
 
       <div
-         style="font-family:Open Sans;font-size:20px;font-weight:500;line-height:24px;text-align:left;color:white;"
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:20px;font-weight:700;line-height:24px;text-align:left;color:white;"
       >
         <i class="fas fa-key"></i>
       </div>
@@ -191,7 +192,7 @@
               >
 
       <div
-         style="font-family:Open Sans;font-size:24px;font-weight:600;line-height:24px;text-align:center;color:#000000;"
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:24px;font-weight:700;line-height:24px;text-align:center;color:#000000;"
       >
         <a href="www.lalagence.com" style="color: white; text-decoration: none;">LaLAGENCE</a>
       </div>
@@ -205,7 +206,7 @@
               >
 
       <div
-         style="font-family:Open Sans;font-size:14px;font-weight:400;line-height:24px;text-align:center;color:#000000;"
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;font-weight:300;line-height:24px;text-align:center;color:#000000;"
       >
         <p style="color: white;" >La location nouvelle génération</a>
       </div>
@@ -339,14 +340,14 @@
               >
 
       <div
-         style="font-family:Open Sans;font-size:14px;font-weight:500;line-height:24px;text-align:left;color:#000000;"
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;font-weight:300;line-height:24px;text-align:left;color:#000000;"
       >
         <p>Bonjour,</p>
-          <p>Votre client <strong><%= @user.first_name %> <%= @user.last_name %></strong> vous envoie son dossier complet à verifier pour le bien "<strong> <%= @flat.name %> , <%= @flat.nb_room %> , <%= @flat.address %> , <%= @flat.surface %> , <%= @flat.price %> </strong>".</p>
+          <p>Votre client <strong><%= @user.first_name %> <%= @user.last_name %></strong> vous envoie son dossier complet à verifier pour le bien "<strong> <%= @flat.name %> , <%= @flat.nb_room %> chambres , <%= @flat.address %> , <%= @flat.surface %> , <%= @flat.price %> </strong>".</p>
           <p>Notre plateforme, tiers de confiance entre agence/proprietaire et locataire, a verifié son dossier. Il est complet, ses revenus sont suffisants et ses pièces ont été verifiées et authentifiées. </p>
 
           <div style="color:#3DEAB9;">
-            <p><strong>DOSSIER DE <%= @user.first_name %> <%= @user.last_name%>:</strong></p>
+            <p><strong>DOSSIER DE <%= @user.first_name.upcase %> <%= @user.last_name.upcase%>:</strong></p>
           </div>
 
 
@@ -359,7 +360,7 @@
 
             <tr>
               <td
-                 align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;padding-top:20;padding-bottom:100px;word-break:break-word;"
+                 align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;padding-top:30;padding-bottom:20px;word-break:break-word;"
               >
 
       <table
@@ -370,7 +371,7 @@
              align="center" bgcolor="#3DEAB9" role="presentation" style="border:none;border-radius:2px;color:#FFFFFF;cursor:auto;padding:15px 30px;" valign="middle"
           >
             <a
-               href="#" style="background:#3DEAB9;color:#FFFFFF;font-family:Open Sans;font-size:13px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;" target="_blank"
+               href="<%= candidature_agence_url(@candidature.token) %>" style="background:#3DEAB9;color:#FFFFFF;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;" target="_blank"
             >
               <strong>Voir son dossier</strong>
             </a>
@@ -381,24 +382,195 @@
               </td>
             </tr>
 
+      </table>
+
+      </div>
+
+          <!--[if mso | IE]>
+            </td>
+
+        </tr>
+
+                  </table>
+                <![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+
+      <!--[if mso | IE]>
+          </td>
+        </tr>
+      </table>
+
+      <table
+         align="center" border="0" cellpadding="0" cellspacing="0" style="width:600px;" width="600"
+      >
+        <tr>
+          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![endif]-->
+
+
+      <div  style="background:#FFFFFF;background-color:#FFFFFF;Margin:0px auto;max-width:600px;">
+
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#FFFFFF;background-color:#FFFFFF;width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style="direction:ltr;font-size:0px;padding:0 20px 20px 20px;text-align:center;vertical-align:top;"
+              >
+                <!--[if mso | IE]>
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td
+               style="vertical-align:top;width:224px;"
+            >
+          <![endif]-->
+
+      <div
+         class="mj-column-per-40 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+      >
+
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+      >
+
+            <tr>
+              <td
+                 align="left" style="font-size:0px;padding:0px;word-break:break-word;"
+              >
+
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;font-weight:300;line-height:24px;text-align:left;color:#000000;"
+      >
+        <p><strong>Le bien desiré: <%= @flat.name %></strong></p>
+            <p>Chambres: <%= @flat.nb_room %> | Surface: <%= @flat.surface %></
+p>
+            <p>Addresse: <%= @flat.address %> | Prix: <%= @flat.price %></p>
+      </div>
+
+              </td>
+            </tr>
+
+      </table>
+
+      </div>
+
+          <!--[if mso | IE]>
+            </td>
+
+            <td
+               style="vertical-align:top;width:224px;"
+            >
+          <![endif]-->
+
+      <div
+         class="mj-column-per-40 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+      >
+
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+      >
+
+            <tr>
+              <td
+                 align="center" vertical-align="middle" style="font-size:0px;padding:10px;word-break:break-word;"
+              >
+
+      <table
+         align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"
+      >
+        <tbody>
+          <tr>
+            <td  style="width:150px;">
+
+      <img
+         height="auto" src="<%= @flat.photo.url %>" style="border:0;padding:15px;display:block;outline:none;text-decoration:none;width:100%;" width="auto"
+      />
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+              </td>
+            </tr>
+
+      </table>
+
+      </div>
+
+          <!--[if mso | IE]>
+            </td>
+
+        </tr>
+
+                  </table>
+                <![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+
+      <!--[if mso | IE]>
+          </td>
+        </tr>
+      </table>
+
+      <table
+         align="center" border="0" cellpadding="0" cellspacing="0" style="width:600px;" width="600"
+      >
+        <tr>
+          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![endif]-->
+
+
+      <div  style="background:#FFFFFF;background-color:#FFFFFF;Margin:0px auto;max-width:600px;">
+
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#FFFFFF;background-color:#FFFFFF;width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style="direction:ltr;font-size:0px;padding:0 20px 20px 20px;text-align:center;vertical-align:top;"
+              >
+                <!--[if mso | IE]>
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td
+               style="vertical-align:top;width:448px;"
+            >
+          <![endif]-->
+
+      <div
+         class="mj-column-per-80 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+      >
+
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+      >
+
             <tr>
               <td
                  align="left" style="font-size:0px;padding:0px;padding-top:10px;word-break:break-word;"
               >
 
       <div
-         style="font-family:Open Sans;font-size:14px;font-weight:500;line-height:24px;text-align:left;color:#000000;"
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;font-weight:300;line-height:24px;text-align:left;color:#000000;"
       >
-        <p><strong>Le bien desiré:</strong></p>
-
-         <div class="row user-bien">
-            <% @user.flats.each do |flat| %>
-              <div class="col-xs-12">
-              <%= render 'shared/flat_card_agency', flat: flat %>
-              </div>
-            <% end %>
-        </div>
-
         <p><strong>Qui sommes nous?</strong></p>
         <p>Lalagence est une société qui facilite le depot de dossier entre les postulants locataire et les agences/proprietaires. Nous automatisons, fludifons et sécurisons le traitement des dossiers de location.</p>
         <p>Agence et locataire gagnent du temps et travaillent sereinement dans un milieu efficace, organisé et respectueux des règles de sécurités et de confidentielités.</p>
@@ -498,7 +670,7 @@
               >
 
       <div
-         style="font-family:Open Sans;font-size:16px;font-weight:600;line-height:24px;text-align:right;color:white;"
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:16px;font-weight:700;line-height:24px;text-align:right;color:white;"
       >
         Découvrez nos prestations sur
         <p>WWW.LALAGENCE.COM</p>
@@ -577,4 +749,3 @@
 
       </body>
     </html>
-

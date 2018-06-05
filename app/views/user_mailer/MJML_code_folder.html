@@ -1,0 +1,97 @@
+<%= candidature_agence_url(@candidature.token) %>
+<%= @flat.photo.url %>
+
+
+<mjml>
+  <mj-head>
+    <mj-title>Service location - Lalagence</mj-title>
+    <mj-font name="Open Sans" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet"></mj-font>
+    <mj-attributes>
+      <mj-all font-family: 'Open Sans', sans-serif;></mj-all>
+      <mj-text font-weight="300" font-size="16px" color="#000000" line-height="24px"></mj-text>
+      <mj-section padding="0px"></mj-section>
+    </mj-attributes>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+  </mj-head>
+
+  <mj-body background-color="#F2F2F2">
+    <mj-section padding="10px 0 20px 0">
+    </mj-section>
+    <mj-section padding="10px 0px 0 20px" background-color="#3DEAB9">
+      <mj-column width="35%">
+        <mj-text align="left" font-size="20px" color="white" font-weight="700"><i class="fas fa-key"></i> </mj-text>
+      </mj-column>
+      <mj-column width="100%">
+        <mj-text align="center" font-size="24px" font-weight="700" padding="0px"><a href="www.lalagence.com" style="color: white; text-decoration: none;">LaLAGENCE</a>
+        </mj-text>
+        <mj-text align="center" font-size="14px" padding="0px"><p style="color: white;" >La location nouvelle génération</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="10px 20px" background-color="#FFFFFF">
+      <mj-column>
+
+      </mj-column>
+    </mj-section>
+    <mj-section padding="0 20px 20px 20px" background-color="#FFFFFF">
+      <mj-column width="80%">
+        <mj-text align="left" padding-top="10px" font-size="14px" font-weight="300" padding="0px">
+          <p>Bonjour,</p>
+          <p>Votre client <strong><%= @user.first_name %> <%= @user.last_name %></strong> vous envoie son dossier complet à verifier pour le bien "<strong> <%= @flat.name %> , <%= @flat.nb_room %> chambres , <%= @flat.address %> , <%= @flat.surface %> , <%= @flat.price %> </strong>".</p>
+          <p>Notre plateforme, tiers de confiance entre agence/proprietaire et locataire, a verifié son dossier. Il est complet, ses revenus sont suffisants et ses pièces ont été verifiées et authentifiées. </p>
+
+          <div style="color:#3DEAB9;">
+            <p><strong>DOSSIER DE <%= @user.first_name.upcase %> <%= @user.last_name.upcase%>:</strong></p>
+          </div>
+
+
+          <p>Lien: <%= link_to "lalagence.com/candidature", candidature_agence_url(@candidature.token) %></p>
+          <p>Mot de passe pour voir le dossier: 1wst5*kl</p>
+        </mj-text>
+
+        <mj-button align="center" background-color="#3DEAB9" color="#FFFFFF" border-radius="2px" href="#insert-link" inner-padding="15px 30px" padding-bottom="20px" padding-top="30"><strong>Voir son dossier</strong></mj-button>
+
+    </mj-section>
+
+    <mj-section padding="0 20px 20px 20px" background-color="#FFFFFF">
+
+        <mj-column width="40%">
+          <mj-text align="left" font-size="14px" font-weight="300" padding="0px" list-style-type="none">
+            <p><strong>Le bien desiré: <%= @flat.name %></strong></p>
+            <p>Chambres: <%= @flat.nb_room %> | Surface: <%= @flat.surface %></
+p>
+            <p>Addresse: <%= @flat.address %> | Prix: <%= @flat.price %></p>
+          </mj-text>
+        </mj-column>
+
+        <mj-column width="40%">
+          <mj-image src="#insert-link" vertical-align="middle" padding="10px" width="150px" background-repeat="no-repeat"></mj-image>
+        </mj-column>
+
+    </mj-section>
+
+    <mj-section padding="0 20px 20px 20px" background-color="#FFFFFF">
+      <mj-column width="80%">
+        <mj-text align="left" padding-top="10px" font-size="14px" font-weight="300" padding="0px">
+        <p><strong>Qui sommes nous?</strong></p>
+        <p>Lalagence est une société qui facilite le depot de dossier entre les postulants locataire et les agences/proprietaires. Nous automatisons, fludifons et sécurisons le traitement des dossiers de location.</p>
+        <p>Agence et locataire gagnent du temps et travaillent sereinement dans un milieu efficace, organisé et respectueux des règles de sécurités et de confidentielités.</p>
+        <p><strong>L'equipe LaLAGENCE</strong></p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#3DEAB9" vertical-align="middle" background-size="cover" background-repeat="no-repeat">
+      <mj-column width="100%">
+        <mj-image src="http://nimus.de/share/tpl-card/lineshadow.png" alt="" align="center" border="none" padding="0px"></mj-image>
+        <mj-text align="right" color="white" padding="50px 40px 20px 40px" font-weight="700">Découvrez nos prestations sur
+        <p>WWW.LALAGENCE.COM</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="50px 0 0 0" background-color="#F2F2F2">
+    </mj-section>
+
+  </mj-body>
+</mjml>
