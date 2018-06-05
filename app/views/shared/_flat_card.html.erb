@@ -9,6 +9,7 @@
     <li> Superficie : <%=  candidature.url_flat.flat.surface %></li>
     <br>
     <span style="font-weight:bold; margin-top:10px;"><li>Prix : <%= candidature.url_flat.flat.price %></li> </span>
+    <li><%= link_to "Lien vers l'annonce", "#{candidature.url}", target: "_blank" %></li>
   </ul>
   </div>
     <div class="flat-card-pic" style="background-image: url('<%= cl_image_path candidature.url_flat.flat.photo %>');border-radius: 3px;">
