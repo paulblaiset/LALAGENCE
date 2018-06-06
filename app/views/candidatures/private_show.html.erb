@@ -1,5 +1,5 @@
 <body style="background-color:#FAFAFA">
-<div class="container_candidature_anonymesession">
+<div class="container_candidature_anonymesession_privateshow">
 
 
     <div class="col-xs-4">
@@ -34,13 +34,17 @@
         </div>
         <div class="row-mini">
           <ul class="contact_info">
-            <li>*number* garant(s)</li>
+            <li>1 garant(s)</li>
           </ul>
         </div>
         <div class="flat-details">
           <div class="row-apart">
             <ul class="contact_info">
-              <li>*Flat details*</li>
+                <ul>
+                  <% flat = @candidature.url_flat.flat %>
+                  <li>T<%=  flat.nb_room %> - <%=  flat.surface %> - <%=  flat.address %>
+                  <li><%=  flat.price %></li>
+                </ul>
             </ul>
           </div>
           <div class="row-apart">

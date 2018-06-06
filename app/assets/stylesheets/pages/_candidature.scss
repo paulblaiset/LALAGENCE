@@ -5,6 +5,13 @@
   width: 500px;
 }
 
+.container_candidature_anonymesession_privateshow {
+  display: flex;
+  margin-top: 50px;
+  width: 500px;
+  margin-left: 250px;
+}
+
 .mega-card-candidature {
 
   width:700px;
@@ -173,12 +180,15 @@ font-weight:bold;
 
 .mini-card-candidature {
   background-color: white;
+  border:1px solid #DEE6E5!important;
+  border-radius:5px!important;
 
   .avatar {
     height: 70px;
     width: 70px;
     margin-left: 50px;
     margin-bottom: 20px;
+    margin-top: 10px;
     img {
       height: 70px;
       width: 70px;
@@ -186,6 +196,8 @@ font-weight:bold;
   }
   .row-mini {
     font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
     li {
       display: inline;
     }
@@ -193,6 +205,9 @@ font-weight:bold;
   .flat-details {
     font-size: 10px;
     margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
@@ -207,8 +222,6 @@ font-weight:bold;
   margin-left: 100px;
   margin-bottom: 20px;
   color: $gray;
-  border:1px solid #DEE6E5!important;
-  border-radius:2px!important;
   position:relative;
   overflow: hidden;
 }
