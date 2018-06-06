@@ -1,0 +1,562 @@
+Searching 267 files for ".sidebar-logo-container .navbar-wagon-brand img"
+
+0 matches
+
+Searching 267 files for "navbar-wagon-brand img"
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/components/_navbar.scss:
+   22
+   23  /* Logo */
+   24: .navbar-wagon-brand img {
+   25    height: 50px;
+   26    max-width:none!important;
+
+1 match in 1 file
+
+
+Searching 267 files for "35px"
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/components/_navbar.scss:
+   23  /* Logo */
+   24  .sidebar-logo-container .navbar-wagon-brand img {
+   25:   height: 35px;
+   26:   width: 135px;
+   27  }
+   28
+   29  /* User Avatar */
+   30  .navbar-wagon .avatar {
+   31:   height: 35px;
+   32:   width: 35px;
+   33    border-radius: 50%;
+   34  }
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/components/_sidebar.scss:
+  130
+  131      img {
+  132:       height:35px;
+  133:       width:35px;
+  134      }
+  135
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/public/404.html:
+  176      position: absolute;
+  177      transform:rotate(-30deg);
+  178:     left:35px;
+  179    }
+  180
+  ...
+  182      position: absolute;
+  183      transform:rotate(30deg);
+  184:     right:35px;
+  185    }
+  186
+
+8 matches across 3 files
+
+
+Searching 267 files for "span"
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/components/_banner.scss:
+   32    color: white;
+   33  }
+   34: span.weak {
+   35    font-weight: lighter;
+   36  }
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/components/_datepicker.scss:
+    1: span.flatpickr-day.selected, span.flatpickr-day.selected:hover{
+    2    background: $light-green;
+    3    border-color: $light-green;
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/components/_flat_card.scss:
+   34    margin-bottom: 20px;
+   35
+   36:   span {
+   37      color:$light-green;
+   38    }
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/components/_navbar.scss:
+   91  color :$light-green;
+   92  }
+   93: span#navbar-wagon-menu{
+   94    display:inline-block;
+   95    background:#fff;
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/components/_sidebar.scss:
+  137  }
+  138
+  139: .profil-container .avatar span{
+  140    display:inline-block;
+  141    border-radius: 50%;
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/components/_tabs.scss.erb:
+    6    display: inline-block;
+    7    position: relative;
+    8:   span.title {
+    9      color:$light-green;
+   10      font-size: 14px;
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/components/step-progress-bar.scss:
+   10    margin:0 0 0 20px;
+   11  }
+   12: .step-progress-bar span{
+   13    position:absolute;
+   14    left:0;
+   ..
+   17    background:$light-green;
+   18  }
+   19: .step-progress-bar-finish span{
+   20    width:100%;
+   21  }
+   22: .step-progress-bar-begin span{
+   23   width:10%;
+   24  }
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/assets/stylesheets/pages/_candidature.scss:
+  137    }
+  138    p {
+  139:     span {
+  140        color:$light-green;
+  141      }
+  ...
+  157        margin-bottom: 5px;
+  158        font-size:16px;
+  159:       span {
+  160        color:$light-green;
+  161      }
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/agencies/show.html.erb:
+  171              <div class="situation-pro">
+  172                <h2>Situation Professionelle & fiscale</h2>
+  173:               <p> Poste : <span style="color:#01B878"> <%= user.job_name %> </span></p>
+  174:               <p> Salaire net mensuel : <span> <%=  user.salary_by_month %> €</span></p>
+  175                <% if user.work_situation %>
+  176:                 <p> Situation : <span> <%= user.work_situation %></span></p>
+  177                <% end %>
+  178                <% if user.first_day_of_work %>
+  179:                 <p> En poste depuis : <span><%=  user.first_day_of_work %></span></p>
+  180                <% end %>
+  181:               <p> Revenus annuels déclarés :<span> <%=  user.year_legal_income %> €</span></p>
+  182              </div>
+  183              <div class="situation-loca">
+  ...
+  194
+  195            <div class="guarantor">
+  196:             <h2>Présence de guarants : <span> Oui </span> (voir)</h2>
+  197            </div>
+  198
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/candidatures/edit.html.erb:
+    1  <div class="candidature-container">
+    2:   <h1>Votre Dossier <span class="step-progress-bar step-progress-bar-finish"><span></span></span></h1>
+    3    <div class="nav-pills-content">
+    4      <ul class="nav nav-pills">
+    5        <li>
+    6:         <span class="tab-btn tab-me"><%= image_tag "icon_renter_guy_off.png", alt: ""%>
+    7:           <span class="title">Moi</span>
+    8:         </span>
+    9        </li>
+   10        <li>
+   11:         <span class="tab-btn tab-guarantor"><%= image_tag "icon_guarantor_girl_off.png", alt: ""%><span class="title">Mon guarant n°1</span></span>
+   12        </li>
+   13        <li>
+   14:         <span class="tab-btn tab-valide"><%= image_tag "icon_complete_on.png", alt: ""%>
+   15:           <span class="title">Mon dossier</span>
+   16:         </span>
+   17        </li>
+   18      </ul>
+   ..
+   20    <div class="row-envoyer-apercu">
+   21      <div class="envoyez-le-container">
+   22:       <h3> <span style="font-weight: lighter;">Votre dossier est prêt. </span>Envoyez-le !</h3>
+   23        <p>Envoyer votre dossier à n'importe quelle agence.</p>
+   24        <%= render "form" %>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/candidatures/new.html.erb:
+    1  <div class="candidature-container">
+    2:   <h1>Votre Dossier <span class="step-progress-bar step-progress-bar-finish"><span></span></span></h1>
+    3    <div class="nav-pills-content">
+    4      <ul class="nav nav-pills">
+    5        <li>
+    6:         <span class="tab-btn tab-me"><%= image_tag "icon_renter_guy_off.png", alt: ""%>
+    7:           <span class="title">Moi</span>
+    8:         </span>
+    9        </li>
+   10        <li>
+   11:         <span class="tab-btn tab-guarantor"><%= image_tag "icon_guarantor_girl_off.png", alt: ""%><span class="title">Mon guarant n°1</span></span>
+   12        </li>
+   13        <li>
+   14:         <span class="tab-btn tab-valide"><%= image_tag "icon_complete_on.png", alt: ""%>
+   15:           <span class="title">Mon dossier</span>
+   16:         </span>
+   17        </li>
+   18      </ul>
+   ..
+   20    <div class="row-envoyer-apercu">
+   21      <div class="envoyez-le-container">
+   22:       <h3> <span style="font-weight: lighter;">Votre dossier est prêt. </span>Envoyez-le !</h3>
+   23        <p>Envoyer votre dossier à n'importe quelle agence.</p>
+   24        <%= render "form" %>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/candidatures/private_show.html.erb:
+  125          <div class="situation-pro">
+  126            <h2>Situation Professionelle & fiscale</h2>
+  127:           <p> Poste : <span style="color:#01B878"> <%= @user.job_name %> </span></p>
+  128:           <p> Salaire net mensuel : <span> <%=  @user.salary_by_month %> €</span></p>
+  129:           <p> Situation : <span> <%=  @user.work_situation %></span></p>
+  130:           <p> En poste depuis : <span><%=  @user.first_day_of_work %></span></p>
+  131:           <p> Revenus annuels déclarés :<span> <%=  @user.year_legal_income %> €</span></p>
+  132          </div>
+  133          <div class="situation-loca">
+  ...
+  139
+  140        <div class="guarantor">
+  141:         <h2>Présence de guarants : <span> Oui </span> (voir)</h2>
+  142        </div>
+  143
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/candidatures/useless_show.html.erb:
+   95          <div class="situation-pro">
+   96            <h2>Situation Professionelle & fiscale</h2>
+   97:           <p> Poste : <span style="color:#01B878"> <%= @user.job_name %> </span></p>
+   98:           <p> Salaire net mensuel : <span> <%=  @user.salary_by_month %> €</span></p>
+   99:           <p> Situation : <span> <%=  @user.work_situation %></span></p>
+  100:           <p> En poste depuis : <span><%=  @user.first_day_of_work %></span></p>
+  101:           <p> Revenus annuels déclarés :<span> <%=  @user.year_legal_income %> €</span></p>
+  102          </div>
+  103          <div class="situation-loca">
+  ...
+  109
+  110        <div class="guarantor">
+  111:         <h2>Présence de guarants : <span> Oui </span> (voir)</h2>
+  112        </div>
+  113
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/pages/home.html.erb:
+   19      <div class="col-xs-12 col-sm-4 col-icon-home">
+   20        <div class="col-icon-img"><%=image_tag("fileicon.png", alt: "")%></div>
+   21:       <div class="col-icon-title"><p><span style="font-weight:bold">Remplissez facilement votre dossier</span> <br> et chargez vos pièces</p></div>
+   22        <div class="col-icon-text"><p></p></div>
+   23      </div>
+   24      <div class="col-xs-12 col-sm-4 col-icon-home">
+   25        <div class="col-icon-img"><%=image_tag("secureicon.png", alt: "")%></div>
+   26:       <div class="col-icon-title"><p> Vos fichiers entièrement <span style="font-weight:bold">sécurisés et modifiables</span></p></div>
+   27        <div class="col-icon-text"><p></p></div>
+   28      </div>
+   29      <div class="col-xs-12 col-sm-4 col-icon-home">
+   30        <div class="col-icon-img"><%=image_tag("email-12.png", alt: "")%></div>
+   31:       <div class="col-icon-title"><p><span style="font-weight:bold">Envoyez à l'agence que vous voulez</span><br>quand vous le voulez.</p></div>
+   32        <div class="col-icon-text"><p></p></div>
+   33      </div>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_banner.html.erb:
+    1  <div class="banner">
+    2    <div class="banner-content">
+    3:     <h3>Ils parlent de nous<span class="weak"> en bien!</span></h3>
+    4      <div class="banner-links">
+    5      <%= image_tag "ilsParlentDeNous.png"%>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_carousel_home.html.erb:
+  157    <!-- Controls -->
+  158    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+  159:     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  160:     <span class="sr-only">Previous</span>
+  161    </a>
+  162    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+  163:     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  164:     <span class="sr-only">Next</span>
+  165    </a>
+  166  </div><!-- End-Carousel -->
+  ...
+  254    <!-- Controls -->
+  255    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+  256:     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  257:     <span class="sr-only">Previous</span>
+  258    </a>
+  259    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+  260:     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  261:     <span class="sr-only">Next</span>
+  262    </a>
+  263  </div><!-- End-Carousel -->
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_completebadge.html.erb:
+    1  <div class="dot-complete">
+    2:   <span class="dot">
+    3:     <span class="glyphicon glyphicon-ok"></span>
+    4:   </span>
+    5  </div>
+    6
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_fixnavbar.html.erb:
+   31              <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+   32            <% else %>
+   33:             <span id="navbar-wagon-menu" data-toggle="dropdown"><%= image_tag "icon_renter_guy_off.png", class: "avatar dropdown-toggle" %></span>
+   34            <% end %>
+   35            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_flashes.html.erb:
+    1  <% if notice %>
+    2    <div class="alert alert-info alert-dismissible" role="alert">
+    3:     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    4      <%= notice %>
+    5    </div>
+    .
+    7  <% if alert %>
+    8    <div class="alert alert-warning alert-dismissible" role="alert">
+    9:     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+   10      <%= alert %>
+   11    </div>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_flat_card.html.erb:
+    2    <div class="flat-card-info">
+    3    <div class="title-card">
+    4:    <span style="font-weight:bold; color:#01B878"><%= candidature.url_flat.flat.name %></span>
+    5    </div>
+    6    <ul>
+    .
+    9      <li> Superficie : <%=  candidature.url_flat.flat.surface %></li>
+   10      <br>
+   11:     <span style="font-weight:bold; margin-top:10px;"><li>Prix : <%= candidature.url_flat.flat.price %></li> </span>
+   12      <li><%= link_to "Lien vers l'annonce", "#{candidature.url}", target: "_blank" %></li>
+   13    </ul>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_flat_card_agency.html.erb:
+    2    <div class="flat-card-info">
+    3    <div class="title-card">
+    4:    <span style="font-weight:bold; color:#01B878"><%= flat.name %></span>
+    5      </div>
+    6      <ul>
+    .
+    9        <li> Superficie : <%=  flat.surface %></li>
+   10        <br>
+   11:       <span style="font-weight:bold; margin-top:10px;"><li> Prix : <%= flat.price %></li> </span>
+   12        <br>
+   13:       <span style="color:#01B878; padding-top:10px;"><li> <i class="far fa-user"></i> Nombre de candidature <%= flat.candidatures.length %></li></span>
+   14      </ul>
+   15    </div>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_form.html.erb:
+   11            <%= f.input :birthday_date, as: :string, placeholder:'Date de naissance',required: false, input_html: {class: "datepicker"} %>
+   12            <%= f.input :phone_number, placeholder:'Téléphone' %>
+   13:           <p> <span style="font-weight: bold">Photo de profile</span></p>
+   14              <%= f.input :photo, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   15              <% if @user.photo.present? %>
+   16:                 <span class="check"><i class='fa fa-check-circle'></i></span>
+   17                <% end %>
+   18            <%= f.input :photo, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   19          </div>
+   20          <div class="upload-container-step-1">
+   21:           <p> <span style="font-weight: bold">Carte d'identité ou passeport </span><br> en cours de validité</p>
+   22              <%= f.input :identity_card, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   23              <% if @user.identity_card.present? %>
+   24:                 <span class="check"><i class='fa fa-check-circle'></i></span>
+   25                <% end %>
+   26            <%= f.input :identity_card_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   ..
+   69          <div class="row-step-2-2">
+   70            <div class="contrat-step-2-2">
+   71:             <p> <span style="font-weight: bold">Contrat de travail</span><br> ou attestation employeur</p>
+   72              <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   73              <% if @user.employment_contract.present? %>
+   74:               <span class="check"><i class='fa fa-check-circle'></i></span>
+   75              <% end %>
+   76              <%= f.input :employment_contract_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   77            </div>
+   78            <div class="bulletin-step-2-2">
+   79:             <p style="margin-top:18px;"> <span style="font-weight: bold">Vos 3 derniers bulletins de salaire</span><br></p>
+   80              <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   81              <% if @user.pay_slip_1.present? %>
+   82:               <span class="check"><i class='fa fa-check-circle'></i></span>
+   83              <% end %>
+   84              <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   85              <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   86              <% if @user.pay_slip_2.present? %>
+   87:               <span class="check"><i class='fa fa-check-circle'></i></span>
+   88              <% end %>
+   89              <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   90              <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   91              <% if @user.pay_slip_3.present? %>
+   92:               <span class="check"><i class='fa fa-check-circle'></i></span>
+   93              <% end %>
+   94              <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   ..
+  106            <div class="quitanceetprice">
+  107              <div class="step-3-quittance">
+  108:               <p> <span style="font-weight: bold">Quittance de loyer</span></p>
+  109                <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+  110                <div style="padding-left:24px">
+  111                <%= f.input :actual_rent_price, placeholder:'Loyer actuel' %>
+  112                <% if @user.actual_rent_price.present? %>
+  113:               <span class="check"><i class='fa fa-check-circle'></i></span>
+  114              <% end %>
+  115                </div>
+  ...
+  123            <h3>4 - Situation fiscale</h3>
+  124            <%= f.input :year_legal_income, placeholder:'Revenus annuels' %>
+  125:           <p> <span style="font-weight: bold">Avis d'imposition</span><br></p>
+  126            <%= f.input :tax_notice, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+  127            <% if @user.tax_notice.present? %>
+  128:               <span class="check"><i class='fa fa-check-circle'></i></span>
+  129              <% end %>
+  130            <%= f.input :tax_notice_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_form_guarantor.html.erb:
+   20          </div>
+   21          <div class="upload-container-step-1">
+   22:           <p> <span style="font-weight: bold">Carte d'identité ou passeport </span><br> en cours de validité</p>
+   23            <%= f.input :identity_card, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   24            <% if @guarantor.identity_card.present? %>
+   25:             <span class="check"><i class='fa fa-check-circle'></i></span>
+   26            <% end %>
+   27            <%= f.input :identity_card_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   ..
+   41              </div>
+   42              <div class="upload-step-2-guarantor">
+   43:               <p> <span style="font-weight: bold">Contrat de travail</span><br> ou attestation employeur</p>
+   44                <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   45                <% if @guarantor.employment_contract.present? %>
+   46:                 <span class="check"><i class='fa fa-check-circle'></i></span>
+   47                <% end %>
+   48                <%= f.input :employment_contract_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   49
+   50:               <p style="margin-top:18px;"> <span style="font-weight: bold; ">Vos 3 derniers bulletins de salaire</span><br></p>
+   51                <div class="allpayslips">
+   52                  <div>
+   53                    <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   54                    <% if @guarantor.pay_slip_1.present? %>
+   55:                     <span class="check"><i class='fa fa-check-circle'></i></span>
+   56                    <% end %>
+   57                    <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   ..
+   60                    <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   61                    <% if @guarantor.pay_slip_2.present? %>
+   62:                     <span class="check"><i class='fa fa-check-circle'></i></span>
+   63                    <% end %>
+   64                    <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   ..
+   67                     <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   68                    <% if @guarantor.pay_slip_3.present? %>
+   69:                     <span class="check"><i class='fa fa-check-circle'></i></span>
+   70                    <% end %>
+   71                    <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   ..
+   85            <div class="quitanceetprice">
+   86              <div class="step-3-quittance">
+   87:               <p> <span style="font-weight: bold">Dernire Quittance de loyer</span><br></p>
+   88                <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+   89                 <% if @guarantor.actual_rent_bill.present? %>
+   90:                 <span class="check"><i class='fa fa-check-circle'></i></span>
+   91                 <% end %>
+   92                 <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+   ..
+   96              </div>
+   97              <div class="step-3-rentalprice">
+   98:               <p> Dernière <span style="font-weight: bold"> Taxe foncière</span><br></p>
+   99                <%= f.input :property_tax, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+  100                 <% if @guarantor.property_tax.present? %>
+  101:                 <span class="check"><i class='fa fa-check-circle'></i></span>
+  102                <% end %>
+  103                <%= f.input :property_tax_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+  ...
+  108            <h3>4 - Situation fiscale</h3>
+  109            <%= f.input :year_legal_income, placeholder:'Revenus annuels' %>
+  110:           <p> <span style="font-weight: bold">Avis d'imposition</span><br></p>
+  111            <%= f.input :tax_notice, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+  112            <% if @guarantor.tax_notice.present? %>
+  113:             <span class="check"><i class='fa fa-check-circle'></i></span>
+  114            <% end %>
+  115            <%= f.input :tax_notice_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_incompletebadge.html.erb:
+    1  <div class="dot-incomplete">
+    2:   <span class="dot">!</span>
+    3  </div>
+    4
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_navbar.html.erb:
+   33              <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+   34            <% else %>
+   35:             <span id="navbar-wagon-menu" data-toggle="dropdown"><%= image_tag "icon_renter_guy_off.png", class: "avatar dropdown-toggle" %></span>
+   36            <% end %>
+   37            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/shared/_sidebar.html.erb:
+   51              <%= cl_image_tag current_user.photo %>
+   52            <% else %>
+   53:             <span><%= image_tag("icon_renter_guy_off.png") %></span>
+   54            <% end %>
+   55          </div>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/app/views/users/edit.html.erb:
+    1  <div class="profil-edit-container">
+    2:   <h1>Votre Dossier <span class="step-progress-bar step-progress-bar-begin"><span style="width: <%= @step == 1 ? "0" : "50"; %>%;"></span></span></h1>
+    3    <div class="add_a_guarantor">
+    4        <%= image_tag("add.png") %>
+    5:       <span>Ajouter un guarant</span>
+    6      </div>
+    7    <div class="nav-pills-content">
+    .
+   11            <%= link_to "#1a", class: "tab-btn tab-me", data: { toggle: "tab"} do %>
+   12              <%= image_tag "icon_renter_guy_off.png", alt: ""%>
+   13:             <span class="title">Moi</span>
+   14            <% end %>
+   15          </li>
+   ..
+   17            <%= link_to "#2a", class: "tab-btn tab-guarantor", data: {toggle: "tab"} do %>
+   18              <%= image_tag "icon_guarantor_girl_off.png", alt: ""%>
+   19:             <span class="title">Mon guarant n°1</span>
+   20            <% end %>
+   21          </li>
+   22          <li>
+   23:           <span class="tab-btn tab-valide"><%= image_tag "icon_complete_off.png", alt: ""%><span class="title">Mon dossier</span></span>
+   24          </li>
+   25        </ul>
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/config/initializers/simple_form.rb:
+   55      # b.use :input, class: 'input', error_class: 'is-invalid', valid_class: 'is-valid'
+   56      b.use :label_input
+   57:     b.use :hint,  wrap_with: { tag: :span, class: :hint }
+   58:     b.use :error, wrap_with: { tag: :span, class: :error }
+   59
+   60      ## full_messages_for
+   ..
+   62      # use the component :full_error, like:
+   63      #
+   64:     # b.use :full_error, wrap_with: { tag: :span, class: :error }
+   65    end
+   66
+   ..
+  104
+  105    # You can wrap each item in a collection of radio/check boxes with a tag,
+  106:   # defaulting to :span.
+  107:   # config.item_wrapper_tag = :span
+  108
+  109    # You can define a class to use in all item wrappers. Defaulting to none.
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/config/initializers/simple_form_bootstrap.rb:
+  245    #
+  246    # inline default_wrapper
+  247:   config.wrappers :inline_form, tag: 'span', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
+  248      b.use :html5
+  249      b.use :placeholder
+  ...
+  261
+  262    # inline input for boolean
+  263:   config.wrappers :inline_boolean, tag: 'span', class: 'form-check flex-wrap justify-content-start mr-sm-2', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
+  264      b.use :html5
+  265      b.optional :readonly
+
+/Users/Paul_Henri_Blaiset/code/paulblaiset/LALAGENCE/public/404.html:
+   82       }
+   83
+   84:      html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+   85       abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+   86       small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+   ..
+  437  <div class="text-container">
+  438    <div class="buttons-container">
+  439:     <a class="border-button" href="https://www.lalagence.com/" target="_blank"><span class="fa fa-home"></span> Home Page</a>
+  440    </div>
+  441  </div>
+
+214 matches across 30 files
