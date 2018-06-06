@@ -7,6 +7,7 @@
     <%= image_tag "logo.png", height: 15, class: 'logo-green hidden' %>
     </div>
   <% end %>
+
   </div>
 
   <!-- Right Navigation -->
@@ -20,6 +21,7 @@
         <% agency = Agency.find(agency_id) %>
         <%= link_to "Vos candidatures", agency_path(agency), class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "Vos biens", agency_flats_path(agency), class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Ajouter un bien", new_agency_flat_path(agency), class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
         <%= link_to "Mon dossier", edit_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "Ma sélection", "#", class: "navbar-wagon-item navbar-wagon-link" %>

@@ -27,7 +27,7 @@
       <% agency_id = User.find(current_user.id).agency_id %>
       <% agency = Agency.find(agency_id) %>
       <%= link_to "Vos candidatures", agency_path(agency)  %>
-      <%= link_to "Vos appartements", agency_flats_path(agency) %>
+      <%= link_to "Vos biens", agency_flats_path(agency) %>
       <%= link_to "Ajouter un appartement", new_agency_flat_path(agency) %>
     </div>
     <div class="side-bar-menu">

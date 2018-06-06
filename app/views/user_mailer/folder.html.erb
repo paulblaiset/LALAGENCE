@@ -356,13 +356,7 @@
           <p>Votre client <strong><%= @user.first_name %> <%= @user.last_name %></strong> vous envoie son dossier complet à verifier pour le bien "<strong> <%= @flat.name %> , <%= @flat.nb_room %> chambres , <%= @flat.address %> , <%= @flat.surface %> , <%= @flat.price %> </strong>".</p>
           <p>Notre plateforme, tiers de confiance entre agence/proprietaire et locataire, a verifié son dossier. Il est complet, ses revenus sont suffisants et ses pièces ont été verifiées et authentifiées. </p>
 
-          <div style="color:#00C78E;">
-            <p><strong>DOSSIER DE <%= @user.first_name.upcase %> <%= @user.last_name.upcase%>:</strong></p>
-          </div>
 
-
-          <p>Lien: <%= link_to "lalagence.com/candidature", candidature_agence_url(@candidature.token) %></p>
-          <p>Mot de passe pour voir le dossier: 1wst5*kl</p>
       </div>
 
               </td>
