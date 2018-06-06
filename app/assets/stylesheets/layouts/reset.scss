@@ -34,11 +34,13 @@ h1 {
 h3 {
   font-size:18px;
   font-weight: bold;
-  font-family: "Assistant"
+  font-family: "Assistant";
 }
 
 h4 {
-  font-family: "Assistant"
+  font-family: "Assistant";
+  font-size:30px;
+  color:$light-green;
 }
 
 input.form-control{

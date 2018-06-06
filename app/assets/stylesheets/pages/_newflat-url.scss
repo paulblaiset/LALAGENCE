@@ -1,0 +1,30 @@
+
+.container_new_url_page {
+  margin-top: 50px;
+  margin-left :50px;
+  width: 800px;
+  min-height:80vh;
+}
+
+.urls-input {
+  flex : 0 0 35%;
+  margin-right: 50px;
+
+  .form-control {
+    height: 27px;
+    font-size: 12px;
+    border-radius: 50px;
+  }
+}
+
+.contenu-url-apercu {
+display:flex;
+padding-top:20px;
+}
+
+
+.btoun-rose-cool {
+  .create {
+margin-top:20px;
+}
+}
