@@ -20,7 +20,7 @@ class GuarantorsController < ApplicationController
     authorize @guarantor
     @guarantor.update(guarantor_params)
     @guarantor = @guarantor.reload
-    if @guarantor.has_required_field?
+    if @guarantor
       @candidature = current_user.candidatures.last
       redirect_to edit_user_candidature_path(current_user, @candidature)
     end

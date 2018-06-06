@@ -80,6 +80,8 @@ skip_before_action :authenticate_user!, only: [:show, :candidatures, :private_sh
   def private_show
     @candidature = Candidature.find_by(token: params[:token] )
     @user = @candidature.user
+    @flat = @candidature.url_flat.flat
+
     authorize @candidature
   end
 

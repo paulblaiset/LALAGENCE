@@ -102,7 +102,7 @@
       <div class="mega-card-candidature tab-content">
 
       <% @candidatures.each_with_index do |candidature, i| %>
-      <% user = candidature.user %>
+        <% user = candidature.user %>
         <div class="tab-pane <%= i == 0 ? 'active' : '' %>" id="candidature-<%= candidature.id %>">
           <div class="row-button-and-contact">
             <div class="avat_contact">
@@ -142,18 +142,17 @@
             <div class="buttons-container">
               <% if candidature.status == "pending" %>
                 <div class="accept-reject">
-                  <div class="btoun-green-cool accept" > <%= link_to 'Accept', validate_path(candidature), method: :patch %>
+                  <div class="btoun-green-cool accept" > <%= link_to 'Accepter', validate_path(candidature), method: :patch %>
                   </div>
-                  <div class="btoun-rose-cool reject" > <%= link_to 'Decline', decline_path(candidature), method: :patch %>
+                  <div class="btoun-rose-cool reject" > <%= link_to 'Refuser', decline_path(candidature), method: :patch %>
                   </div>
                 </div>
-              <% elsif candidature.status == "validate" %>
-                <div><div class="btoun-green-cool accept" > Accepted</div></div>
-              <% else %>
-                <div><div class="btoun-rose-cool reject" > Declined </div></div>
-              <% end %>
-              <div class="button-file">
-                <span><i class="fa fa-eye"></i>
+                <% elsif candidature.status == "validate" %>
+                  <div><div class="btoun-green-cool accept" > Acceptée </div></div>
+                <% else %>
+                  <div><div class="btoun-rose-cool reject" > Refusée </div></div>
+                <% end %>
+                <div class="button-file"><span><i class="fa fa-eye"></i>
                   <%= link_to "Voir pièces", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
                   <%= link_to "", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
                   <%= link_to "", cl_image_path(user.identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
@@ -167,7 +166,6 @@
               </div>
             </div>
           </div>
-
           <div class="commentaire">
             <h2>Son commentaire :</h2>
             <% if candidature.commentaire %>
