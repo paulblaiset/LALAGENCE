@@ -1,8 +1,10 @@
 <div style="background-color:#FAFAFA">
 
-<h3 style="padding:20px">Toutes les candidatures sur vos biens</h3>
-
+<div class="title-candidature-container">
+  <h4>Toutes les candidatures sur vos biens</h4>
+</div>
 <div class="container_candidature_anonymesession">
+
 
   <div class="row">
     <div class="tabs">
@@ -131,7 +133,7 @@
                   <%= link_to "", cl_image_path(user.tax_notice), data: {luminous: "true", title: "lightbox"} %>
 
               </div>
-              <%= link_to 'Download',download_path(user.id), class: 'btoun-bleu-cool seemore' %>
+              <%= link_to 'Download ',download_path(user.id), class: 'btoun-bleu-cool seemore' %>
             </div>
           </div>
 
