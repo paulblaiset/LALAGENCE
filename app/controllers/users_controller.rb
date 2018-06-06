@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = current_user
     (@user.guarantors.count > 1) ? @guarantor = @user.guarantors.where.not(mail: nil).first : @guarantor = @user.guarantors.first
     authorize @user
-    if @user.has_required_field?
+    if @user
       @step = 2
     else
       @step = 1
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if @user.agency_id
       @agency = Agency.find(current_user.agency_id)
       redirect_to agency_path(@agency)
-    elsif @user.has_required_field?
+    elsif @user
       @candidature = current_user.candidatures.create
       redirect_to edit_user_path(@user)
     else

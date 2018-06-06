@@ -111,15 +111,15 @@
             <div class="buttons-container">
               <% if candidature.status == "pending" %>
                 <div class="accept-reject">
-                  <div class="btoun-green-cool accept" > <%= link_to 'Accept', validate_path(candidature), method: :patch %>
+                  <div class="btoun-green-cool accept" > <%= link_to 'Accepter', validate_path(candidature), method: :patch %>
                   </div>
-                  <div class="btoun-rose-cool reject" > <%= link_to 'Decline', decline_path(candidature), method: :patch %>
+                  <div class="btoun-rose-cool reject" > <%= link_to 'Refuser', decline_path(candidature), method: :patch %>
                   </div>
                 </div>
                 <% elsif candidature.status == "validate" %>
-                  <div><div class="btoun-green-cool accept" > Accepted</div></div>
+                  <div><div class="btoun-green-cool accept" > Acceptée </div></div>
                 <% else %>
-                  <div><div class="btoun-rose-cool reject" > Declined </div></div>
+                  <div><div class="btoun-rose-cool reject" > Refusée </div></div>
                 <% end %>
 
                 <div class="btoun-bleu-cool seemore">
