@@ -98,7 +98,7 @@
       <div class="mega-card-candidature tab-content">
 
       <% @candidatures.each_with_index do |candidature, i| %>
-      <% user = candidature.user %>
+        <% user = candidature.user %>
         <div class="tab-pane <%= i == 0 ? 'active' : '' %>" id="candidature-<%= candidature.id %>">
           <div class="row-button-and-contact">
             <div class="avat_contact">
