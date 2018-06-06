@@ -28,15 +28,8 @@
                   <% end %>
                   <li>
                     <div class="rating-euro">
-                      <div class="rating"
-                        <% if user.work_situation == "SALARIÉ(E)" && user.guarantors.count > 1  %>
-                          <% i = 3 %>
-                        <% elsif user.work_situation == "SALARIÉ(E)" && user.guarantors.count == 1 %>
-                          <% i = 2 %>
-                        <% else %>
-                          <% i = 1 %>
-                        <% end %>
-                        <%= ("<i class='fa fa-star'></i>" * i).html_safe %>
+                      <div class="rating">
+                        <%= ("<i class='fa fa-star'></i>" * user.rating).html_safe %>
                       </div>
                       <div class="euro">
                         <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
@@ -114,14 +107,8 @@
                 <div class="rating-euro">
                   <p class="font-style:italic">Rating :</p>
                   <div class="rating">
-                  <% if user.work_situation == "SALARIÉ(E)" && user.guarantors.count > 1  %>
-                    <% i = 3 %>
-                  <% elsif user.work_situation == "SALARIÉ(E)" && user.guarantors.count == 1 %>
-                    <% i = 2 %>
-                  <% else %>
-                    <% i = 1 %>
-                  <% end %>
-                  <%= ("<i class='fa fa-star'></i>" * i).html_safe %>
+
+                  <%= ("<i class='fa fa-star'></i>" * user.rating).html_safe %>
                   </div>
                   <div class="euro">
                     <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
@@ -140,9 +127,9 @@
                   </div>
                 </div>
                 <% elsif candidature.status == "validate" %>
-                  <div><div class="btoun-green-cool accept" > Acceptée </div></div>
+                  <div>Acceptée <i class='fa fa-check-circle'></i></div>
                 <% else %>
-                  <div><div class="btoun-rose-cool reject" > Refusée </div></div>
+                  <div>Refusée <i class="fa fa-times"></i></div>
                 <% end %>
 
                 <div class="btoun-bleu-cool seemore">
