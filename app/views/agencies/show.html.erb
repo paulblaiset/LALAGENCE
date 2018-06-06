@@ -40,9 +40,24 @@
                   <% end %>
                 </ul>
               </div>
+              <div class="rating">
+              <% if user.work_situation == "SALARIÉ(E)" && user.guarantors.count > 1  %>
+                <% i = 3 %>
+              <% elsif user.work_situation == "SALARIÉ(E)" && user.guarantors.count == 1 %>
+                <% i = 2 %>
+              <% else %>
+                <% i = 1 %>
+              <% end %>
+              <%= ("<i class='fa fa-star'></i>" * i).html_safe %>
+            </div>
+            <div class="euro">
+              <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
+                <i class="fa fa-euro-sign"></i>
+              <% end %>
+            </div>
               <div class="row-mini">
                 <ul class="contact_info">
-                  <li>1 garant(s)</li>
+                  <li><%= user.guarantors.count %> garant(s)</li>
                 </ul>
               </div>
               <div class="flat-details">
@@ -144,6 +159,21 @@
               <h2>Situation Locative</h2>
               <p> Situation : <%= user.rental_status %> </p>
               <p> Loyer actuel : <%= user.actual_rent_price %> € </p>
+            </div>
+            <div class="rating">
+              <% if user.work_situation == "SALARIÉ(E)" && user.guarantors.count > 1  %>
+                <% i = 3 %>
+              <% elsif user.work_situation == "SALARIÉ(E)" && user.guarantors.count == 1 %>
+                <% i = 2 %>
+              <% else %>
+                <% i = 1 %>
+              <% end %>
+              <%= ("<i class='fa fa-star'></i>" * i).html_safe %>
+            </div>
+            <div class="euro">
+              <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
+                <i class="fa fa-euro-sign"></i>
+              <% end %>
             </div>
           </div>
 
