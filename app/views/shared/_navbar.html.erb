@@ -25,6 +25,7 @@
         <%= link_to "Mon dossier", edit_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "Ma sélection", "#", class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "Mon historique", user_candidatures_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Déposer un dossier", new_user_candidature_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
