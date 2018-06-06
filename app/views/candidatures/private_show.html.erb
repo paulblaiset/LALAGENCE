@@ -73,10 +73,18 @@
             <p><%=  candidature.commentaire %></p>
           <% end %>
         </div>
-
+      <div class="row-button-and-contact">
+        <div class="avat_contact">
+          <div class ="avatar">
+            <% if user.photo.present? %>
+              <%= cl_image_tag user.photo %>
+            <% else %>
+              <%= image_tag("icon_renter_guy_off.png") %>
+            <% end %>
+          </div>
         <div class="row-situ-pro-loca">
           <div class="situation-pro">
-            <h2>Situation Professionelle & fiscale</h2>
+            <h2>Situation Professionelle &amp; fiscale</h2>
             <p> Poste : <span style="color:#01B878"> <%= user.job_name %> </span></p>
             <p> Salaire net mensuel : <span> <%=  user.salary_by_month %> €</span></p>
             <% if user.work_situation %>
