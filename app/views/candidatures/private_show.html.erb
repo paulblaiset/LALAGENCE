@@ -82,7 +82,11 @@
       <div class="row-button-and-contact">
         <div class="avat_contact">
           <div class ="avatar">
-            <%= image_tag("avatar_phb.png") %>
+            <% if user.photo.present? %>
+              <%= cl_image_tag user.photo %>
+            <% else %>
+              <%= image_tag("icon_renter_guy_off.png") %>
+            <% end %>
           </div>
            <div class="rating-euro">
              <p class="font-style:italic">Rating :</p>
