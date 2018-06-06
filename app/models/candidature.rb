@@ -55,7 +55,6 @@ class Candidature < ApplicationRecord
     url_flat.save
 
     self.update_column(:url_flat_id, url_flat.id)
-    binding.pry
   end
 
 
