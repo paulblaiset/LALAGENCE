@@ -191,6 +191,21 @@ padding-right: 213px;
 .collection_radio_buttons {
   padding:11px;
   font-weight:lighter;
+  position: relative;
+  margin-right: 10px;
+  margin-left: 8px;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid $light-green;
+    border-radius: 50%;
+    position: absolute;
+    top: 13px;
+    left: -5px;
+  }
 
   #user_gender_monsieur {
     background-color:$light-green;
@@ -206,3 +221,10 @@ padding-right: 213px;
   display:flex;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked+label:before {
+  background: $light-green;
+}
