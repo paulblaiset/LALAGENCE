@@ -65,7 +65,7 @@
             <h2><%=  @user.first_name  %></h2>
             <h1><%=  @user.last_name  %></h1>
             <a><%=  @user.mail  %></a>
-            <a><%=  @user.birthday_date  %></a>
+            <p><%=  @user.birthday_date  %></p>
             <p><%=  @user.phone_number %></p>
           </div>
         </div>
@@ -115,10 +115,12 @@
 
       <div class="row-apercu-bien">
         <h2>LE BIEN</h2>
+        <div class="row user-bien">
+          <div class="col-xs-12">
+            <%= render 'shared/flat_card_agency', flat: candidature.url_flat.flat %>
+          </div>
+        </div>
       </div>
-
-      <!-- <a><%=  @user.work_situation  %> from <%=  @user.first_day_of_work%> </a>
-      <a><%=  @user.job_name  %> : <%=  @user.salary_by_month  %></a> -->
     </div>
   </div>
 </div>
