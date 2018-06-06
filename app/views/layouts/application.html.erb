@@ -31,7 +31,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-      <% if controller_name == 'sessions'||  controller_name =='candidatures' && action_name == 'show' || controller_name == 'registrations' %>
+      <% if controller_name == 'sessions'||  controller_name =='candidatures' && action_name == 'show' || controller_name == 'registrations' || controller_name =='candidatures' && action_name == 'private_show' %>
       <%= render 'shared/fixnavbar' %>
       <div class="container-navbar">
         <%= yield %>
@@ -44,7 +44,7 @@
       <%= render 'shared/banner' %>
       <%= render 'shared/footer' %>
     <% else %>
-      <%= render 'shared/sidebar' %>
+      <%= render 'shared/sidebar' if current_user %>
       <div class="container-rightofnavbar">
         <%= yield %>
       </div>

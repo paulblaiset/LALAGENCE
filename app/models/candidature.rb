@@ -29,7 +29,7 @@ class Candidature < ApplicationRecord
         @url_lbc = self.url
         @flat = ScrapLbc.new.create_flat_lbc(@url_lbc)
       else
-        @flat = Flat.new(title: "Url non trouvée")
+        @flat = Flat.new(name: "Url non trouvée")
       end
       @flat.save
     end
