@@ -16,6 +16,25 @@
             <% unless @user.birthday_date.nil? %>
               <strong><li><%=  ((Date.today - @user.birthday_date)/365).to_i %> ans</li></strong>
             <% end %>
+            <li>
+              <div class="rating-euro">
+                <div class="rating">
+                  <% if user.work_situation == "SALARIÉ(E)" && user.guarantors.count > 1  %>
+                    <% i = 3 %>
+                  <% elsif user.work_situation == "SALARIÉ(E)" && user.guarantors.count == 1 %>
+                    <% i = 2 %>
+                  <% else %>
+                    <% i = 1 %>
+                  <% end %>
+                  <%= ("<i class='fa fa-star'></i>" * i).html_safe %>
+                </div>
+                <div class="euro">
+                  <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
+                  <i class="fa fa-euro-sign"></i>
+                  <% end %>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
         <div class="row-mini">
@@ -65,12 +84,24 @@
           <div class ="avatar">
             <%= image_tag("avatar_phb.png") %>
           </div>
-          <div class="contact_info">
-            <h2><%=  @user.first_name  %></h2>
-            <h1><%=  @user.last_name  %></h1>
-            <a><%=  @user.mail  %></a>
-            <p><%=  @user.birthday_date  %></p>
-            <p><%=  @user.phone_number %></p>
+           <div class="rating-euro">
+             <p class="font-style:italic">Rating :</p>
+             <div class="rating">
+               <% if user.work_situation == "SALARIÉ(E)" && user.guarantors.count > 1  %>
+                <% i = 3 %>
+               <% elsif user.work_situation == "SALARIÉ(E)" && user.guarantors.count == 1 %>
+                <% i = 2 %>
+               <% else %>
+                <% i = 1 %>
+               <% end %>
+               <%= ("<i class='fa fa-star'></i>" * i).html_safe %>
+             </div>
+             <div class="euro">
+                <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
+                <i class="fa fa-euro-sign"></i>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
         <div class="buttons-container">

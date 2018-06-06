@@ -17,6 +17,19 @@
   margin-left: 250px;
 }
 
+.fa-star {
+  color:#ECBF40;
+}
+
+.fa-euro-sign {
+  color:#ECBF40;
+  margin-left:5px;
+}
+
+.rating-euro{
+  display:flex;
+}
+
 .mega-card-candidature {
 
   width:700px;
@@ -185,8 +198,6 @@ font-weight:bold;
 
 .mini-card-candidature {
   background-color: white;
-  border:1px solid #DEE6E5!important;
-  border-radius:5px!important;
 
   .avatar {
     height: 70px;
@@ -222,14 +233,31 @@ font-weight:bold;
 
 .mini-cards-container .tab {
   width: 200px;
-  height: 260px;
   background-color: white;
   margin-left: 100px;
   margin-bottom: 20px;
   color: $gray;
   position:relative;
   overflow: hidden;
+  border: 1px solid #e6e6e6;
 }
+
+.mini-cards-container a {
+
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+
+}
+
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #333333;
+    background-color: #E7E7E7;
+    border: 1px solid #ddd;
+    border-bottom-color: #e6e6e6;
+    cursor: default;
+  }
+
 .mini-cards-container .nav-tabs > li.active > a,
 .mini-cards-container .nav-tabs > li.active > a:hover,
 .mini-cards-container .nav-tabs > li.active > a:focus{

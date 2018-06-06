@@ -44,7 +44,7 @@ paul = User.create!(
   last_name: 'BLAISET',
   work_situation: 'SALARIÉ(E)',
   job_name: 'Developpeur',
-  salary_by_month: '2800 €',
+  salary_by_month: '5800 €',
   first_day_of_work: '2017-12-01',
   birthday_date: '1988-10-11',
   actual_rent_price: '1690€',
