@@ -1,14 +1,14 @@
 <section class="banner-home">
   <div class="form-container">
     <div class="form-container-inner">
-      <h1>Remplissez votre dossier de location une seule fois et envoyez le de manière sécurisée.</h1>
+      <h1>Remplissez votre dossier de location une seule fois et envoyez-le <br> de manière sécurisée.</h1>
       <% if current_user %>
       <div class="btn-medium" >
         <%= link_to "Créer mon dossier", edit_user_path(current_user) %>
       </div>
       <% else %>
       <div class="btn-medium" >
-        <%= link_to "Sign up/Sign in", new_user_registration_path %>
+        <%= link_to "Créer son dossier", new_user_registration_path %>
       </div>
       <% end %>
     </div>
@@ -18,17 +18,17 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-icon-home">
       <div class="col-icon-img"><%=image_tag("fileicon.png", alt: "")%></div>
-      <div class="col-icon-title"><p><span style="font-weight:bold">Remplissez facilement votre dossier</span> <br> et chargez vos pièces</p></div>
+      <div class="col-icon-title"><p><span style="font-weight:bold">Remplissez facilement votre dossier</span> <br> et chargez vos pièces.</p></div>
       <div class="col-icon-text"><p></p></div>
     </div>
     <div class="col-xs-12 col-sm-4 col-icon-home">
       <div class="col-icon-img"><%=image_tag("secureicon.png", alt: "")%></div>
-      <div class="col-icon-title"><p> Vos fichiers entièrement <span style="font-weight:bold">sécurisés et modifiables</span></p></div>
+      <div class="col-icon-title"><p> Vos fichiers entièrement <span style="font-weight:bold">sécurisés et modifiables.</span></p></div>
       <div class="col-icon-text"><p></p></div>
     </div>
     <div class="col-xs-12 col-sm-4 col-icon-home">
       <div class="col-icon-img"><%=image_tag("email-12.png", alt: "")%></div>
-      <div class="col-icon-title"><p><span style="font-weight:bold">Envoyez à l'agence que vous voulez</span><br>quand vous le voulez.</p></div>
+      <div class="col-icon-title"><p><span style="font-weight:bold">Envoyez-le à l'agence que vous voulez,</span><br>quand vous le voulez.</p></div>
       <div class="col-icon-text"><p></p></div>
     </div>
   </div>
