@@ -34,7 +34,9 @@ class Candidature < ApplicationRecord
       @flat.save
     end
     url_flat = @flat.url_flats.first
+
     if url_flat.nil?
+
       url_flat = UrlFlat.new(url_1: url, flat: @flat)
     else
       url_flat.flat = @flat
@@ -53,7 +55,7 @@ class Candidature < ApplicationRecord
     url_flat.save
 
     self.update_column(:url_flat_id, url_flat.id)
-
+    binding.pry
   end
 
 

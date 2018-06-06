@@ -54,7 +54,7 @@ class FlatsController < ApplicationController
       # end
     end
 
-
+    url_flat.update(url_2: params[:url_2], url_3: params[:url_3])
     url_flat.save
     redirect_to agency_flats_path(@flat.agency)
   end

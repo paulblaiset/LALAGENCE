@@ -6,8 +6,8 @@
     <div class='urls-input'>
     <%= simple_form_for [@agency, @flat] do |f|%>
       <%= f.input :url, placeholder: 'ex: https://www.orpi.com/annonce-location-appartement-t3-paris-20-75020-b-e0jyf7/' %>
-      <%= f.input :url, placeholder: 'ex: http://www.logic-immo.com/detail-location-20325fbf-3879-8eb9-2420-c7c7f92a8928.htm' %>
-      <%= f.input :url, placeholder: 'ex: https://www.leboncoin.fr/locations/1437041688.htm/?ca=12_s' %>
+      <%= text_field_tag :url_2, nil, placeholder: 'ex: https://www.orpi.com/annonce-location-appartement-t3-paris-20-75020-b-e0jyf7/' %>
+      <%= text_field_tag :url_3, nil, placeholder: 'ex: https://www.leboncoin.fr/locations/1437041688.htm/?ca=12_s' %>
 
       <%= f.button :submit, :class => 'btoun-rose-cool create' %>
     <% end %>
@@ -19,3 +19,4 @@
     </div>
   </div>
 </div>
+
