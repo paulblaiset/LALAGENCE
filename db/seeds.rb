@@ -44,7 +44,7 @@ paul = User.create!(
   last_name: 'BLAISET',
   work_situation: 'SALARIÉ(E)',
   job_name: 'Developpeur',
-  salary_by_month: '2800 €',
+  salary_by_month: '5800 €',
   first_day_of_work: '2017-12-01',
   birthday_date: '1988-10-11',
   actual_rent_price: '1690€',
@@ -53,12 +53,12 @@ paul = User.create!(
 
 paul.remote_identity_card_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201886/ID_Recto.jpg"
 paul.remote_employment_contract_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201614/contrat-de-travail-CDI_all.jpg"
-paul.remote_pay_slip_1_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_1_all.pdf"
-paul.remote_pay_slip_2_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_2_all.pdf"
-paul.remote_pay_slip_3_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_3_all.pdf"
+paul.remote_pay_slip_1_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_1_all.pdf.jpg"
+paul.remote_pay_slip_2_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_2_all.pdf.jpg"
+paul.remote_pay_slip_3_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_3_all.pdf.jpg"
 paul.remote_actual_rent_bill_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/Quittance-de-loyer_all.jpg"
 paul.remote_tax_notice_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528146744/mduzxuoqqdwqbznqhamb.jpg"
-
+paul.remote_photo_url = "https://res.cloudinary.com/dp4vga3rz/image/upload/v1528280783/IMG_2739_NB_Carr%C3%A9.jpg"
 paul.save
 
 
@@ -79,12 +79,12 @@ marie = User.create!(
 
 marie.remote_identity_card_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/ID_3_F.jpg"
 marie.remote_employment_contract_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201614/contrat-de-travail-CDI_all.jpg"
-marie.remote_pay_slip_1_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_1_all.pdf"
-marie.remote_pay_slip_2_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_2_all.pdf"
-marie.remote_pay_slip_3_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_3_all.pdf"
+marie.remote_pay_slip_1_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_1_all.pdf.jpg"
+marie.remote_pay_slip_2_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_2_all.pdf.jpg"
+marie.remote_pay_slip_3_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_3_all.pdf.jpg"
 marie.remote_actual_rent_bill_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/Quittance-de-loyer_all.jpg"
 marie.remote_tax_notice_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528146744/mduzxuoqqdwqbznqhamb.jpg"
-
+marie.remote_photo_url = "https://res.cloudinary.com/dp4vga3rz/image/upload/v1528280844/photo-1527578444645-85bbbb91d53c.jpg"
 marie.save
 
 
@@ -107,12 +107,12 @@ jack = User.create!(
 
 jack.remote_identity_card_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201614/ID_2.jpg"
 jack.remote_employment_contract_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201614/contrat-de-travail-CDI_all.jpg"
-jack.remote_pay_slip_1_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_1_all.pdf"
-jack.remote_pay_slip_2_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_2_all.pdf"
-jack.remote_pay_slip_3_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_3_all.pdf"
+jack.remote_pay_slip_1_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_1_all.pdf.jpg"
+jack.remote_pay_slip_2_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_2_all.pdf.jpg"
+jack.remote_pay_slip_3_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_3_all.pdf.jpg"
 jack.remote_actual_rent_bill_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/Quittance-de-loyer_all.jpg"
 jack.remote_tax_notice_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528146744/mduzxuoqqdwqbznqhamb.jpg"
-
+jack.remote_photo_url = "https://res.cloudinary.com/dp4vga3rz/image/upload/v1528280843/photo-1496345875659-11f7dd282d1d.jpg"
 jack.save
 
 puts "Paul Marie et Jack created"
@@ -130,7 +130,7 @@ f3.remote_photo_url = "https://static.orpi.com/images/ac3-media/estate-v2/office
 f3.save
 
 f2= Flat.create!(
-  name: 'F2 superb état',
+  name: 'F2 superbe état',
   nb_room: "2",
   address: "Paris 12",
   surface: "41m²",

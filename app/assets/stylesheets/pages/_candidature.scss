@@ -1,8 +1,33 @@
 
+.title-candidature-container {
+ padding-top: 50px;
+ padding-left: 82px;
+}
+
 .container_candidature_anonymesession {
   display: flex;
   margin-top: 50px;
   width: 500px;
+}
+
+.container_candidature_anonymesession_privateshow {
+  display: flex;
+  margin-top: 50px;
+  width: 500px;
+  margin-left: 250px;
+}
+
+.fa-star {
+  color:#ECBF40;
+}
+
+.fa-euro-sign {
+  color:#ECBF40;
+  margin-left:5px;
+}
+
+.rating-euro{
+  display:flex;
 }
 
 .mega-card-candidature {
@@ -174,6 +199,7 @@ font-weight:bold;
     width: 70px;
     margin-left: 50px;
     margin-bottom: 20px;
+    margin-top: 10px;
     img {
       height: 70px;
       width: 70px;
@@ -181,6 +207,8 @@ font-weight:bold;
   }
   .row-mini {
     font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
     li {
       display: inline;
     }
@@ -188,6 +216,9 @@ font-weight:bold;
   .flat-details {
     font-size: 10px;
     margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
@@ -197,16 +228,31 @@ font-weight:bold;
 
 .mini-cards-container .tab {
   width: 200px;
-  height: 260px;
   background-color: white;
   margin-left: 100px;
   margin-bottom: 20px;
   color: $gray;
-  border:1px solid #DEE6E5!important;
-  border-radius:2px!important;
   position:relative;
   overflow: hidden;
+  border: 1px solid #e6e6e6;
 }
+
+.mini-cards-container a {
+
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+
+}
+
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #333333;
+    background-color: #E7E7E7;
+    border: 1px solid #ddd;
+    border-bottom-color: #e6e6e6;
+    cursor: default;
+  }
+
 .mini-cards-container .nav-tabs > li.active > a,
 .mini-cards-container .nav-tabs > li.active > a:hover,
 .mini-cards-container .nav-tabs > li.active > a:focus{
