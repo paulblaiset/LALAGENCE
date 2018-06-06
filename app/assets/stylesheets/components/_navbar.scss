@@ -90,21 +90,8 @@
 .fa {
 color :$light-green;
 }
-
-
-.surlign-link:after {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: 0px;
-    width: 28%;
-    height: 7px;
-    background-color: #2684E2;
-    z-index: -1;
-  }
-
-.surlign-link {
-    position: relative;
-    margin-bottom: 2em;
-    font-weight: 900;
-    z-index: 1; }
+span#navbar-wagon-menu{
+  display:inline-block;
+  background:#fff;
+  border-radius:50%;
+}

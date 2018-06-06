@@ -16,6 +16,7 @@ class User < ApplicationRecord
   mount_uploader :pay_slip_3, PhotoUploader
   mount_uploader :actual_rent_bill, PhotoUploader
   mount_uploader :tax_notice, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 
  def has_required_field?
     self.gender && self.first_name && self.last_name && self.email && self.phone_number &&

@@ -10,6 +10,12 @@
           <%= f.input :last_name, placeholder:'Nom' %>
           <%= f.input :birthday_date, as: :string, placeholder:'Date de naissance',required: false, input_html: {class: "datepicker"} %>
           <%= f.input :phone_number, placeholder:'Téléphone' %>
+          <p> <span style="font-weight: bold">Photo de profile</span></p>
+            <%= f.input :photo, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <% if @user.photo.present? %>
+                <span class="check"><i class='fa fa-check-circle'></i></span>
+              <% end %>
+          <%= f.input :photo, as: :hidden, input_html: { class: 'custom-file-input' } %>
         </div>
         <div class="upload-container-step-1">
           <p> <span style="font-weight: bold">Carte d'identité ou passeport </span><br> en cours de validité</p>

@@ -47,7 +47,11 @@
       </div>
       <div class="profil-container">
         <div class ="avatar">
-          <%= image_tag("avatar_phb.png") %>
+          <% if current_user.photo.present? %>
+            <%= cl_image_tag current_user.photo %>
+          <% else %>
+            <span><%= image_tag("icon_renter_guy_off.png") %></span>
+          <% end %>
         </div>
         <div class="avatar-info">
           <% if current_user&.first_name %>
