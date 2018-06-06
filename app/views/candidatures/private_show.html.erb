@@ -1,32 +1,31 @@
-<body style="background-color:#FAFAFA">
-<div class="container_candidature_anonymesession_privateshow">
-
-
-    <div class="col-xs-4">
-      <div class="mini-card-candidature">
-        <div class="row">
-          <div class ="avatar">
-            <%= image_tag("avatar_phb.png") %>
-          </div>
-        </div>
-        <div class="row-mini">
-          <ul class="contact_info">
-            <strong><li><%=  @user.last_name  %></li></strong>
-            <strong><li><%=  @user.first_name[0]  %>.</li></strong>
-            <% unless @user.birthday_date.nil? %>
-              <strong><li><%=  ((Date.today - @user.birthday_date)/365).to_i %> ans</li></strong>
-            <% end %>
-            <li>
+<% user = @user %>
+<% candidature = @candidature %>
+<div class="mega-cards-container">
+ <div class="col-xs-12">
+    <div class="mega-card-candidature tab-content">
+      <div id="candidature-<%= candidature.id %>">
+        <div class="row-button-and-contact">
+          <div class="avat_contact">
+            <div class ="avatar">
+              <%= image_tag("avatar_phb.png") %>
+            </div>
+            <div class="contact_info">
+              <h2><%=  user.first_name  %></h2>
+              <h1><%=  user.last_name  %></h1>
+              <a><%=  user.mail  %></a>
+              <p><%=  user.birthday_date  %></p>
+              <p><%=  user.phone_number %></p>
               <div class="rating-euro">
+                <p class="font-style:italic">Rating :</p>
                 <div class="rating">
-                  <% if user.work_situation == "SALARIÉ(E)" && user.guarantors.count > 1  %>
-                    <% i = 3 %>
-                  <% elsif user.work_situation == "SALARIÉ(E)" && user.guarantors.count == 1 %>
-                    <% i = 2 %>
-                  <% else %>
-                    <% i = 1 %>
-                  <% end %>
-                  <%= ("<i class='fa fa-star'></i>" * i).html_safe %>
+                <% if user.work_situation == "SALARIÉ(E)" && user.guarantors.count > 1  %>
+                  <% i = 3 %>
+                <% elsif user.work_situation == "SALARIÉ(E)" && user.guarantors.count == 1 %>
+                  <% i = 2 %>
+                <% else %>
+                  <% i = 1 %>
+                <% end %>
+                <%= ("<i class='fa fa-star'></i>" * i).html_safe %>
                 </div>
                 <div class="euro">
                   <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
@@ -34,132 +33,94 @@
                   <% end %>
                 </div>
               </div>
-            </li>
-          </ul>
-        </div>
-        <div class="row-mini">
-          <ul class="contact_info">
-            <li>€<%=  (@user.salary_by_month).to_i %></li>
-            <li> / <%= @user.job_name %></li>
-          </ul>
-        </div>
-        <div class="row-mini">
-          <ul class="contact_info">
-            <li><%=  @user.work_situation %></li>
-            <% unless @user.birthday_date.nil?  %>
-              <li> depuis <%= ((Date.today - @user.first_day_of_work)/31).to_i %> mois</li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="row-mini">
-          <ul class="contact_info">
-            <li>1 garant(s)</li>
-          </ul>
-        </div>
-        <div class="flat-details">
-          <div class="row-apart">
-            <ul class="contact_info">
-                <ul>
-                  <% flat = @candidature.url_flat.flat %>
-                  <li>T<%=  flat.nb_room %> - <%=  flat.surface %> - <%=  flat.address %>
-                  <li><%=  flat.price %></li>
-                </ul>
-            </ul>
+            </div>
           </div>
-          <div class="row-apart">
-            <ul class="contact_info">
-              <% candidature = Candidature.find_by(token: params[:token]) %>
-              <strong><li>Déposé depuis le <%= candidature.created_at.strftime("%d/%m/%y") %></li></strong>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <div class="col-xs-8">
-    <div class="mega-card-candidature">
-
-      <div class="row-button-and-contact">
-        <div class="avat_contact">
-          <div class ="avatar">
-            <%= image_tag("avatar_phb.png") %>
-          </div>
-           <div class="rating-euro">
-             <p class="font-style:italic">Rating :</p>
-             <div class="rating">
-               <% if user.work_situation == "SALARIÉ(E)" && user.guarantors.count > 1  %>
-                <% i = 3 %>
-               <% elsif user.work_situation == "SALARIÉ(E)" && user.guarantors.count == 1 %>
-                <% i = 2 %>
-               <% else %>
-                <% i = 1 %>
-               <% end %>
-               <%= ("<i class='fa fa-star'></i>" * i).html_safe %>
-             </div>
-             <div class="euro">
-                <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
-                <i class="fa fa-euro-sign"></i>
-                <% end %>
+          <div class="buttons-container">
+            <% if candidature.status == "pending" %>
+              <div class="accept-reject">
+                <div class="btoun-green-cool accept" > <%= link_to 'Accept', validate_path(candidature), method: :patch %>
+                </div>
+                <div class="btoun-rose-cool reject" > <%= link_to 'Decline', decline_path(candidature), method: :patch %>
+                </div>
               </div>
+            <% elsif candidature.status == "validate" %>
+              <div>
+                <div class="btoun-green-cool accept" > Accepted</div>
+              </div>
+            <% else %>
+              <div>
+                <div class="btoun-rose-cool reject" > Declined </div>
+              </div>
+            <% end %>
+
+            <div class="btoun-bleu-cool seemore">
+              <%= link_to "voir pièces", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
+              <%= link_to "", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
+              <%= link_to "", cl_image_path(user.identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
+              <%= link_to "", cl_image_path(user.pay_slip_1), data: {luminous: "true", title: "luminous"} %>
+              <%= link_to "", cl_image_path(user.pay_slip_2), data: {luminous: "true", title: "luminous"} %>
+              <%= link_to "", cl_image_path(user.pay_slip_3), data: {luminous: "true", title: "luminous"} %>
+              <%= link_to "", cl_image_path(user.actual_rent_bill), data: {luminous: "true", title: "luminous"} %>
+              <%= link_to "", cl_image_path(user.tax_notice), data: {luminous: "true", title: "lightbox"} %>
             </div>
+            <%= link_to 'Download ',download_path(user.id), class: 'btoun-bleu-cool seemore' %>
           </div>
         </div>
-        <div class="buttons-container">
-          <div class="accept-reject">
-            <div class="btoun-green-cool accept" > Accept
-            </div>
-            <div class="btoun-rose-cool reject" > Decline
-            </div>
+
+        <div class="commentaire">
+          <h2>Son commentaire :</h2>
+          <% if candidature.commentaire %>
+            <p><%=  candidature.commentaire %></p>
+          <% end %>
+        </div>
+
+        <div class="row-situ-pro-loca">
+          <div class="situation-pro">
+            <h2>Situation Professionelle & fiscale</h2>
+            <p> Poste : <span style="color:#01B878"> <%= user.job_name %> </span></p>
+            <p> Salaire net mensuel : <span> <%=  user.salary_by_month %> €</span></p>
+            <% if user.work_situation %>
+              <p> Situation : <span> <%= user.work_situation %></span></p>
+            <% end %>
+            <% if user.first_day_of_work %>
+              <p> En poste depuis : <span><%=  user.first_day_of_work %></span></p>
+            <% end %>
+            <p> Revenus annuels déclarés :<span> <%=  user.year_legal_income %> €</span></p>
           </div>
-          <div class="btoun-bleu-cool seemore" style="width:110px"> See pieces
+          <div class="situation-loca">
+            <h2>Situation Locative</h2>
+            <p> Situation : <%= user.rental_status %> </p>
+            <p> Loyer actuel : <%= user.actual_rent_price %> € </p>
+          </div>
+          <div class="euro">
+            <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
+              <i class="fa fa-euro-sign"></i>
+            <% end %>
           </div>
         </div>
-      </div>
 
-      <div class="commentaire">
-        <h2>Son commentaire :</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.</p>
-      </div>
-
-      <div class="row-situ-pro-loca">
-        <div class="situation-pro">
-          <h2>Situation Professionelle & fiscale</h2>
-          <p> Poste : <span style="color:#01B878"> <%= @user.job_name %> </span></p>
-          <p> Salaire net mensuel : <span> <%=  @user.salary_by_month %> €</span></p>
-          <p> Situation : <span> <%=  @user.work_situation %></span></p>
-          <p> En poste depuis : <span><%=  @user.first_day_of_work %></span></p>
-          <p> Revenus annuels déclarés :<span> <%=  @user.year_legal_income %> €</span></p>
+        <div class="guarantor">
+          <h2>Présence de guarants : <span> Oui </span> (voir)</h2>
         </div>
-        <div class="situation-loca">
-          <h2>Situation Locative</h2>
-          <p> Situation : <%= @user.rental_status %> </p>
-          <p> Loyer actuel : <%= @user.actual_rent_price %> € </p>
-        </div>
-      </div>
 
-      <div class="guarantor">
-        <h2>Présence de guarants : <span> Oui </span> (voir)</h2>
-      </div>
-
-      <div class="wrapper">
-        <div class ="icon-secure">
+        <div class="wrapper">
+          <div class ="icon-secure">
             <%= image_tag("secureicon.png") %>
           </div>
           <p> TOUTES LES PIECES DE CE DOSSIER SONT LISIBLES ET STOCKÉES DE MANIERE 100% SECURISÉE</p>
-      </div>
+        </div>
 
-      <div class="row-apercu-bien">
-        <h2>LE BIEN</h2>
-        <div class="row user-bien">
-          <div class="col-xs-12">
-            <%= render 'shared/flat_card_agency', flat: candidature.url_flat.flat %>
+        <div class="row-apercu-bien">
+          <h2>LE BIEN</h2>
+
+          <div class="row user-bien">
+            <div class="col-xs-12">
+              <%= render 'shared/flat_card_agency', flat: candidature.url_flat.flat %>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-</body>
-
-
-
