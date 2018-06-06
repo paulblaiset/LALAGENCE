@@ -130,7 +130,7 @@ f3.remote_photo_url = "https://static.orpi.com/images/ac3-media/estate-v2/office
 f3.save
 
 f2= Flat.create!(
-  name: 'F2 superb état',
+  name: 'F2 superbe état',
   nb_room: "2",
   address: "Paris 12",
   surface: "41m²",

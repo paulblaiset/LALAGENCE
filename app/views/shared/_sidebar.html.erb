@@ -1,4 +1,4 @@
-<% if current_user.agency_id %>
+<% if current_user&.agency_id %>
   <div id="mySidenav" class="sidenav-agency">
     <div class="sidebar-logo-container">
       <div>
@@ -50,21 +50,21 @@
           <%= image_tag("avatar_phb.png") %>
         </div>
         <div class="avatar-info">
-          <% if current_user.first_name %>
-            <%= current_user.first_name %><br><%= current_user.last_name %>
+          <% if current_user&.first_name %>
+            <%= current_user&.first_name %><br><%= current_user&.last_name %>
           <% else %>
-            <%= current_user.email %>
+            <%= current_user&.email %>
           <% end %>
         </div>
       </div>
       <div class="name"></div>
       <div class="side-bar-menu">
-        <div class="surlignlink">
-          <%= link_to "Mon dossier", edit_user_path(current_user) %>
-          <%= link_to "Ma sélection", '#' %>
-          <%= link_to "Mon historique", user_candidatures_path(current_user) %>
-          <%= link_to "Déposer son dossier", new_user_candidature_path(current_user) %>
-        </div>
+      <% if current_user %>
+        <%= link_to "Mon dossier", edit_user_path(current_user) %>
+        <%= link_to "Ma sélection", '#' %>
+        <%= link_to "Mon historique", user_candidatures_path(current_user) %>
+        <%= link_to "Déposer son dossier", new_user_candidature_path(current_user) %>
+      <% end  %>
       </div>
     <div class="side-bar-menu">
        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, style:"font-size:12px;text-align:center;color:#1E2939;margin-right:30px" %>
