@@ -42,6 +42,8 @@
       }
     .avatar-info{
       padding:10px 0 0;
+      font-family: Assistant;
+      font-weight: bold;
     }
 }
 
@@ -113,8 +115,10 @@
 
 .side-bar-menu {
   margin-top: 75px;
-  a {font-weight:lighter;
-  }
+ a {
+  font-weight: semi-bold;
+  font-family: Assistant;
+ }
 }
 
 .sidebar-logo-container {
