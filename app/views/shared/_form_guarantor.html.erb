@@ -2,36 +2,49 @@
   <%= simple_form_for [@user, @guarantor] do |f|%>
     <div class="form-section">
       <div class="row-step-1">
-        <div class="champs-step-1-guarant">
-          <div class="premierrang">
-          <h3>1 - État civil</h3>
-          <%= f.collection_radio_buttons :gender, [['Monsieur', 'Monsieur'] ,['Madame', 'Madame']],:first, :last %>
-          <%= f.input :first_name, placeholder:'Prénom' %>
-          <%= f.input :last_name, placeholder:'Nom' %>
-          <%= f.input :birthday_date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder:'Date naissance' %>
-          <%= f.input :address,placeholder:'Adresse' %>
-          </div>
-          <div class="deuxiemerang">
-          <%= f.input :nationality, placeholder:'Nationality', error: 'Nationality is mandatory, please specify one' %>
-          <%= f.input :couple_status, placeholder:'En Couple? O/N' %>
-          <%= f.input :mail, placeholder:'Mail' %>
-          <%= f.input :child_number, placeholder:'Nombre enfants' %>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="champs-step-1-guarant">
+            <div class="premierrang">
+            <h3>1 - État civil</h3>
+            <div class="premierrang-radio-buttons">
+              <%= f.collection_radio_buttons :gender, [['Monsieur', 'Monsieur'] ,['Madame', 'Madame']],:first, :last %>
+            </div>
+            <%= f.input :first_name, placeholder:'Prénom' %>
+            <%= f.input :last_name, placeholder:'Nom' %>
+            <%= f.input :birthday_date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder:'Date naissance' %>
+            <%= f.input :address, as: :text, placeholder:'Adresse' %>
+            </div>
+            <div class="deuxiemerang">
+            <%= f.input :nationality, placeholder:'Nationality', error: 'Nationality is mandatory, please specify one' %>
+            <%= f.input :couple_status, placeholder:'En Couple? O/N' %>
+            <%= f.input :mail, placeholder:'Mail' %>
+            <%= f.input :child_number, placeholder:'Nombre enfants' %>
+            </div>
           </div>
         </div>
-        <div class="upload-container-step-1">
-          <p> <span style="font-weight: bold">Carte d'identité ou passeport </span><br> en cours de validité</p>
-          <%= f.input :identity_card, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-          <% if @guarantor.identity_card.present? %>
-            <span class="check"><i class='fa fa-check-circle'></i></span>
-          <% end %>
-          <%= f.input :identity_card_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+
+        <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+          <div class="upload-container-step-1">
+            <p> <span style="font-weight: bold">Carte d'identité ou passeport </span><br> en cours de validité</p>
+            <div class="upload-mini-container-photo">
+              <%= f.input :identity_card, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+              <div class="preview-name"><%= @guarantor.identity_card.file.filename if @guarantor.identity_card.present? %></div>
+              <% if @guarantor.identity_card.present? %>
+                <span class="check"><i class='fa fa-check-circle'></i></span>
+              <% end %>
+            </div>
+            <%= f.input :identity_card_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+          </div>
         </div>
       </div>
     </div> <!-- End-Section -->
     <div class="form-section">
       <div class="row-step-2">
-          <h3>2 - Situation professionnelle</h3>
-          <div class="row-step-2-1">
+
+        <h3>2 - Situation professionnelle</h3>
+        <div class="row-step-2-1">
+          <div class="col-xs-12 col-sm-4">
             <div class="champs-step-2-guarantor">
               <%= f.input :job_name, placeholder:'Profession' %>
               <%= f.input :employer,placeholder:'Employeur' %>
@@ -39,87 +52,119 @@
               <%= f.input :employer_phone_number, placeholder:'Téléphone employeur' %>
               <%= f.input :seniority, as: :hidden %>
             </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 col-sm-offset-2">
             <div class="upload-step-2-guarantor">
               <p> <span style="font-weight: bold">Contrat de travail</span><br> ou attestation employeur</p>
-              <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-              <% if @guarantor.employment_contract.present? %>
-                <span class="check"><i class='fa fa-check-circle'></i></span>
-              <% end %>
+              <div class="upload-mini-container-photo">
+                <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                <div class="preview-name"><%= @guarantor.employment_contract.file.filename if @guarantor.employment_contract.present? %></div>
+                <% if @guarantor.employment_contract.present? %>
+                  <span class="check"><i class='fa fa-check-circle'></i></span>
+                <% end %>
+              </div>
               <%= f.input :employment_contract_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-
               <p style="margin-top:18px;"> <span style="font-weight: bold; ">Vos 3 derniers bulletins de salaire</span><br></p>
               <div class="allpayslips">
                 <div>
-                  <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-                  <% if @guarantor.pay_slip_1.present? %>
-                    <span class="check"><i class='fa fa-check-circle'></i></span>
-                  <% end %>
+                  <div class="upload-mini-container-photo">
+                    <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                    <div class="preview-name"><%= @guarantor.pay_slip_1.file.filename if @guarantor.pay_slip_1.present? %></div>
+                    <% if @guarantor.pay_slip_1.present? %>
+                      <span class="check"><i class='fa fa-check-circle'></i></span>
+                    <% end %>
+                  </div>
                   <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
                 </div>
                 <div>
-                  <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-                  <% if @guarantor.pay_slip_2.present? %>
-                    <span class="check"><i class='fa fa-check-circle'></i></span>
-                  <% end %>
+                  <div class="upload-mini-container-photo">
+                    <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                    <div class="preview-name"><%= @guarantor.pay_slip_2.file.filename if @guarantor.pay_slip_2.present? %></div>
+                    <% if @guarantor.pay_slip_2.present? %>
+                      <span class="check"><i class='fa fa-check-circle'></i></span>
+                    <% end %>
+                  </div>
                   <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
                 </div>
                 <div>
-                   <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-                  <% if @guarantor.pay_slip_3.present? %>
-                    <span class="check"><i class='fa fa-check-circle'></i></span>
-                  <% end %>
+                  <div class="upload-mini-container-photo">
+                    <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                    <div class="preview-name"><%= @guarantor.pay_slip_3.file.filename if @guarantor.pay_slip_3.present? %></div>
+                    <% if @guarantor.pay_slip_3.present? %>
+                      <span class="check"><i class='fa fa-check-circle'></i></span>
+                    <% end %>
+                  </div>
                   <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="form-section">
       <div class="row-step-3-4">
-        <div class="step-3-container">
-          <h3>3 - Situation locative</h3>
-          <div class="step-3-locative-box">
-          <%= f.collection_radio_buttons :rental_status, [['Locataire', 'Locataire'] ,['Proprietaire', 'Proprietaire']],:first, :last %>
-          </div>
-          <div class="quitanceetprice">
-            <div class="step-3-quittance">
-              <p> <span style="font-weight: bold">Dernire Quittance de loyer</span><br></p>
-              <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-               <% if @guarantor.actual_rent_bill.present? %>
-                <span class="check"><i class='fa fa-check-circle'></i></span>
-               <% end %>
-               <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-              <div style="padding-left:24px">
-              <%= f.input :actual_rent_price, placeholder:'Loyer actuel' %>
+<!--         <div class="step-3-container"> -->
+          <div class="col-xs-12 col-sm-4">
+            <h3>3 - Situation locative</h3>
+            <div class="step-3-locative-box">
+            <%= f.collection_radio_buttons :rental_status, [['Locataire', 'Locataire'] ,['Proprietaire', 'Proprietaire']],:first, :last %>
+            </div>
+            <div class="quitanceetprice">
+              <div class="step-3-quittance">
+                <p> <span style="font-weight: bold">Dernière quittance de loyer</span><br></p>
+                <div class="upload-mini-container-photo">
+                  <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                  <div class="preview-name"><%= @guarantor.actual_rent_bill.file.filename if @guarantor.actual_rent_bill.present? %></div>
+                   <% if @guarantor.actual_rent_bill.present? %>
+                    <span class="check"><i class='fa fa-check-circle'></i></span>
+                   <% end %>
+                </div>
+                 <%= f.input :actual_rent_bill_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+                <div class="input-rent-price">
+                <%= f.input :actual_rent_price, placeholder:'Loyer actuel' %>
+                </div>
+              </div>
+              <div class="step-3-rentalprice">
+                <p> <span style="font-weight: bold"> Dernière taxe foncière</span><br></p>
+                <div class="upload-mini-container-photo">
+                  <%= f.input :property_tax, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                  <div class="preview-name"><%= @guarantor.property_tax.file.filename if @guarantor.property_tax.present? %></div>
+                   <% if @guarantor.property_tax.present? %>
+                    <span class="check"><i class='fa fa-check-circle'></i></span>
+                  <% end %>
+                </div>
+                <%= f.input :property_tax_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
               </div>
             </div>
-            <div class="step-3-rentalprice">
-              <p> Dernière <span style="font-weight: bold"> Taxe foncière</span><br></p>
-              <%= f.input :property_tax, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-               <% if @guarantor.property_tax.present? %>
+          </div>
+<!--         </div> -->
+
+
+<!--         <div class="step-4-container"> -->
+          <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+            <h3>4 - Situation fiscale</h3>
+            <%= f.input :year_legal_income, placeholder:'Revenus annuels' %>
+            <p> <span style="font-weight: bold">Avis d'imposition</span><br></p>
+            <div class="upload-mini-container-photo">
+              <%= f.input :tax_notice, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+              <div class="preview-name"><%= @guarantor.tax_notice.file.filename if @guarantor.tax_notice.present? %></div>
+              <% if @guarantor.tax_notice.present? %>
                 <span class="check"><i class='fa fa-check-circle'></i></span>
               <% end %>
-              <%= f.input :property_tax_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
             </div>
+            <%= f.input :tax_notice_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
           </div>
-        </div>
-        <div class="step-4-container">
-          <h3>4 - Situation fiscale</h3>
-          <%= f.input :year_legal_income, placeholder:'Revenus annuels' %>
-          <p> <span style="font-weight: bold">Avis d'imposition</span><br></p>
-          <%= f.input :tax_notice, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-          <% if @guarantor.tax_notice.present? %>
-            <span class="check"><i class='fa fa-check-circle'></i></span>
-          <% end %>
-          <%= f.input :tax_notice_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-        </div>
+<!--         </div> -->
+
       </div>
+    </div>
       <div class="bouton-container">
         <div class='bouton-update-user' >
           <%= f.button :submit,' Mettre à jour les champs  ', :class => 'btoun-rose-cool ' %>
         </div>
       </div>
-    </div>
   <% end %>
 </div>
