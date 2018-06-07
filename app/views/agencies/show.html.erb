@@ -74,7 +74,7 @@
                         <% flat = candidature.url_flat.flat %>
                         <li>
                           <p>T<%=  flat.nb_room %> - <%=  flat.surface %> - <%=  flat.address %></p>
-                          <p><%=  flat.price %></p>
+                          <p><%=  flat.price.to_i %>€</p>
                         </li>
                       </ul>
                   </ul>
