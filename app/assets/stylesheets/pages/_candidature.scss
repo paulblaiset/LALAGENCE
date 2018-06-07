@@ -6,7 +6,6 @@
 
 .container_candidature_anonymesession {
   display: flex;
-  margin-top: 50px;
   width: 500px;
 }
 
@@ -42,7 +41,7 @@
   border: 1px solid #DEE6E5;
   border-radius: 5px;
   padding:40px;
-  margin: 0 auto;
+  margin: 60px auto;
   margin-bottom: 30px;
 
   h1 {
@@ -232,7 +231,7 @@ font-weight:bold;
 .mini-cards-container .tab {
   width: 200px;
   background-color: white;
-  margin-left: 100px;
+  margin-left: 65px;
   margin-bottom: 20px;
   color: $gray;
   position:relative;
@@ -278,4 +277,48 @@ font-weight:bold;
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+// .blur-effect {
+//   width:100%;
+//   box-shadow: 0px 0px 40px 40px #000000;
+//   z-index: +1
+// }
+
+
+.fixscroll {
+  overflow: scroll;
+  height:120vh;
+  padding-top: 60px;
+}
+
+.blurscroll {
+height: 120vh;
+position:relative;
+}
+
+.blurscroll::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 90%;
+    left: 23px;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, #fafafa 80%);
+}
+
+.blurscroll::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 90%;
+    left: 23px;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    height: 80px;
+    background: linear-gradient(0, transparent, #fafafa 80%);
 }

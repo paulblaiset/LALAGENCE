@@ -8,6 +8,11 @@
       <% end %>
     </div>
     <div class="profil-container">
+      <div class ="avatar">
+          <% if current_user.photo.present? %>
+            <%= cl_image_tag current_user.photo %>
+          <% end %>
+        </div>
       <div class="avatar-info">
         Bonjour
         <% if current_user.first_name %>
@@ -19,7 +24,7 @@
       <div class="agence-bonjour">
         <% agency_id = User.find(current_user.id).agency_id %>
         <% agency = Agency.find(agency_id) %>
-       <p style="color:#01B878"> Agence  : <%= agency.name  %> </p>
+       <p style="color:#FF1326"> Agence  : <%= agency.name  %> </p>
       </div>
     </div>
     <div class="name"></div>
