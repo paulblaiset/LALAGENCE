@@ -21,8 +21,8 @@ orpi = Agency.create!(
 )
 
 michel = User.new(
-  email: 'michel@orpi.com',
-  password: 'password',
+  email: 'orpi.paris14@gmail.com',
+  password: 'lalagence.123',
   gender: 'male',
   first_name: 'Michel',
   last_name: 'Dubois',
@@ -32,6 +32,7 @@ michel = User.new(
   first_day_of_work: '2017-12-01',
   birthday_date: '1990-08-12'
 )
+michel.remote_photo_url = "https://res.cloudinary.com/dp4vga3rz/image/upload/v1528373172/orpi_logo.png"
 michel.agency = orpi
 michel.save
 
