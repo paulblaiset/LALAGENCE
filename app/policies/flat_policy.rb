@@ -5,6 +5,10 @@ class FlatPolicy < ApplicationPolicy
     end
   end
 
+  def show
+    user.agency
+  end
+
   def create?
     true
   end
