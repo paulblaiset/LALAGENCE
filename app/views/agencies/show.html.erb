@@ -178,11 +178,6 @@
               <p> Situation : <%= user.rental_status %> </p>
               <p> Loyer actuel : <%= user.actual_rent_price %> € </p>
             </div>
-            <div class="euro">
-              <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
-                <i class="fa fa-euro-sign"></i>
-              <% end %>
-            </div>
           </div>
 
           <div class="guarantor">
