@@ -248,14 +248,17 @@ font-weight:bold;
 }
 
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    color: #333333;
-    background-color: #E7E7E7;
-    border: 1px solid #ddd;
-    border-bottom-color: #e6e6e6;
-    cursor: default;
-  }
-
+.mini-cards-container .nav-tabs > li.active > a,
+.mini-cards-container .nav-tabs > li.active > a:hover,
+.mini-cards-container .nav-tabs > li.active > a:focus {
+  color: #333333;
+  background-color: #E7E7E7;
+  border: 1px solid #ddd;
+  cursor: default;
+}
+.mini-cards-container .nav-tabs > li > a:hover{
+  border: 1px solid #ddd;
+}
 .mini-cards-container .nav-tabs > li.active > a,
 .mini-cards-container .nav-tabs > li.active > a:hover,
 .mini-cards-container .nav-tabs > li.active > a:focus{
