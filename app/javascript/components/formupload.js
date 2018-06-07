@@ -1,4 +1,4 @@
-
+/* pour afficher le nom des fichiers sous l'icone après l'upload*/
 
 function showFileName( event ) {
   console.log(this.files[0].name);

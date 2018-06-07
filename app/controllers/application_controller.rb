@@ -31,12 +31,12 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(resource) #si on se connecte en mode agence, on arrive sur le dashboard agence, sinon sur l'edit user
     if resource.agency_id
       @agency_id = current_user.agency_id
       agency_flats_path(@agency_id)
     else
-      root_path
+      edit_user_path(current_user)
     end
   end
 

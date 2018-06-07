@@ -3,18 +3,23 @@ class Candidature < ApplicationRecord
   belongs_to :url_flat, optional: true
   after_save :scrap, if: :url_will_change!
   has_many :flats, through: :url_flat
-  after_create :create_token
-  validates :status, inclusion: { in: ["pending", "validate", "declined"] }
+  after_create :create_token #A la création d'une candidature, on lui affecte un token pour la private show
+  validates :status, inclusion: { in: ["pending", "validate", "declined"] } #les valeurs de status sont comprises dans l'array
 
 
   def create_token
-    token = SecureRandom.hex(10)
-    self.token = token
+    token = SecureRandom.hex(10) #on crée un token de 10 caractères au hasard
+    self.token = token #affectation du token à la candidature
     self.save
   end
 
 
   def scrap
+    #on a 3 url par flat (ex: leboncoin, logic-immo et orpi)
+    #on vérifie que l'url que rentre le particulier existe ou non dans la db
+    #si il existe dans la db, on a pas besoin de scrapper
+    # s'il n'existe pas dans la db, on scrap les infos de l'annonce sur orpi, logic-immo ou leboncoin et on crée un nouveau flat avec les infos
+
     return if url.nil?
     @url = self.url
     @flat = Flat.joins(:url_flats).where("url_flats.url_1 = ? OR url_flats.url_2 = ? OR url_flats.url_3 = ? ", @url, @url, @url).first

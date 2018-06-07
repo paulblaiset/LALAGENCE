@@ -7,7 +7,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  after_create :create_guarantor
+  after_create :create_guarantor #après la création d'un user, on génère automatiquement un guarantor
 
   mount_uploader :employment_contract, PhotoUploader
   mount_uploader :identity_card, PhotoUploader
@@ -29,7 +29,7 @@ class User < ApplicationRecord
     Guarantor.create(user_id: self.id)
   end
 
-  def rating
+  def rating #Pour savoir si les candidatures sont bonnes ou pas
     if work_situation == "SALARIÉ(E)" && guarantors.count > 1
       i = 3
     elsif work_situation == "SALARIÉ(E)" && guarantors.count == 1

@@ -1,11 +1,11 @@
 require 'zip'
 
 class AgenciesController < ApplicationController
-  skip_after_action :verify_authorized, only: [:download]
+  skip_after_action :verify_authorized, only: [:download] #Pas de vérification après le download
 
-  def show
+  def show #Pour afficher tous les appartements par agence, il faut trouver l'agence concernée et les candidatures associées
     @agency = Agency.find(params[:id])
-    authorize @agency
+    authorize @agency                    #authorize --> Gem Pundit (vérification des droits)
     @candidatures = @agency.candidatures
     @users = @candidatures.map(&:user)
     @flats = @agency.flats
