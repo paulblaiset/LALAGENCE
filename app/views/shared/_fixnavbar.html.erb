@@ -5,7 +5,6 @@
     <%= link_to root_path , class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 15 %>
     </div>
-    <p style="font-family: Assistant;color:$light-green">Lalagence</p>
   <% end %>
   </div>
 
@@ -46,7 +45,7 @@
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se déconnecter") %>
               <% end %>
             </li>
           </ul>
@@ -54,7 +53,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 

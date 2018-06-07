@@ -7,7 +7,11 @@
         <div class="row-button-and-contact">
           <div class="avat_contact">
             <div class ="avatar">
-              <%= image_tag("avatar_phb.png") %>
+              <% if user.photo.present? %>
+              <%= cl_image_tag user.photo %>
+              <% else %>
+                <%= image_tag("icon_renter_guy_off.png") %>
+              <% end %>
             </div>
             <div class="contact_info">
               <h2><%=  user.first_name  %></h2>
@@ -52,18 +56,19 @@
                 <div class="btoun-rose-cool reject" > Declined </div>
               </div>
             <% end %>
-
-            <div class="btoun-bleu-cool seemore">
-              <%= link_to "voir pièces", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
-              <%= link_to "", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
-              <%= link_to "", cl_image_path(user.identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
-              <%= link_to "", cl_image_path(user.pay_slip_1), data: {luminous: "true", title: "luminous"} %>
-              <%= link_to "", cl_image_path(user.pay_slip_2), data: {luminous: "true", title: "luminous"} %>
-              <%= link_to "", cl_image_path(user.pay_slip_3), data: {luminous: "true", title: "luminous"} %>
-              <%= link_to "", cl_image_path(user.actual_rent_bill), data: {luminous: "true", title: "luminous"} %>
-              <%= link_to "", cl_image_path(user.tax_notice), data: {luminous: "true", title: "lightbox"} %>
+            <div class="button-file">
+              <span><i class="fa fa-eye"></i>
+                <%= link_to "Voir pièces", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"}   %>
+                <%= link_to "", cl_image_path(user.employment_contract, width: 600), data: {luminous: "true", title: "luminous"} %>
+                <%= link_to "", cl_image_path(user.identity_card, width: 600), data: {luminous: "true", title: "luminous"} %>
+                <%= link_to "", cl_image_path(user.pay_slip_1), data: {luminous: "true", title: "luminous"} %>
+                <%= link_to "", cl_image_path(user.pay_slip_2), data: {luminous: "true", title: "luminous"} %>
+                <%= link_to "", cl_image_path(user.pay_slip_3), data: {luminous: "true", title: "luminous"} %>
+                <%= link_to "", cl_image_path(user.actual_rent_bill), data: {luminous: "true", title: "luminous"} %>
+                <%= link_to "", cl_image_path(user.tax_notice), data: {luminous: "true", title: "lightbox"} %>
+              </span>
+              <span><i class="fa fa-cloud-download-alt"></i> <%= link_to 'Télécharger ',download_path(user.id) %></span>
             </div>
-            <%= link_to 'Download ',download_path(user.id), class: 'btoun-bleu-cool seemore' %>
           </div>
         </div>
 
@@ -73,10 +78,9 @@
             <p><%=  candidature.commentaire %></p>
           <% end %>
         </div>
-
         <div class="row-situ-pro-loca">
           <div class="situation-pro">
-            <h2>Situation Professionelle & fiscale</h2>
+            <h2>Situation Professionelle &amp; fiscale</h2>
             <p> Poste : <span style="color:#01B878"> <%= user.job_name %> </span></p>
             <p> Salaire net mensuel : <span> <%=  user.salary_by_month %> €</span></p>
             <% if user.work_situation %>

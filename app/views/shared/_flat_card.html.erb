@@ -9,6 +9,7 @@
     <li> Superficie : <%=  candidature.url_flat.flat.surface %></li>
     <br>
     <span style="font-weight:bold; margin-top:10px;"><li>Prix : <%= candidature.url_flat.flat.price.to_i %>€</li> </span>
+    <br>
     <li><%= link_to "Lien vers l'annonce", "#{candidature.url}", target: "_blank" %></li>
   </ul>
   </div>

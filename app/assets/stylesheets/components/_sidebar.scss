@@ -42,6 +42,8 @@
       }
     .avatar-info{
       padding:10px 0 0;
+      font-family: Assistant;
+      font-weight: bold;
     }
 }
 
@@ -103,7 +105,7 @@
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {font-size: 18px;}
 }
 
 @media screen and (max-height: 450px) {
@@ -113,12 +115,13 @@
 
 .side-bar-menu {
   margin-top: 75px;
-  a {font-weight:lighter;
-  }
+ a {
+  font-weight: semi-bold;
+  font-family: Assistant;
+ }
 }
 
 .sidebar-logo-container {
-  max-width: 100%;
   display: flex;
   align-items: center;
   margin-left:30px;
@@ -127,11 +130,6 @@
     width:100%;
     text-align:center;
     padding-left:8px;
-
-    img {
-      height:35px;
-      width:35px;
-    }
 
     p { width:80px;
       padding:0px;

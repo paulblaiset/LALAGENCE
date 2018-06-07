@@ -29,4 +29,15 @@ class User < ApplicationRecord
     Guarantor.create(user_id: self.id)
   end
 
+  def rating
+    if work_situation == "SALARIÉ(E)" && guarantors.count > 1
+      i = 3
+    elsif work_situation == "SALARIÉ(E)" && guarantors.count == 1
+      i = 2
+    else
+      i = 1
+    end
+    return i
+  end
+
 end
