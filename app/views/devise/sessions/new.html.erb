@@ -4,7 +4,7 @@
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="form-login">
 
-        <h2>Log in</h2>
+        <h4>Se connecter </h4>
 
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
@@ -14,7 +14,7 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Log in" %>
+            <%= f.button :submit, "Se connecter" %>
           </div>
         <% end %>
 

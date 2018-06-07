@@ -5,7 +5,6 @@
       <%= link_to root_path , class: "navbar-wagon-brand" do %>
       <%= image_tag "logo_white.png", height: 15 %>
       </div>
-      <p style="font-family: Assistant">Lalagence PRO</p>
       <% end %>
     </div>
     <div class="profil-container">
@@ -20,7 +19,7 @@
       <div class="agence-bonjour">
         <% agency_id = User.find(current_user.id).agency_id %>
         <% agency = Agency.find(agency_id) %>
-       <p> (Agence  : <%= agency.name  %>) </p>
+       <p style="color:#01B878"> Agence  : <%= agency.name  %> </p>
       </div>
     </div>
     <div class="name"></div>
@@ -40,9 +39,8 @@
       <div class="sidebar-logo-container">
         <div>
         <%= link_to root_path , class: "navbar-wagon-brand" do %>
-        <%= image_tag "logo_white.png", height: 15 %>
+        <%= image_tag "logo_white.png"%>
         </div>
-        <p style="font-family: Assistant">Lalagence</p>
         <% end %>
       </div>
       <div class="profil-container">

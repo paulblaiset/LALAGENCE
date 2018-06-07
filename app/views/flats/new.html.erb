@@ -5,11 +5,11 @@
   <div class="contenu-url-apercu">
     <div class='urls-input'>
     <%= simple_form_for [@agency, @flat] do |f|%>
-      <%= f.input :url, placeholder: 'ex: https://www.orpi.com/annonce-location-appartement-t3-paris-20-75020-b-e0jyf7/' %>
-      <%= text_field_tag :url_2, nil, placeholder: 'ex: https://www.orpi.com/annonce-location-appartement-t3-paris-20-75020-b-e0jyf7/' %>
-      <%= text_field_tag :url_3, nil, placeholder: 'ex: https://www.leboncoin.fr/locations/1437041688.htm/?ca=12_s' %>
+      <%= f.input :url, placeholder: 'ex: https://www.orpi.com/annonce-location-appartement-t3-paris-20-75020-b-e0jyf7/', label: false %>
+      <%= text_field_tag :url_2, nil, placeholder: 'ex: https://www.orpi.com/annonce-location-appartement-t3-paris-20-75020-b-e0jyf7/', class: 'form-group form-control url optional flat_url' %>
+      <%= text_field_tag :url_3, nil, placeholder: 'ex: https://www.leboncoin.fr/locations/1437041688.htm/?ca=12_s', class: 'form-group form-control url optional flat_url' %>
 
-      <%= f.button :submit, :class => 'btoun-rose-cool create' %>
+      <%= f.button :submit, 'Ajoutez un bien', :class => 'btoun-rose-cool create' %>
     <% end %>
   </div>
   <div class="apercu">
