@@ -1,14 +1,14 @@
 <div class="flat-card">
   <div class="flat-card-info">
     <div class="title-card">
-      <span style="font-weight:bold; color:#01B878"><%= flat.name %></span>
+      <span style="font-weight:bold; color:#2EC590"><%= flat.name %></span>
     </div>
     <ul>
       <li> Type : <%= flat.nb_room %></li>
       <li> Arrondissement : <%= flat.address %></li>
       <li> Superficie : <%=  flat.surface %></li>
       <li style="font-weight:bold; margin-top:10px;"><span> Prix : <%= flat.price.to_i %>€</span></li>
-      <li style="color:#01B878; padding-top:10px;">
+      <li style="color:#gray; padding-top:10px;">
         <i class="far fa-user"></i>
         <% if flat.candidatures.length > 0 %>
           <%= link_to "Nombre de candidature #{flat.candidatures.length}", agency_flat_path(flat.agency, flat) %>
