@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+
+
   def default_url_options
     { host: ENV["HOST"] || "localhost:3000" }
   end
@@ -36,7 +38,7 @@ class ApplicationController < ActionController::Base
       @agency_id = current_user.agency_id
       agency_flats_path(@agency_id)
     else
-      root_path
+      edit_user_path(current_user)
     end
   end
 
