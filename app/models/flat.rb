@@ -3,7 +3,7 @@ class Flat < ApplicationRecord
   has_many :url_flats, dependent: :destroy
   has_many :candidatures, through: :url_flats
 
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader #Association de Cloudinary avec CarrierWave, upload de photos
 
 
 
