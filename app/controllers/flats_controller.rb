@@ -6,6 +6,13 @@ class FlatsController < ApplicationController
     @flats = policy_scope(Flat)
   end
 
+  def show
+    @agency = Agency.find(params[:agency_id])
+    @flat = Flat.find(params[:id])
+    @candidatures = @flat.candidatures
+    authorize @flat
+  end
+
 
   def new
     @agency = Agency.find(params[:agency_id])

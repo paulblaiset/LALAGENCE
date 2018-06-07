@@ -7,89 +7,85 @@
 
 
   <div class="row">
-    <div class="blurscroll">
-      <div class="fixscroll">
-        <div class="tabs">
-          <div class="mini-cards-container">
-            <ul class="col-xs-4 nav nav-tabs">
-              <% @candidatures.each_with_index do |candidature, i| %>
-              <% user = candidature.user %>
-              <li class="<%= i == 0 ? 'active' : '' %>"><a class="tab" data-toggle="tab" href="#candidature-<%= candidature.id %>">
-                <div class="mini-card-candidature">
-                  <div class="row-mini">
-                    <div class ="avatar">
-                      <% if user.photo.present? %>
-                        <%= cl_image_tag user.photo %>
-                      <% else %>
-                        <%= image_tag("icon_renter_guy_off.png") %>
-                      <% end %>
+    <div class="tabs">
+      <div class="mini-cards-container">
+        <ul class="col-xs-4 nav nav-tabs">
+          <% @candidatures.each_with_index do |candidature, i| %>
+          <% user = candidature.user %>
+          <li class="<%= i == 0 ? 'active' : '' %>"><a class="tab" data-toggle="tab" href="#candidature-<%= candidature.id %>">
+            <div class="mini-card-candidature">
+              <div class="row-mini">
+                <div class ="avatar">
+                  <% if user.photo.present? %>
+                    <%= cl_image_tag user.photo %>
+                  <% else %>
+                    <%= image_tag("icon_renter_guy_off.png") %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="row-mini">
+                <ul class="contact_info">
+                  <strong><li><%=  user.last_name  %></li></strong>
+                  <strong><li><%=  user.first_name[0]  %>.</li></strong>
+                  <% if user.birthday_date %>
+                    <strong><li><%=  ((Date.today - user.birthday_date)/365).to_i %> ans</li></strong>
+                  <% end %>
+                  <li>
+                    <div class="rating-euro">
+                      <div class="rating">
+                        <%= ("<i class='fa fa-star'></i>" * user.rating).html_safe %>
+                      </div>
+                      <div class="euro">
+                        <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
+                        <i class="fa fa-euro-sign"></i>
+                        <% end %>
+                      </div>
                     </div>
-                  </div>
-                  <div class="row-mini">
-                    <ul class="contact_info">
-                      <strong><li><%=  user.last_name  %></li></strong>
-                      <strong><li><%=  user.first_name[0]  %>.</li></strong>
-                      <% if user.birthday_date %>
-                        <strong><li><%=  ((Date.today - user.birthday_date)/365).to_i %> ans</li></strong>
-                      <% end %>
-                      <li>
-                        <div class="rating-euro">
-                          <div class="rating">
-                            <%= ("<i class='fa fa-star'></i>" * user.rating).html_safe %>
-                          </div>
-                          <div class="euro">
-                            <% if (user.salary_by_month/3) >= candidature.url_flat.flat.price.to_i %>
-                            <i class="fa fa-euro-sign"></i>
-                            <% end %>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="row-mini">
-                    <ul class="contact_info">
-                      <li>€<%=  (user.salary_by_month).to_i %></li>
-                      <li> / <%= user.job_name %></li>
-                    </ul>
-                  </div>
-                  <div class="row-mini">
-                    <ul class="contact_info">
-                      <li><%=  user.work_situation %></li>
-                      <% if user.first_day_of_work %>
-                        <li> depuis <%= ((Date.today - user.first_day_of_work)/31).to_i %> mois</li>
-                      <% end %>
-                    </ul>
-                  </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="row-mini">
+                <ul class="contact_info">
+                  <li>€<%=  (user.salary_by_month).to_i %></li>
+                  <li> / <%= user.job_name %></li>
+                </ul>
+              </div>
+              <div class="row-mini">
+                <ul class="contact_info">
+                  <li><%=  user.work_situation %></li>
+                  <% if user.first_day_of_work %>
+                    <li> depuis <%= ((Date.today - user.first_day_of_work)/31).to_i %> mois</li>
+                  <% end %>
+                </ul>
+              </div>
 
-<<<<<<< HEAD
-                  <div class="row-mini">
-                    <ul class="contact_info">
-                      <li><%= user.guarantors.count %> garant(s)</li>
-                    </ul>
-                  </div>
-                  <div class="flat-details">
-                    <div class="row-apart">
-                      <ul class="contact_info">
+              <div class="row-mini">
+                <ul class="contact_info">
+                  <li><%= user.guarantors.count %> garant(s)</li>
+                </ul>
+              </div>
+              <div class="flat-details">
+                <div class="row-apart">
+                  <ul class="contact_info">
                       <ul>
                         <% flat = candidature.url_flat.flat %>
                         <li>
                           <p>T<%=  flat.nb_room %> - <%=  flat.surface %> - <%=  flat.address %></p>
-                          <p><%=  flat.price.to_i %></p>
+                          <p><%=  flat.price.to_i %>€</p>
                         </li>
                       </ul>
-                    </div>
-                    <div class="row-apart">
-                      <ul class="contact_info">
-                        <strong><li>Déposé depuis le <%= candidature.created_at.strftime("%d/%m/%y") %></li></strong>
-                      </ul>
-                    </div>
-                  </div>
+                  </ul>
                 </div>
-              </a></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
+                <div class="row-apart">
+                  <ul class="contact_info">
+                    <strong><li>Déposé depuis le <%= candidature.created_at.strftime("%d/%m/%y") %></li></strong>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
@@ -192,7 +188,7 @@
             <div class ="icon-secure">
                 <%= image_tag("secureicon.png") %>
               </div>
-              <span> TOUTES LES PIECES DE CE DOSSIER SONT LISIBLES ET STOCKÉES DE MANIERE 100% SECURISÉE</span>
+              <p> TOUTES LES PIECES DE CE DOSSIER SONT LISIBLES ET STOCKÉES DE MANIERE 100% SECURISÉE</p>
           </div>
 
           <div class="row-apercu-bien">
