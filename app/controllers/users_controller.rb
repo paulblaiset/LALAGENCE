@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = current_user
     (@user.guarantors.count > 1) ? @guarantor = @user.guarantors.where.not(mail: nil).first : @guarantor = @user.guarantors.first
     authorize @user
-    if @user
+    if @user.has_required_field?
       @step = 2  #si le formulaire est rempli, on passe à l'onglet de la tabs "Guarantor"
     else
       @step = 1
