@@ -20,6 +20,7 @@
               <p><span style="font-weight: bold">Photo de profile</span></p>
                 <div class="upload-mini-container-photo">
                   <%= f.input :photo, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                  <div class="preview-name"><%= @user.photo.file.filename if @user.photo.present? %></div>
                   <% if @user.photo.present? %>
                     <span class="check"><i class='fa fa-check-circle'></i></span>
                   <% end %>
@@ -30,6 +31,7 @@
               <p> <span style="font-weight: bold">Carte d'identité ou passeport </span><br> en cours de validité</p>
                 <div class="upload-mini-container-photo">
                   <%= f.input :identity_card, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                  <div class="preview-name"><%= @user.identity_card.file.filename if @user.identity_card.present? %></div>
                   <% if @user.identity_card.present? %>
                       <span class="check"><i class='fa fa-check-circle'></i></span>
                     <% end %>
@@ -90,6 +92,7 @@
                   <p> <span style="font-weight: bold">Contrat de travail ou attestation employeur</p>
                   <div class="upload-mini-container-photo">
                   <%= f.input :employment_contract, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                  <div class="preview-name"><%= @user.employment_contract.file.filename if @user.employment_contract.present? %></div>
                   <% if @user.employment_contract.present? %>
                     <span class="check"><i class='fa fa-check-circle'></i></span>
                   <% end %>
@@ -105,6 +108,7 @@
                 <div class="three-bulletins">
                   <div class="upload-mini-container-photo">
                     <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                    <div class="preview-name"><%= @user.pay_slip_1.file.filename if @user.pay_slip_1.present? %></div>
                     <% if @user.pay_slip_1.present? %>
                       <span class="check"><i class='fa fa-check-circle'></i></span>
                     <% end %>
@@ -112,6 +116,7 @@
                   <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
                   <div class="upload-mini-container-photo">
                     <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                    <div class="preview-name"><%= @user.pay_slip_2.file.filename if @user.pay_slip_2.present? %></div>
                     <% if @user.pay_slip_2.present? %>
                       <span class="check"><i class='fa fa-check-circle'></i></span>
                     <% end %>
@@ -119,6 +124,7 @@
                   <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
                   <div class="upload-mini-container-photo">
                     <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                    <div class="preview-name"><%= @user.pay_slip_3.file.filename if @user.pay_slip_3.present? %></div>
                     <% if @user.pay_slip_3.present? %>
                       <span class="check"><i class='fa fa-check-circle'></i></span>
                     <% end %>
@@ -145,6 +151,7 @@
                 <p> <span style="font-weight: bold">Quittance de loyer</span></p>
                 <div class="upload-mini-container-photo">
                   <%= f.input :actual_rent_bill, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                  <div class="preview-name"><%= @user.actual_rent_bill.file.filename if @user.actual_rent_bill.present? %></div>
                   <% if @user.actual_rent_price.present? %>
                     <span class="check"><i class='fa fa-check-circle'></i></span>
                   <% end %>
@@ -166,6 +173,7 @@
             <p> <span style="font-weight: bold">Avis d'imposition</span><br></p>
             <div class="upload-mini-container-photo">
               <%= f.input :tax_notice, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+              <div class="preview-name"><%= @user.tax_notice.file.filename if @user.tax_notice.present? %></div>
               <% if @user.tax_notice.present? %>
                   <span class="check"><i class='fa fa-check-circle'></i></span>
               <% end %>
