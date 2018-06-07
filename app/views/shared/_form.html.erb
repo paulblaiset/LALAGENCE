@@ -102,27 +102,29 @@
             <div class="bulletin-step-2-2">
               <div class="upload-mini-container">
                 <p style="margin-top:18px;"> <span style="font-weight: bold">Vos 3 derniers bulletins de salaire</span><br></p>
-                <div class="upload-mini-container-photo">
-                  <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-                  <% if @user.pay_slip_1.present? %>
-                    <span class="check"><i class='fa fa-check-circle'></i></span>
-                  <% end %>
+                <div class="three-bulletins">
+                  <div class="upload-mini-container-photo">
+                    <%= f.input :pay_slip_1, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                    <% if @user.pay_slip_1.present? %>
+                      <span class="check"><i class='fa fa-check-circle'></i></span>
+                    <% end %>
+                  </div>
+                  <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+                  <div class="upload-mini-container-photo">
+                    <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                    <% if @user.pay_slip_2.present? %>
+                      <span class="check"><i class='fa fa-check-circle'></i></span>
+                    <% end %>
+                  </div>
+                  <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+                  <div class="upload-mini-container-photo">
+                    <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+                    <% if @user.pay_slip_3.present? %>
+                      <span class="check"><i class='fa fa-check-circle'></i></span>
+                    <% end %>
+                  </div>
+                  <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
                 </div>
-                <%= f.input :pay_slip_1_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-                <div class="upload-mini-container-photo">
-                  <%= f.input :pay_slip_2, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-                  <% if @user.pay_slip_2.present? %>
-                    <span class="check"><i class='fa fa-check-circle'></i></span>
-                  <% end %>
-                </div>
-                <%= f.input :pay_slip_2_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-                <div class="upload-mini-container-photo">
-                  <%= f.input :pay_slip_3, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-                  <% if @user.pay_slip_3.present? %>
-                    <span class="check"><i class='fa fa-check-circle'></i></span>
-                  <% end %>
-                </div>
-                <%= f.input :pay_slip_3_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
               </div>
             </div>
           </div>
@@ -172,10 +174,10 @@
           </div>
         </div>
       </div>
-      <div class="bouton-container">
-        <div class='bouton-update-user' >
-          <%= f.button :submit, ' Mettre à jour les champs  ', :class => 'btoun-rose-cool ' %>
-        </div>
+    </div>
+    <div class="bouton-container">
+      <div class='bouton-update-user' >
+        <%= f.button :submit, ' Mettre à jour les champs  ', :class => 'btoun-rose-cool ' %>
       </div>
     </div>
   <% end %><!-- End-Form -->
