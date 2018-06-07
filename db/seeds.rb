@@ -52,7 +52,6 @@ paul = User.create!(
   rental_status: 'Locataire',
   )
 
-paul.remote_identity_card_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201886/ID_Recto.jpg"
 paul.remote_employment_contract_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201614/contrat-de-travail-CDI_all.jpg"
 paul.remote_pay_slip_1_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_1_all.jpg"
 paul.remote_pay_slip_2_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_2_all.jpg"
