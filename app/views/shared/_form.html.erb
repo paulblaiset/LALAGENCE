@@ -17,7 +17,7 @@
         <div class="col-xs-12 col-sm-4 col-sm-offset-2">
           <div class="upload-container-step-1">
             <div class="upload-mini-container">
-              <p><span style="font-weight: bold">Photo de profile</span></p>
+              <p><span style="font-weight: bold">Photo de profil</span></p>
                 <div class="upload-mini-container-photo">
                   <%= f.input :photo, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
                   <div class="preview-name"><%= @user.photo.file.filename if @user.photo.present? %></div>
