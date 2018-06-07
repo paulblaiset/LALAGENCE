@@ -33,8 +33,9 @@ textarea{
 }
 
 .fa-check-circle {
-color:$light-green;
+  color:$light-green;
 }
+
 
 .profil-edit-container .form-control {
     height: 27px;
@@ -85,14 +86,15 @@ color:$light-green;
 
 }
 .upload-container-step-1 {
- flex: 1 0 20%;
- text-align:center;
+ margin-top: 30px;
  p {
   padding-bottom: 20px;
-
  }
 }
-
+.upload-mini-container{
+  margin-bottom: 10px;
+  position: relative;
+}
 .row-step-2 {
   padding: 30px 0 30px 100px;
   background-color:white;
@@ -102,7 +104,6 @@ color:$light-green;
 .row-step-2-1 {
   padding: 6px 0 30px 0px;
   display:flex;
-
 }
 .bouton-step-2-1 {
 flex: 0 0 55%;
@@ -110,17 +111,14 @@ flex: 0 0 55%;
 
 .row-step-2-2 {
   padding: 3px 0 30px 0px;
-  display:flex;
+  display:-webkit-inline-box;
+  width: 80%;
   p {
     margin-bottom: 10px;
   }
 }
 
 .contrat-step-2-2 {
-    flex: 0 0 55%;
-    padding-left: 109px;
-    padding-right: 199px;
-    text-align: center;
 
 }
 
@@ -144,23 +142,25 @@ flex: 0 0 55%;
 
   }
 }
+.quittance-de-loyer {
+  margin-top: 30px;
+}
 
 .step-3-container{
 flex: 0 0 55%;
 padding-right: 160px;
 }
 
-.step-3-quittance {
-  display:flex;
-}
 
 .bouton-update-user {
     margin-top: 42px;
-    margin-left: 64px;
 }
 
 .step-4-container{
-text-align:center;
+
+}
+.champs-step-1{
+  min-width: 250px;
 }
 
 .champs-step-1-guarant {
@@ -244,3 +244,15 @@ input[type="radio"]:checked+label:before {
   background: $light-green;
 }
 
+.champs-step-2-1 {
+  margin-top: 30px;
+}
+.upload-mini-container-photo {
+  position: relative;
+}
+
+.upload-mini-container-photo .fa-check-circle {
+  position: absolute;
+  left: 48px;
+  top: -3px;
+}
