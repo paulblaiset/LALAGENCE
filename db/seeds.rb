@@ -50,9 +50,10 @@ paul = User.create!(
   birthday_date: '1988-10-11',
   actual_rent_price: '1690€',
   rental_status: 'Locataire',
+  phone_number: '06 37 01 69 39',
+  year_legal_income: '60 000€'
   )
 
-paul.remote_identity_card_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201886/ID_Recto.jpg"
 paul.remote_employment_contract_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201614/contrat-de-travail-CDI_all.jpg"
 paul.remote_pay_slip_1_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_1_all.jpg"
 paul.remote_pay_slip_2_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_2_all.jpg"
@@ -271,7 +272,7 @@ alfred = Guarantor.new(
   couple_status: 'O',
   birthday_date: '1990-08-12',
   nationality: 'Francaise',
-  mail: 'alfred@pigeonvoyageur.fr',
+  mail: 'alfred@gmail.fr',
   child_number: '6',
   employer_address: "3 rue de la république - 75011 Paris",
   employer_phone_number: "01 18 30 46 17",

@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  def edit
+  def edit #On check si l'user a un ou deux garants et on prend le bon guarant (Probleme de Seed)
     @user = current_user
     (@user.guarantors.count > 1) ? @guarantor = @user.guarantors.where.not(mail: nil).first : @guarantor = @user.guarantors.first
     authorize @user
     if @user
-      @step = 2
+      @step = 2  #si le formulaire est rempli, on passe à l'onglet de la tabs "Guarantor"
     else
       @step = 1
     end

@@ -80,7 +80,7 @@
         </div>
         <div class="row-situ-pro-loca">
           <div class="situation-pro">
-            <h2>Situation Professionelle &amp; fiscale</h2>
+            <h2>Situation Professionelle &amp; Fiscale</h2>
             <p> Poste : <span style="color:#01B878"> <%= user.job_name %> </span></p>
             <p> Salaire net mensuel : <span> <%=  user.salary_by_month %> €</span></p>
             <% if user.work_situation %>
@@ -99,7 +99,7 @@
         </div>
 
         <div class="guarantor">
-          <h2>Présence de guarants : <span> Oui </span> (voir)</h2>
+          <h2>Présence de garants : <span> Oui </span> (voir)</h2>
         </div>
 
         <div class="wrapper">
@@ -114,7 +114,7 @@
 
           <div class="row user-bien">
             <div class="col-xs-12">
-              <%= render 'shared/flat_card_agency', flat: candidature.url_flat.flat %>
+              <%= render 'shared/flat_card', candidature: @candidature %>
             </div>
           </div>
 

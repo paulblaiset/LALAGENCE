@@ -1,4 +1,7 @@
 // écouter le click sur la class .button-label
+/*Pour les boutons Work_situation (Salarié, Etudiant, Commercant)*/
+
+
 function selectJob() {
   const labels = document.querySelectorAll('.button-label');
   // const pickup = document.querySelector('.button-label');

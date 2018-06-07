@@ -1,3 +1,5 @@
+/*Pour que la navbar devienne transparente en scrollant*/
+
 function initUpdateNavbarOnScroll() {
   const navbar = document.querySelector('.navbar-wagon');
   const banner = document.querySelector('.banner-home');

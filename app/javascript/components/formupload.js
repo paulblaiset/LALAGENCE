@@ -1,3 +1,5 @@
+/* pour afficher le nom des fichiers sous l'icone après l'upload*/
+
 function showFileName( event ) {
   if (this.files[0]) {
     const fileName = this.files[0].name;

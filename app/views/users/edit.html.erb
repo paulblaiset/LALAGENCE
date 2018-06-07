@@ -2,7 +2,7 @@
   <h1>Votre Dossier <span class="step-progress-bar step-progress-bar-begin"><span style="width: <%= @step == 1 ? "0" : "50"; %>%;"></span></span></h1>
   <div class="add_a_guarantor">
       <%= image_tag("add.png") %>
-      <span>Ajouter un guarant</span>
+      <span>Ajouter un garant</span>
     </div>
   <div class="nav-pills-content">
     <div class="content-pill">
@@ -16,7 +16,7 @@
         <li class="<%= 'active' if @step == 2 %>">
           <%= link_to "#2a", class: "tab-btn tab-guarantor", data: {toggle: "tab"} do %>
             <%= image_tag "icon_guarantor_girl_off.png", alt: ""%>
-            <span class="title">Mon guarant n°1</span>
+            <span class="title">Mon garant n°1</span>
           <% end %>
         </li>
         <li>
