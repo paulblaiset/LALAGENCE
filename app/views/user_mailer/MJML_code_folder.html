@@ -39,7 +39,7 @@
       <mj-column width="80%">
         <mj-text align="left" padding-top="10px" font-size="14px" font-weight="300" padding="0px">
           <p>Bonjour,</p>
-          <p>Votre client <strong><%= @user.first_name %> <%= @user.last_name %></strong> vous envoie son dossier complet à verifier pour le bien "<strong> <%= @flat.name %> , <%= @flat.nb_room %> chambres , <%= @flat.address %> , <%= @flat.surface %> , <%= @flat.price %> </strong>".</p>
+          <p>Votre client <strong><%= @user.first_name %> <%= @user.last_name %></strong> vous envoie son dossier complet à verifier pour le bien "<strong> <%= @flat.name %> , <%= @flat.nb_room %> chambres , <%= @flat.address %> , <%= @flat.surface %> , <%= @flat.price.to_i %>€ </strong>".</p>
           <p>Notre plateforme, tiers de confiance entre agence/proprietaire et locataire, a verifié son dossier. Il est complet, ses revenus sont suffisants et ses pièces ont été verifiées et authentifiées. </p>
 
           <div style="color:#3DEAB9;">
@@ -62,7 +62,7 @@
             <p><strong>Le bien desiré: <%= @flat.name %></strong></p>
             <p>Chambres: <%= @flat.nb_room %> | Surface: <%= @flat.surface %></
 p>
-            <p>Addresse: <%= @flat.address %> | Prix: <%= @flat.price %></p>
+            <p>Addresse: <%= @flat.address %> | Prix: <%= @flat.price.to_i %>€</p>
           </mj-text>
         </mj-column>
 
