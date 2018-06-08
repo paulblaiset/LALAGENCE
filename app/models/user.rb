@@ -30,9 +30,9 @@ class User < ApplicationRecord
   end
 
   def rating #Pour savoir si les candidatures sont bonnes ou pas
-    if work_situation == "SALARIÉ(E)" && guarantors.count > 1
+    if work_situation.strip == "SALARIÉ(E)" && guarantors.count > 1
       i = 3
-    elsif work_situation == "SALARIÉ(E)" && guarantors.count == 1
+    elsif work_situation.strip == "SALARIÉ(E)" && guarantors.count == 1
       i = 2
     else
       i = 1
