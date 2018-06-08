@@ -1,6 +1,7 @@
 /* pour afficher le nom des fichiers sous l'icone après l'upload*/
 
 function showFileName( event ) {
+  debugger
   if (this.files[0]) {
     const fileName = this.files[0].name;
     var newDiv = document.createElement("div");
