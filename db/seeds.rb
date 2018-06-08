@@ -22,7 +22,7 @@ orpi = Agency.create!(
 
 michel = User.new(
   email: 'orpi.paris14@gmail.com',
-  password: 'lalagence.123',
+  password: 'password',
   gender: 'male',
   first_name: 'Michel',
   last_name: 'Dubois',
@@ -53,7 +53,7 @@ paul = User.create!(
   phone_number: '06 37 01 69 39',
   year_legal_income: '60 000€'
   )
-
+paul.remote_identity_card_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528449272/ID_Moi.jpg"
 paul.remote_employment_contract_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201614/contrat-de-travail-CDI_all.jpg"
 paul.remote_pay_slip_1_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_1_all.jpg"
 paul.remote_pay_slip_2_url = "http://res.cloudinary.com/dp4vga3rz/image/upload/v1528201615/bulletin_2_all.jpg"
